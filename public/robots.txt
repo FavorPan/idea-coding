@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+Disallow: /analytics.html
+Disallow: /monitor.html
+Disallow: /src/monitor.css
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+Sitemap: https://ideacoding.favorhub.top/sitemap.xml
+Sitemap: https://ideacoding.favorhub.top/feed.xml
+Host: ideacoding.favorhub.top

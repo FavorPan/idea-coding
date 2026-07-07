@@ -1,0 +1,85 @@
+/* Idea Coding - Dark Glassmorphism Theme
+ * Design: Dark mode with glassmorphism effects
+ * Features: Deep dark background, frosted glass cards, gradient accents, gold highlights
+ */
+
+:root {
+  /* Dark base colors - zinc palette */
+  --bg: #09090b;
+  --surface: #18181b;
+  --paper: #27272a;
+  --elevated: #3f3f46;
+  --ink: #fafafa;
+  --muted: #a1a1aa;
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 255, 255, 0.15);
+
+  /* Primary - white with gold gradient */
+  --primary: #ffffff;
+  --primary-hover: #f4f4f5;
+  --primary-soft: rgba(255, 255, 255, 0.08);
+  --primary-glow: rgba(255, 255, 255, 0.1);
+
+  /* Accent - warm gold */
+  --accent: #fcd34d;
+  --accent-soft: rgba(252, 211, 77, 0.15);
+  --accent-glow: rgba(252, 211, 77, 0.2);
+
+  /* Functional colors - muted for dark theme */
+  --blue: #60a5fa;
+  --blue-soft: rgba(96, 165, 250, 0.15);
+  --green: #4ade80;
+  --green-soft: rgba(74, 222, 128, 0.15);
+  --orange: #fb923c;
+  --orange-soft: rgba(251, 146, 60, 0.15);
+  --purple: #c084fc;
+  --purple-soft: rgba(192, 132, 252, 0.15);
+  --red: #f87171;
+  --pink: #f472b6;
+
+  /* Track theme colors - brighter for dark bg */
+  --track-fun: #60a5fa;
+  --track-fun-soft: rgba(96, 165, 250, 0.12);
+  --track-useful: #4ade80;
+  --track-useful-soft: rgba(74, 222, 128, 0.12);
+  --track-hardware: #fb923c;
+  --track-hardware-soft: rgba(251, 146, 60, 0.12);
+  --track-stars: #c084fc;
+  --track-stars-soft: rgba(192, 132, 252, 0.12);
+
+  /* Fonts - Inter for clean modern look */
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace;
+
+  /* Shadows - glow effects for dark theme */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.7);
+
+  /* Glass effects */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-glow: rgba(255, 255, 255, 0.03);
+
+  /* Radius system */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+}
