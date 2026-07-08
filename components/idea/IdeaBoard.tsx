@@ -124,8 +124,8 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
         {/* Background Image with Gradient Mask */}
         <div className="hero-bg" />
 
-        <div className="hero-shell">
-          <header className="topbar">
+        <header className="topbar">
+          <div className="topbar-inner">
             <a className="brand" href="#top" aria-label="Idea Coding">
               <span className="brand-mark"></span>
               <span>Idea Coding</span>
@@ -142,8 +142,10 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
                 </button>
               ))}
             </nav>
-          </header>
+          </div>
+        </header>
 
+        <div className="hero-shell">
           <div className="hero-grid" id="top">
             {/* LEFT COLUMN */}
             <div className="hero-copy">
