@@ -1,0 +1,70 @@
+name: Data Refresh
+
+on:
+  # 手动触发,方便测试和调试
+  workflow_dispatch:
+
+  # 每天北京时间 11:00 (UTC 03:00) 自动跑
+  schedule:
+    - cron: "0 3 * * *"
+
+permissions:
+  contents: write # 写 lib/generated/ 目录
+  pages: write    # 触发 Pages rebuild
+  id-token: write # OIDC 鉴权(可选)
+
+jobs:
+  refresh:
+    name: Discover & Evaluate
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # ── Step 1: Discover topics ──────────────────────────────────────────────
+      - name: Discover GitHub Topics
+        run: node scripts/discover-topics.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # ── Step 2: AI Evaluation ────────────────────────────────────────────────
+      - name: AI Evaluate Candidates
+        run: node scripts/ai-evaluate.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AGNES_API_KEY: ${{ secrets.AGNES_API_KEY }}
+
+      # ── Step 3: Validate ─────────────────────────────────────────────────────
+      - name: Validate Generated Data
+        run: node scripts/validate-data.mjs
+
+      # ── Step 4: Commit & Push ────────────────────────────────────────────────
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and push
+        run: |
+          if git diff --quiet lib/generated/; then
+            echo "✅ No changes to lib/generated — skipping commit."
+          else
+            git add lib/generated/
+            git diff --cached --stat
+            git commit -m "chore: auto-refresh project data $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+            git push
+            echo "✅ Pushed lib/generated/ changes"
+          fi

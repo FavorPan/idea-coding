@@ -8,7 +8,11 @@
     "start": "next start",
     "test": "node --test test/project-data-quality.test.mjs",
     "preview": "opennextjs-cloudflare build && wrangler dev",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "data:discover": "node scripts/discover-topics.mjs",
+    "data:evaluate": "node scripts/ai-evaluate.mjs",
+    "data:validate": "node scripts/validate-data.mjs",
+    "data:refresh": "node scripts/discover-topics.mjs && node scripts/ai-evaluate.mjs && node scripts/validate-data.mjs"
   },
   "dependencies": {
     "next": "16.2.10",

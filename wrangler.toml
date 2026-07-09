@@ -19,16 +19,5 @@ service = "idea-coding"
 binding = "NEXT_INC_CACHE_R2_BUCKET"
 bucket_name = "idea-coding-opennext-cache"
 
-# KV namespace for the GitHub Trending weekly snapshot.
-# Create before first deploy: wrangler kv namespace create TRENDING_KV
-[[kv_namespaces]]
-binding = "TRENDING_KV"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
-
-# Optional: cron trigger to refresh trending on a schedule (fallback if ISR
-# revalidation doesn't fire reliably on Cloudflare). Runs every 6 hours.
-[triggers]
-crons = ["0 */6 * * *"]
-
 # Production route — replace with your actual domain.
 # routes = [{ pattern = "ideacoding.favorhub.top/*", custom_domain = true }]

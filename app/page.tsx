@@ -1,5 +1,5 @@
 import { cacheLife } from "next/cache";
-import { fetchTrending, pickKV, type TrendingResult } from "@/lib/github/trending";
+import { fetchTrending, type TrendingResult } from "@/lib/github/trending";
 import { IdeaBoard } from "@/components/idea/IdeaBoard";
 
 // Cached data fetch: revalidated on the `minutes` profile in dev for fast
@@ -8,9 +8,7 @@ import { IdeaBoard } from "@/components/idea/IdeaBoard";
 async function getTrending(): Promise<TrendingResult> {
   "use cache";
   cacheLife("minutes");
-  const token = process.env.GITHUB_TOKEN;
-  const kv = pickKV();
-  return fetchTrending(kv, token);
+  return fetchTrending();
 }
 
 export default async function Home() {

@@ -28,7 +28,7 @@ import { PlanDialog } from "./PlanDialog";
 interface IdeaBoardProps {
   starProjects: StarBoardProject[];
   fetchedAt: string;
-  trendingSource: "live" | "fallback";
+  trendingSource: "live" | "generated" | "fallback";
 }
 
 const DEFAULT_STARTER: StarterState = {
