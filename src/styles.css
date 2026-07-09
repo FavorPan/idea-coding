@@ -174,11 +174,12 @@ a {
 }
 
 .brand-mark {
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
   border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, var(--ink) 0%, var(--accent) 100%);
-  box-shadow: 0 2px 8px var(--accent-glow);
+  background: transparent;
+  box-shadow: none;
+  object-fit: contain;
 }
 
 .topnav,

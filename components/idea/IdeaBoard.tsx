@@ -127,7 +127,7 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
         <header className="topbar">
           <div className="topbar-inner">
             <a className="brand" href="#top" aria-label="Idea Coding">
-              <span className="brand-mark"></span>
+              <img className="brand-mark" src="/logo.png" alt="" width={26} height={26} />
               <span>Idea Coding</span>
             </a>
             <nav className="topnav" aria-label="榜单分组">
