@@ -25,8 +25,8 @@ export function starterScore(
   }
   if (state.goal === "frontier") {
     score += project.track === "stars" ? 96 : 0;
-    const weekly = project.weeklyStars;
-    score += weekly ? Math.min(46, weekly / 420) : 0;
+    const delta = project.deltaStars;
+    score += delta ? Math.min(46, delta / 420) : 0;
   }
 
   if (state.skill === "beginner") score += project.easy * 0.75;
@@ -72,8 +72,8 @@ export function starterReason(
   const timeText = starterLabels.time[state.time];
   const goalText = starterLabels.goal[state.goal];
   if (project.track === "stars") {
-    const weekly = project.weeklyStars ?? 0;
-    return `适合想“${goalText}”的新手：本周增长 +${formatCount(weekly)} stars，先复刻一个最小使用场景就能摸到前沿脉搏。`;
+    const delta = project.deltaStars ?? 0;
+    return `适合想“${goalText}”的新手：近期增长 +${formatCount(delta)} stars，先复刻一个最小使用场景就能摸到前沿脉搏。`;
   }
   if (project.track === "hardware") {
     return `适合“${timeText}”动手：反馈来自真实设备，按 MVP 做出一个可见/可测的小结果。`;

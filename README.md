@@ -15,88 +15,92 @@ Idea Coding 是一个给 AI Coding 新手看的项目发现网站，也是一枚
 - 一个独立的 Codex Skill（`skills/idea-coding/`），在对话里提供同样的推荐能力。
 
 ```
-app/                  # Next.js App Router（Server Component 入口）
-components/idea/      # 客户端看板组件（IdeaBoard / IdeaCanvas / PlanDialog）
-lib/
-  data/               # 精选数据层：项目、轨道、Skill、明星项目、建议器选项
-  generated/          # 自动生成数据层（每天由 GitHub Actions 刷新，勿手改）
-  logic/              # 纯函数逻辑：项目筛选、Skill 匹配、开工提示词组装
-  github/trending.ts  # GitHub Trending 数据层（消费 lib/generated/ + 实时拉取）
-scripts/              # 数据刷新链路：discover-topics / ai-evaluate / validate-data
-.github/workflows/    # data-refresh.yml — 每天 UTC 03:00 跑发现 + 评估 + commit
-public/               # 静态 SEO 专题页（guides/、projects/）与站点文件
-skills/idea-coding/   # Codex Skill 版本（SKILL.md + references/）
-test/                 # 数据质量测试套件
+components/idea/      # 看板 UI（IdeaBoard 看板 / IdeaCanvas 建议器 / PlanDialog 开工对话）
+lib/data/             # 精选数据层：约 90 个项目、四轨道、Skill 目录、建议器选项
+lib/generated/        # 自动生成数据层（每天由 GitHub Actions 刷新，勿手改）
+lib/logic/            # 筛选、Skill 匹配、开工提示词组装
+lib/github/trending.ts  # 明星项目数据层
+scripts/              # 数据刷新链路：discover / ai-evaluate / validate
+skills/idea-coding/   # Codex Skill 版本
+public/               # 静态 SEO 专题页与站点文件
 ```
 
-## 数据流：自动刷新链路 → 服务端缓存 → 客户端看板
+## 四大轨道
 
-数据分两层：**精选项目**（`lib/data/`，手维护）和**增长项目**（`lib/generated/`，GitHub Actions 每天自动刷新）。两者都被归一化成 `BoardProject`，`<IdeaBoard>` 一视同仁。
+看板把所有项目分成四个轨道，对应新手关心的四种「值不值得做」：
 
-### 自动刷新链路（GitHub Actions Cron）
+| 轨道 | 定位 |
+|---|---|
+| **好玩**（fun） | 即时反馈、强互动，一天能做出给朋友看的版本。 |
+| **好用**（useful） | 做完能进入日常工作流，优先解决信息、文档、财务、个人知识管理。 |
+| **好搓**（hardware） | 小预算也能跑通，硬件反馈明确，从 ESP32、树莓派起步。 |
+| **明星**（stars） | 最近 star 增长最快的 GitHub 项目，追踪正在冒头的开源新货。 |
 
-`.github/workflows/data-refresh.yml` 每天北京时间 11:00（UTC 03:00）自动跑，分三步，全部成功才会 commit：
+前三个轨道是手维护的精选项目（约 90 个，见 `lib/data/`）；明星轨道由 GitHub Actions 每天自动刷新（见 `lib/generated/`）。四者在看板上统一呈现，每个项目都带三个评分。
+
+## 三个评分维度
+
+每个项目都有三个 0–5 的评分，帮新手快速判断「值不值得做」：
+
+- **wow** — 惊喜感 / 炫不炫。做完能不能让人眼前一亮、想分享。
+- **useful** — 实用度。做完是不是真的能进日常用。
+- **easy** — 上手友好度。步骤清不清晰、要不要踩坑、环境复杂不复杂。
+
+看板支持按任一维度排序，配合轨道筛选快速定位。比如「好玩 + 按 wow 排序」找最炫的演示项目，「好用 + 按 useful 排序」找最值得长期用的工具。
+
+## 数据从哪来：自动刷新链路
+
+明星轨道的数据每天自动更新。`.github/workflows/data-refresh.yml` 每天北京时间 11:00 自动跑，分三步，全部成功才会 commit：
 
 1. **发现** — `scripts/discover-topics.mjs` 对 13 个 GitHub Topics（`creative-coding` / `ai-agents` / `esp32` 等，硬编码映射到 `fun` / `useful` / `hardware` 三轨道）调 Search API，过滤掉 star < 100 或超过 12 个月未更新的仓库，输出候选列表。
 2. **评估** — `scripts/ai-evaluate.mjs` 读每个候选的 README 和 issue 区，交给 Agnes AI（`agnes-2.0-flash`）生成 `tagline` / `mvp` / `wow·useful·easy` 评分 / Skill 推荐，每轨道留 Top 30。
 3. **校验** — `scripts/validate-data.mjs` 跑数据质量校验，失败则 abort workflow，不会污染数据。
 
-通过后把结果 commit 进 `lib/generated/`：`stars.ts`（评估结果）、`lastWeek.ts`（上周 star 快照）、`metadata.ts`（刷新时间）。**这个目录不要手改**，一切由脚本写入。
+通过后把结果 commit 进 `lib/generated/`：`stars.ts`（评估结果）、`lastSnapshot.ts`（上次刷新的 star 快照）、`metadata.ts`（刷新时间）。**这个目录不要手改**，一切由脚本写入。
 
-### 运行时：服务端缓存 → 客户端
+### 明星轨道怎么算出来
 
-`app/page.tsx` 是异步 Server Component，调用 `getTrending()`（`"use cache"` 函数，`minutes` 缓存策略），后者调用 `lib/github/trending.ts` 里的 `fetchTrending()`：
+1. 候选池来自上一步 AI 评估通过的 Top 项目（带预填的 wow/useful/easy 评分和 tagline）。
+2. 每次构建时并发拉取这些仓库的实时 `stargazers_count`，用 `当前总数 − 上次快照` 算出增量，按增量排序。
+3. 上次快照就存在 git 里——Actions 每天跑一次，每次把当天的 star 数写进 `lib/generated/lastSnapshot.ts` 并 commit。下次构建时拿这个快照来 diff，所以「增量」实际是「距上一次每日刷新的增长量」。
 
-- 主数据源是 `lib/generated/stars.ts`（AI 评估过的项目，带预填的评分）。为空时回退到 `lib/data/stars.ts` 里手维护的 `starFallback`。
-- 请求时并发拉取实时 `stargazers_count`，`weeklyStars = 当前总数 − lastWeek 快照`，按周增量排序。Git 本身就是快照存储——每次 Actions 都把当前计数和上周快照一起 commit，周对周 diff 天然成立。
-- 三层回退：没有 `GITHUB_TOKEN` → 仍用 generated 数据但 star 数不实时；generated 为空 → 用 `starFallback`；API 全失败 → 返回静态数据，source 标为 `"fallback"`。
-
-`getGeneratedMeta()` 暴露刷新时间，页面据此显示「上次刷新」时间戳。
+也就是说，明星轨道的「排名」是构建时算的，数据新鲜度取决于上一次构建。要是没有配 `GITHUB_TOKEN`，star 数不会实时刷新，只会用 commit 进 `lib/generated/` 的快照值。
 
 ## 命令
 
 ```bash
-pnpm dev          # Next.js 开发服务器
-pnpm build        # 生产构建
-pnpm test         # node --test test/project-data-quality.test.mjs（唯一的测试套件）
+pnpm dev          # 本地开发
+pnpm build        # 构建（输出到 out/，纯静态）
+pnpm test         # 数据质量测试
+
+pnpm data:refresh # 手动跑一次数据刷新链路（discover + evaluate + validate）
 ```
 
-数据刷新链路（对应 GitHub Actions 的三步，本地也能单跑）：
+部署是分工的：GitHub Actions 只刷新数据并 commit `lib/generated/` 回 main；push 到 main 后，由托管平台的 Git 集成自动拉取代码、构建、部署。Actions 里不跑构建、不部署。
 
-```bash
-pnpm data:discover   # 拉 13 个 GitHub Topics 候选仓库（需 GITHUB_TOKEN）
-pnpm data:evaluate   # Agnes AI 评估候选，写 lib/generated/（需 GITHUB_TOKEN + AGNES_API_KEY）
-pnpm data:validate   # 校验生成数据质量
-pnpm data:refresh    # 顺序跑上面三步
-```
+需要的环境变量：
 
-部署目标通过 OpenNext 适配到 Cloudflare 边缘运行时：
+- `GITHUB_TOKEN` — 数据刷新链路拉候选仓库用（Actions 自动提供）；构建时也用它实时拉 star 数，不配的话明星轨道 star 数不会刷新。
+- `AGNES_API_KEY` — AI 评估用，只在数据刷新链路里需要。
 
-```bash
-pnpm preview      # OpenNext 边缘构建 + 本地预览
-pnpm deploy       # OpenNext 边缘构建 + 部署
-```
+## 开工建议器
 
-首次部署前，先在 `wrangler.toml` 里创建引用的绑定：
+看板上的「开工建议器」（IdeaCanvas）是一个四维度的小问答，帮不知道做什么的新手缩小范围：
 
-- R2 桶 `idea-coding-opennext-cache`（OpenNext 增量缓存 / ISR）
-- 自引用 service binding（OpenNext 缓存需要）
+- **时间** — 今天 2 小时 / 周末 1-2 天 / 一周慢慢做
+- **目标** — 给朋友演示 / 自己日常用 / 动手搓设备 / 追前沿动态
+- **熟练度** — 刚开始 / 会一点 / 愿意折腾
+- **硬件** — 不买硬件 / 几十块可以 / 已经有设备
 
-> Trending 的定时刷新已从 Cloudflare cron 迁移到 GitHub Actions（见上文的自动刷新链路），`wrangler.toml` 不再有 cron trigger 和 KV 绑定。push 到 main 即触发 Cloudflare Pages 自动 rebuild。
+选完四个维度后，看板会推荐一个最匹配的项目，并生成一段**开工提示词**——包含项目来源链接、推荐 Skill 及每个 Skill 的使用理由、难度评估、风险清单、准备清单，最终拼成一段可以直接复制粘贴给 Codex / Cursor / Claude Code 的 prompt。这是整个项目的核心交付：不只是「推荐项目」，而是「给新手一个能直接开工的起点」。
 
-生产环境若要让运行时实时拉取 star 数生效，需配置 `GITHUB_TOKEN` 环境变量；自动刷新链路则需要在 GitHub 仓库 Secrets 里配 `AGNES_API_KEY`（`GITHUB_TOKEN` 由 Actions 自动提供）。
+## Skill 推荐
 
-> 仓库里没有 `lint` / `tsc` 脚本。类型检查在 `next build` 时隐式进行。
+每个项目会匹配若干个值得搭配的 Skill / 工具（比如做网页的配 HTML/CSS Skill，做自动化的配脚本 Skill）。匹配规则在 `lib/data/` 里，按项目轨道和技术栈正则匹配。开工提示词里会逐个说明「这个 Skill 在本项目里用在哪一步」，而不是干巴巴列一串工具名。
 
-## 数据层是项目的核心
+## 数据层
 
-`lib/data/` 持有约 90 个精挑细选的项目（横跨 `fun` / `useful` / `hardware` / `stars` 四个轨道）、Skill 目录、开工建议器选项，以及标签 / Skill 匹配规则。`lib/data/types.ts` 是类型权威来源。`BoardProject` 是统一的渲染形状——精选项目和明星项目都会被归一化成它，所以 `<IdeaBoard>` 能一视同仁地处理（见 `toStarBoardProject`）。
-
-> `lib/data/*.ts` 里的 `// AUTO-GENERATED from src/main.js by scripts/extract-data.mjs` 头是**历史遗留**。`src/main.js` 已不存在，运行 `scripts/extract-data.mjs` 会失败。**请直接手改 `lib/data/*.ts`。** 增删改项目时，记得同步更新同文件里的 `projectTagOverrides` 和正则规则 `projectTagRules` / `projectSkillRules`。
-
-## 纯逻辑，无全局状态
-
-`lib/logic/projects.ts` 和 `lib/logic/starter.ts` 是纯函数：调用方显式传入 `state`（轨道 / 指标 / 查询）和 `starProjects`。这是有意为之，让同一套逻辑在 Server 和 Client Component 里都能用，不产生模块循环。新增逻辑时保持纯函数，并把明星项目作为参数传入——不要引入模块级状态。
+`lib/data/` 是精选数据层：约 90 个项目、四轨道定义、Skill 目录、开工建议器选项、标签和 Skill 匹配规则。直接手改这些 `.ts` 文件即可——文件头的 `AUTO-GENERATED` 注释是历史遗留，已不再有生成脚本。增删改项目时，记得同步更新同文件里的 `projectTagOverrides` 和 `projectTagRules` / `projectSkillRules`，否则标签和 Skill 匹配会不一致。
 
 ## Codex Skill
 
@@ -127,7 +131,7 @@ Use Idea Coding to find 5 fun beginner-friendly Vibe Coding projects.
 
 ## 静态 SEO 内容
 
-`public/guides/` 和 `public/projects/` 是手写的静态 HTML 专题页，面向搜索引擎和 AI 爬虫。`public/llms.txt`、`public/sitemap.xml`、`public/feed.xml`、`public/robots.txt` 也由手工维护。`scripts/check-geo-seo.mjs` 和 `scripts/submit-indexnow.mjs` 是独立的 SEO 辅助脚本（IndexNow ping、地理 / SEO 检查），与 Next.js 构建无关。
+`public/guides/` 和 `public/projects/` 是手写的静态 HTML 专题页，面向搜索引擎和 AI 爬虫。`public/llms.txt`、`public/sitemap.xml`、`public/feed.xml`、`public/robots.txt` 也由手工维护。`scripts/check-geo-seo.mjs` 和 `scripts/submit-indexnow.mjs` 是独立的 SEO 辅助脚本（IndexNow ping、地理 / SEO 检查）。
 
 ## 测试
 

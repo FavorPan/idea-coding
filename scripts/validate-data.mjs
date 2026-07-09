@@ -62,7 +62,7 @@ function validateContentQuality(stars) {
       warn(`${s.repo}: all three scores are 50 — possible AI laziness`);
     }
     // star 数为 0 且不是新项目
-    if (!s.totalStars && !s.weeklyStars) {
+    if (!s.totalStars && !s.deltaStars) {
       warn(`${s.repo}: no star data available`);
     }
   });

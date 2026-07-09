@@ -226,7 +226,7 @@ export function projectExperienceTags(
     });
   }
 
-  if (project.weeklyStars) tags.push(`本周 +${formatCount(project.weeklyStars)}`);
+  if (project.deltaStars) tags.push(`近期 +${formatCount(project.deltaStars)}`);
 
   if (tags.length < 2 && project.track === "fun") tags.push("互动 Demo");
   if (tags.length < 2 && project.track === "useful") tags.push("真实工作流");
@@ -265,7 +265,7 @@ export type StarBoardProject = BoardProject & {
   repo: string;
   language: string;
   totalStars: number;
-  weeklyStars: number;
+  deltaStars: number;
   trendingRank: number;
 };
 
@@ -292,7 +292,7 @@ function matchesQuery(
     project.source,
     project.repo ?? "",
     project.language ?? "",
-    project.weeklyStars ? String(project.weeklyStars) : "",
+    project.deltaStars ? String(project.deltaStars) : "",
   ]
     .join(" ")
     .toLowerCase();
@@ -340,7 +340,7 @@ export function toStarBoardProject(
     source: "GitHub",
     stack: [
       star.language,
-      `+${formatCount(star.weeklyStars)} / week`,
+      `+${formatCount(star.deltaStars)} 近期`,
       `Trending #${star.trendingRank}`,
     ],
     name: star.name,
@@ -353,7 +353,7 @@ export function toStarBoardProject(
     repo: star.repo,
     language: star.language,
     totalStars: star.totalStars,
-    weeklyStars: star.weeklyStars,
+    deltaStars: star.deltaStars,
     trendingRank: star.trendingRank,
   };
 }

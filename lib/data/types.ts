@@ -44,7 +44,7 @@ export interface StarProject {
   tagline: string;
   language: string;
   totalStars: number;
-  weeklyStars: number;
+  deltaStars: number;
   trendingRank: number;
   mvp: string;
   wow: number;
@@ -82,7 +82,7 @@ export interface BoardProject {
   repo?: string;
   language?: string;
   totalStars?: number;
-  weeklyStars?: number;
+  deltaStars?: number;
   trendingRank?: number;
 }
 

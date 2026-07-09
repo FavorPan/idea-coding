@@ -445,7 +445,7 @@ function StarCard({ project, lead }: { project: StarBoardProject; lead?: boolean
     >
       <div className="star-card-top">
         <span>#{project.rank}</span>
-        <em>+{formatCount(project.weeklyStars)} / week</em>
+        <em>+{formatCount(project.deltaStars)} 近期</em>
       </div>
       <strong>{project.name}</strong>
       <p>{project.tagline}</p>
@@ -752,7 +752,7 @@ function ProjectCard({
   const footerLabel = project.track === "stars" ? "Weekly" : "Skills";
   const footerValue =
     project.track === "stars"
-      ? `+${formatCount(project.weeklyStars ?? 0)}`
+      ? `+${formatCount(project.deltaStars ?? 0)}`
       : `${skillCount} 个`;
   const skills = recommendedSkills(project, compact ? 2 : 3);
   return (

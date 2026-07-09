@@ -19,29 +19,28 @@ pnpm test         # node --test test/project-data-quality.test.mjs (the only tes
 node --test test/project-data-quality.test.mjs   # run the suite directly
 ```
 
-Deploy target is Cloudflare Workers via OpenNext:
-
-```bash
-pnpm preview      # opennextjs-cloudflare build && wrangler dev
-pnpm deploy       # opennextjs-cloudflare build && opennextjs-cloudflare deploy
-```
-
-Before first deploy, create the bindings referenced in `wrangler.toml`: the R2 bucket `idea-coding-opennext-cache`, the KV namespace `TRENDING_KV` (replace the placeholder id), and the self-reference service binding.
+This is a **static export** site (`output: "export"` in [next.config.ts](next.config.ts)). `pnpm build` emits a fully static site to `out/` — no server runtime, no edge worker. Deploy `out/` to any static host (Cloudflare Pages, GitHub Pages, Netlify, etc.).
 
 There is **no lint script and no tsc script in package.json**. Type-checking happens implicitly during `next build`, and `scripts/extract-data.mjs` runs `pnpm tsc --noEmit` as its final step.
 
+```bash
+pnpm dev          # Next.js dev server
+pnpm build        # static export → out/
+pnpm test         # node --test test/project-data-quality.test.mjs
+```
+
 ## Architecture
 
-### Data flow: server-cached trending → client board
+### Data flow: build-time trending → static board
 
-`app/page.tsx` is an async Server Component. It calls `getTrending()`, a `"use cache"` function on the `minutes` cache-life profile, which calls `fetchTrending()` in [lib/github/trending.ts](lib/github/trending.ts). The result (`StarBoardProject[]` + `fetchedAt` + `source`) is passed down to `<IdeaBoard>`, the top-level client component.
+`app/page.tsx` is an async Server Component that resolves trending data **at build time** (static export — no request-time execution). It calls `getTrending()`, which calls `fetchTrending()` in [lib/github/trending.ts](lib/github/trending.ts). The result (`StarBoardProject[]` + `fetchedAt` + `source`) is passed down to `<IdeaBoard>`, the top-level client component, and frozen into the prerendered HTML.
 
-The trending strategy: maintain a candidate repo pool (seeded from `starFallback`), fetch live `stargazers_count` for each via the GitHub REST API, compute weekly delta against a previous-week KV snapshot, rank by delta. Three-layer fallback:
-- **No `GITHUB_TOKEN`** → returns the hand-curated `starFallback` immediately (source: `"fallback"`). Live fetching only runs when a token is present.
+The trending strategy: read the candidate repo pool from `lib/generated/stars.ts` (committed daily by GitHub Actions; falls back to hand-curated `starFallback` when empty), fetch live `stargazers_count` for each via the GitHub REST API at build time, compute the delta against the previous-run snapshot in `lib/generated/lastSnapshot.ts`, rank by delta. Three-layer fallback:
+- **No `GITHUB_TOKEN` at build** → live fetching is skipped; returns `starFallback`/generated data as-is (source: `"fallback"`). Live fetching only runs when a token is present.
 - **API fails / returns nothing** → same fallback.
-- **KV has no prior snapshot** → `weeklyStars` falls back to the curated value in `starFallback`; after the first successful fetch the current counts are written as this week's snapshot.
+- **No prior snapshot** → `deltaStars` falls back to the curated value in `starFallback`.
 
-`KVAdapter` (interface in trending.ts) abstracts the snapshot store: `MemoryKV` for local/test, `CloudflareKV` wrapping the bound `TRENDING_KV` namespace in prod. `pickKV()` selects based on `process.env.TRENDING_KV`.
+Git is the snapshot store: each Actions run commits both the current star counts and the previous snapshot, so the next build can diff week-over-week. To refresh the board, rebuild via GitHub Actions (which also runs `data:refresh`).
 
 ### The data layer is the heart of the project
 

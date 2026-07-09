@@ -1,22 +1,23 @@
 // GitHub Trending data layer.
 //
-// Architecture (v2 — replaces KV-based weekly snapshot):
+// Architecture (v2 — static export):
 // - lib/generated/stars.ts: primary data source, committed by GitHub Actions daily.
 //   Contains AI-evaluated projects with pre-filled wow/useful/easy scores.
-// - lib/generated/lastWeek.ts: previous week's star counts, committed by Actions.
+// - lib/generated/lastSnapshot.ts: star counts from the previous Actions run,
+//   committed by Actions. Used to compute the delta.
 // - lib/data/stars.ts: hand-curated fallback, used when generated data is empty
 //   or all API calls fail.
-// - Live star counts: fetched from GitHub API at request time to keep totalStars
-//   fresh. weeklyStars = current total - snapshot total.
+// - Live star counts: fetched from GitHub API at build time to keep totalStars
+//   fresh. deltaStars = current total - previous snapshot total.
 //
-// Git is the snapshot store: each Actions run commits both the current star
-// counts and the previous snapshot to git, so we can diff week-over-week.
+// Resolved at build time (static export). Rebuild via GitHub Actions to refresh.
+// Git is the snapshot store: each Actions run commits the current star counts
+// as the next run's "previous snapshot", so we can diff run-over-run.
 
 import type { StarProject } from "@/lib/data/types";
 import { starFallback } from "@/lib/data/stars";
 import { generatedStars } from "@/lib/generated/stars";
-import { lastWeekSnapshot } from "@/lib/generated/lastWeek";
-import { generatedMeta } from "@/lib/generated/metadata";
+import { lastSnapshot } from "@/lib/generated/lastSnapshot";
 import { toStarBoardProject, type StarBoardProject } from "@/lib/logic/projects";
 
 export interface TrendingResult {
@@ -66,7 +67,7 @@ async function fetchRepoStats(repo: string): Promise<RepoStats | null> {
 // Merge live stats into the generated/curated star project list:
 // - Use the generated/curated project's wow/useful/easy/tagline/mvp
 // - Overwrite tagline with live GitHub description if available
-// - Overwrite totalStars / weeklyStars with live data
+// - Overwrite totalStars / deltaStars with live data
 function composeProjects(allStars: StarProject[], liveStats: RepoStats[]): StarProject[] {
   const statsMap = new Map(liveStats.map((s) => [s.repo, s]));
 
@@ -74,24 +75,24 @@ function composeProjects(allStars: StarProject[], liveStats: RepoStats[]): StarP
     const stats = statsMap.get(project.repo);
     const totalStars = stats?.stargazers_count ?? project.totalStars ?? 0;
 
-    // weeklyStars = current total - last week's total
-    const lastWeekCount = lastWeekSnapshot.counts[project.repo];
-    const weeklyStars =
-      lastWeekCount != null
-        ? Math.max(0, totalStars - lastWeekCount)
-        : project.weeklyStars ?? 0;
+    // deltaStars = current total - previous snapshot's total
+    const prevCount = lastSnapshot.counts[project.repo];
+    const deltaStars =
+      prevCount != null
+        ? Math.max(0, totalStars - prevCount)
+        : project.deltaStars ?? 0;
 
     return {
       ...project,
       totalStars,
-      weeklyStars,
+      deltaStars,
       tagline: stats?.description || project.tagline,
       language: stats?.language || project.language,
     } satisfies StarProject;
   });
 
-  // Rank by weekly delta (desc). Tiebreak by total stars.
-  composed.sort((a, b) => b.weeklyStars - a.weeklyStars || b.totalStars - a.totalStars);
+  // Rank by delta (desc). Tiebreak by total stars.
+  composed.sort((a, b) => b.deltaStars - a.deltaStars || b.totalStars - a.totalStars);
   composed.forEach((p, i) => {
     p.trendingRank = i + 1;
   });
@@ -133,9 +134,4 @@ export async function fetchTrending(): Promise<TrendingResult> {
     hasGenerated ? "live" : "fallback";
 
   return { fetchedAt, projects: projects.map((p, i) => toStarBoardProject(p, i)), source };
-}
-
-// Expose generated metadata so callers can show "last refreshed" time.
-export function getGeneratedMeta() {
-  return generatedMeta;
 }
