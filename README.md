@@ -19,24 +19,39 @@ app/                  # Next.js App Router（Server Component 入口）
 components/idea/      # 客户端看板组件（IdeaBoard / IdeaCanvas / PlanDialog）
 lib/
   data/               # 精选数据层：项目、轨道、Skill、明星项目、建议器选项
+  generated/          # 自动生成数据层（每天由 GitHub Actions 刷新，勿手改）
   logic/              # 纯函数逻辑：项目筛选、Skill 匹配、开工提示词组装
-  github/trending.ts  # GitHub Trending 数据层 + KV 快照
+  github/trending.ts  # GitHub Trending 数据层（消费 lib/generated/ + 实时拉取）
+scripts/              # 数据刷新链路：discover-topics / ai-evaluate / validate-data
+.github/workflows/    # data-refresh.yml — 每天 UTC 03:00 跑发现 + 评估 + commit
 public/               # 静态 SEO 专题页（guides/、projects/）与站点文件
 skills/idea-coding/   # Codex Skill 版本（SKILL.md + references/）
 test/                 # 数据质量测试套件
 ```
 
-## 数据流：服务端缓存的 Trending → 客户端看板
+## 数据流：自动刷新链路 → 服务端缓存 → 客户端看板
 
-`app/page.tsx` 是一个异步 Server Component。它调用 `getTrending()`（一个 `"use cache"` 函数，`minutes` 缓存策略），后者调用 `lib/github/trending.ts` 里的 `fetchTrending()`。结果（`StarBoardProject[]` + `fetchedAt` + `source`）传给顶层客户端组件 `<IdeaBoard>`。
+数据分两层：**精选项目**（`lib/data/`，手维护）和**增长项目**（`lib/generated/`，GitHub Actions 每天自动刷新）。两者都被归一化成 `BoardProject`，`<IdeaBoard>` 一视同仁。
 
-Trending 策略：维护一个候选仓库池（由 `starFallback` 播种），通过 GitHub REST API 拉取实时 `stargazers_count`，与上一周的 KV 快照对比算出本周增量，再按增量排序。三层回退：
+### 自动刷新链路（GitHub Actions Cron）
 
-- **没有 `GITHUB_TOKEN`** → 直接返回手工整理的 `starFallback`（source: `"fallback"`）。只有配置了 token 才会跑实时拉取。
-- **API 失败 / 返回空** → 同样回退到 fallback。
-- **KV 里没有上周快照** → `weeklyStars` 回退到 `starFallback` 里的整理值；首次成功拉取后会把当前计数写成本周快照。
+`.github/workflows/data-refresh.yml` 每天北京时间 11:00（UTC 03:00）自动跑，分三步，全部成功才会 commit：
 
-`KVAdapter`（定义在 `trending.ts`）抽象了快照存储：本地 / 测试用 `MemoryKV`，生产用绑定到 `TRENDING_KV` 命名空间的 KV 适配器。`pickKV()` 根据 `process.env.TRENDING_KV` 选择。
+1. **发现** — `scripts/discover-topics.mjs` 对 13 个 GitHub Topics（`creative-coding` / `ai-agents` / `esp32` 等，硬编码映射到 `fun` / `useful` / `hardware` 三轨道）调 Search API，过滤掉 star < 100 或超过 12 个月未更新的仓库，输出候选列表。
+2. **评估** — `scripts/ai-evaluate.mjs` 读每个候选的 README 和 issue 区，交给 Agnes AI（`agnes-2.0-flash`）生成 `tagline` / `mvp` / `wow·useful·easy` 评分 / Skill 推荐，每轨道留 Top 30。
+3. **校验** — `scripts/validate-data.mjs` 跑数据质量校验，失败则 abort workflow，不会污染数据。
+
+通过后把结果 commit 进 `lib/generated/`：`stars.ts`（评估结果）、`lastWeek.ts`（上周 star 快照）、`metadata.ts`（刷新时间）。**这个目录不要手改**，一切由脚本写入。
+
+### 运行时：服务端缓存 → 客户端
+
+`app/page.tsx` 是异步 Server Component，调用 `getTrending()`（`"use cache"` 函数，`minutes` 缓存策略），后者调用 `lib/github/trending.ts` 里的 `fetchTrending()`：
+
+- 主数据源是 `lib/generated/stars.ts`（AI 评估过的项目，带预填的评分）。为空时回退到 `lib/data/stars.ts` 里手维护的 `starFallback`。
+- 请求时并发拉取实时 `stargazers_count`，`weeklyStars = 当前总数 − lastWeek 快照`，按周增量排序。Git 本身就是快照存储——每次 Actions 都把当前计数和上周快照一起 commit，周对周 diff 天然成立。
+- 三层回退：没有 `GITHUB_TOKEN` → 仍用 generated 数据但 star 数不实时；generated 为空 → 用 `starFallback`；API 全失败 → 返回静态数据，source 标为 `"fallback"`。
+
+`getGeneratedMeta()` 暴露刷新时间，页面据此显示「上次刷新」时间戳。
 
 ## 命令
 
@@ -46,7 +61,16 @@ pnpm build        # 生产构建
 pnpm test         # node --test test/project-data-quality.test.mjs（唯一的测试套件）
 ```
 
-部署目标通过 OpenNext 适配到边缘运行时：
+数据刷新链路（对应 GitHub Actions 的三步，本地也能单跑）：
+
+```bash
+pnpm data:discover   # 拉 13 个 GitHub Topics 候选仓库（需 GITHUB_TOKEN）
+pnpm data:evaluate   # Agnes AI 评估候选，写 lib/generated/（需 GITHUB_TOKEN + AGNES_API_KEY）
+pnpm data:validate   # 校验生成数据质量
+pnpm data:refresh    # 顺序跑上面三步
+```
+
+部署目标通过 OpenNext 适配到 Cloudflare 边缘运行时：
 
 ```bash
 pnpm preview      # OpenNext 边缘构建 + 本地预览
@@ -55,11 +79,12 @@ pnpm deploy       # OpenNext 边缘构建 + 部署
 
 首次部署前，先在 `wrangler.toml` 里创建引用的绑定：
 
-- R2 桶 `idea-coding-opennext-cache`（增量缓存）
-- KV 命名空间 `TRENDING_KV`（替换占位 id，用于 Trending 周快照）
+- R2 桶 `idea-coding-opennext-cache`（OpenNext 增量缓存 / ISR）
 - 自引用 service binding（OpenNext 缓存需要）
 
-生产环境若要让 Trending 实时拉取生效，需配置 `GITHUB_TOKEN` 环境变量。
+> Trending 的定时刷新已从 Cloudflare cron 迁移到 GitHub Actions（见上文的自动刷新链路），`wrangler.toml` 不再有 cron trigger 和 KV 绑定。push 到 main 即触发 Cloudflare Pages 自动 rebuild。
+
+生产环境若要让运行时实时拉取 star 数生效，需配置 `GITHUB_TOKEN` 环境变量；自动刷新链路则需要在 GitHub 仓库 Secrets 里配 `AGNES_API_KEY`（`GITHUB_TOKEN` 由 Actions 自动提供）。
 
 > 仓库里没有 `lint` / `tsc` 脚本。类型检查在 `next build` 时隐式进行。
 
