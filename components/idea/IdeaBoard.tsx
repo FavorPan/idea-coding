@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import type { BoardProject, StarBoardProject } from "@/lib/logic/projects";
 import {
   filteredProjects,
+  localizeProject,
   projectById,
   projectExperienceTags,
   projectPrimaryActionLabel,
@@ -24,6 +25,9 @@ import { tracks, boardTabs } from "@/lib/data/tracks";
 import { formatCount, formatUpdatedDate } from "@/lib/logic/format";
 import { projects as allCuratedProjects } from "@/lib/data/projects";
 import { PlanDialog } from "./PlanDialog";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useLocale } from "@/i18n/client";
+import { useTranslations } from "next-intl";
 
 interface IdeaBoardProps {
   starProjects: StarBoardProject[];
@@ -39,6 +43,9 @@ const DEFAULT_STARTER: StarterState = {
 };
 
 export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoardProps) {
+  const { locale } = useLocale();
+  const t = useTranslations();
+
   const [track, setTrack] = useState<BoardState["track"]>("all");
   const [metric, setMetric] = useState<BoardState["metric"]>("wow");
   const [query, setQuery] = useState("");
@@ -130,7 +137,7 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
               <img className="brand-mark" src="/logo.png" alt="" width={26} height={26} />
               <span>Idea Coding</span>
             </a>
-            <nav className="topnav" aria-label="榜单分组">
+            <nav className="topnav" aria-label="board navigation">
               {boardTabs.map((t) => (
                 <button
                   key={t.id}
@@ -141,6 +148,7 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
                   {t.nav ?? t.short}
                 </button>
               ))}
+              <LanguageSwitcher />
             </nav>
           </div>
         </header>
@@ -152,7 +160,7 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
               {/* Badge */}
               <div className="animate-fade-in delay-100">
                 <div className="hero-badge">
-                  <span>Beginner-Friendly</span>
+                  <span>{t("nav.beginnerFriendly")}</span>
                   <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                   </svg>
@@ -172,32 +180,33 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
 
               {/* Description */}
               <p className="hero-lede animate-fade-in delay-300">
-                给刚开始 Coding 的新手，把好玩、好用、好搓（硬件）三条路线整理成一张 90 项可分享榜单：
-                每个项目都有 MVP、体验标签、参考来源和三维评分。现在还能按时间、目标和经验生成适合你的开工清单。
+                {locale === "zh"
+                  ? "给刚开始 Coding 的新手，把好玩、好用、好搓（硬件）三条路线整理成一张 90 项可分享榜单：每个项目都有 MVP、体验标签、参考来源和三维评分。现在还能按时间、目标和经验生成适合你的开工清单。"
+                  : "A curated board of 90+ projects across fun, useful, and hardware tracks — each with MVP goals, experience tags, sources, and 3D scores. Now with starter plan generation based on your time, goals, and experience."}
               </p>
 
               {/* Update Schedule */}
-              <div className="update-schedule animate-fade-in delay-400" aria-label="更新时间">
-                <span>每天 CNT11:00 更新</span>
-                <strong>趣味项目库清单</strong>
-                <strong>{pool.length}+ 项目</strong>
+              <div className="update-schedule animate-fade-in delay-400" aria-label="update schedule">
+                <span>{locale === "zh" ? "每天 CNT11:00 更新" : "Updated daily at CNT 11:00"}</span>
+                <strong>{locale === "zh" ? "趣味项目库清单" : "Fun projects board"}</strong>
+                <strong>{pool.length}+ {locale === "zh" ? "项目" : "projects"}</strong>
               </div>
 
               {/* CTA Buttons */}
               <div className="hero-actions animate-fade-in delay-400">
-                <a className="primary-link" href="#starter">适合我的项目</a>
-                <a className="secondary-link" href="#board">查看榜单</a>
-                <a className="secondary-link" href="#star-projects">明星项目</a>
+                <a className="primary-link" href="#starter">{t("hero.ctaRecommend")}</a>
+                <a className="secondary-link" href="#board">{t("hero.ctaTrending")}</a>
+                <a className="secondary-link" href="#star-projects">{t("hero.ctaStars")}</a>
               </div>
             </div>
 
             {/* RIGHT COLUMN - Stats Card */}
-            <aside className="hero-panel animate-fade-in delay-500" aria-label="榜单概览">
+            <aside className="hero-panel animate-fade-in delay-500" aria-label="board overview">
               {/* Card Glow Effect */}
               <div className="panel-glow" />
 
               <div className="panel-head">
-                <span>Selection Index</span>
+                <span>{t("metrics.selectionIndex")}</span>
                 <strong>{pool.length}</strong>
               </div>
 
@@ -205,7 +214,7 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
               <div className="progress-section">
                 <div className="progress-item">
                   <div className="progress-header">
-                    <span>趣味项目</span>
+                    <span>{locale === "zh" ? "趣味项目" : "Fun projects"}</span>
                     <strong>30+</strong>
                   </div>
                   <div className="progress-bar">
@@ -214,7 +223,7 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
                 </div>
                 <div className="progress-item">
                   <div className="progress-header">
-                    <span>实用工具</span>
+                    <span>{locale === "zh" ? "实用工具" : "Useful tools"}</span>
                     <strong>25+</strong>
                   </div>
                   <div className="progress-bar">
@@ -223,7 +232,7 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
                 </div>
                 <div className="progress-item">
                   <div className="progress-header">
-                    <span>硬件项目</span>
+                    <span>{locale === "zh" ? "硬件项目" : "Hardware projects"}</span>
                     <strong>15+</strong>
                   </div>
                   <div className="progress-bar">
@@ -238,17 +247,17 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
               <div className="mini-stats-grid">
                 <div className="stat-item">
                   <span className="stat-value">3+1</span>
-                  <span className="stat-label">Tracks</span>
+                  <span className="stat-label">{t("metrics.tracks")}</span>
                 </div>
                 <div className="stat-divider" />
                 <div className="stat-item">
                   <span className="stat-value">98</span>
-                  <span className="stat-label">Top Score</span>
+                  <span className="stat-label">{t("metrics.topScore")}</span>
                 </div>
                 <div className="stat-divider" />
                 <div className="stat-item">
                   <span className="stat-value">1-7d</span>
-                  <span className="stat-label">MVP Span</span>
+                  <span className="stat-label">{t("metrics.mvpSpan")}</span>
                 </div>
               </div>
 
@@ -256,13 +265,13 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
               <div className="tag-pills">
                 <div className="tag-pill tag-pill-active">
                   <span className="pulse-dot"></span>
-                  ACTIVE
+                  {t("nav.active")}
                 </div>
                 <div className="tag-pill">
                   <svg className="w-3 h-3 text-yellow-400" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                   </svg>
-                  PREMIUM
+                  {t("nav.premium")}
                 </div>
               </div>
             </aside>
@@ -291,17 +300,17 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
       >
         <div className="control-row">
           <div>
-            <p className="section-kicker">Project Board</p>
-            <h2>按你的目标挑项目</h2>
+            <p className="section-kicker">{t("board.projectBoard")}</p>
+            <h2>{t("hero.subtitle")}</h2>
           </div>
-          <div className="controls" aria-label="榜单筛选">
-            <div className="segmented" role="tablist" aria-label="分组">
+          <div className="controls" aria-label="board filters">
+            <div className="segmented" role="tablist" aria-label="track filter">
               <button
                 data-filter="all"
                 className={track === "all" ? "active" : ""}
                 onClick={() => selectFilter("all")}
               >
-                全部
+                {t("filter.all")}
               </button>
               {boardTabs.map((t) => (
                 <button
@@ -315,7 +324,7 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
               ))}
             </div>
             <label className="search-field">
-              <span>Search</span>
+              <span>{t("filter.search")}</span>
               <input
                 id="searchInput"
                 name="project-search"
@@ -328,12 +337,12 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
                   setPendingQuery((e.target as HTMLInputElement).value);
                 }}
                 onChange={(e) => setPendingQuery(e.target.value)}
-                placeholder="搜 AI、ESP32、财务…"
+                placeholder={locale === "zh" ? "搜 AI、ESP32、财务…" : "Search AI, ESP32, finance…"}
               />
             </label>
-            <div className="rank-mode" aria-label={track === "all" ? "全品类分列" : "当前榜单顺序"}>
-              <span>{track === "all" ? "Layout" : "Order"}</span>
-              <strong>{track === "all" ? "三列分榜" : `1 → ${visible.length}`}</strong>
+            <div className="rank-mode" aria-label={track === "all" ? "layout info" : "current order"}>
+              <span>{track === "all" ? t("metrics.layout") : t("metrics.order")}</span>
+              <strong>{track === "all" ? (locale === "zh" ? "三列分榜" : "Three columns") : `1 → ${visible.length}`}</strong>
             </div>
           </div>
         </div>
@@ -346,21 +355,24 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
           <TrackColumns query={query} onOpenPlan={setPlanProjectId} />
         ) : (
           <div className="project-grid" aria-live="polite">
-            {visible.map((project, index) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                index={index}
-                onOpenPlan={setPlanProjectId}
-              />
-            ))}
+            {visible.map((raw, index) => {
+              const project = localizeProject(raw, locale);
+              return (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  index={index}
+                  onOpenPlan={setPlanProjectId}
+                />
+              );
+            })}
           </div>
         )}
       </section>
 
-      <footer className="site-footer" aria-label="网站备案信息">
+      <footer className="site-footer" aria-label="site footer">
         <div className="footer-container">
-          <p className="footer-sources-label">发现渠道</p>
+          <p className="footer-sources-label">{t("footer.discoveredVia")}</p>
           <div className="footer-sources">
             <a href="https://github.com/topics/creative-coding" target="_blank" rel="noreferrer">GitHub · creative-coding</a>
             <a href="https://github.com/topics/game-development" target="_blank" rel="noreferrer">GitHub · game-development</a>
@@ -378,12 +390,12 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
             <a href="https://github.com/awesome-selfhosted/awesome-selfhosted" target="_blank" rel="noreferrer">Awesome · self-hosted</a>
             <a href="https://github.com/trending?since=weekly" target="_blank" rel="noreferrer">GitHub · Trending weekly</a>
           </div>
-          <p className="footer-brand">Idea Coding · Project Discovery for AI Coding Beginners</p>
+          <p className="footer-brand">{t("footer.copyright")}</p>
         </div>
       </footer>
 
       {planProject && (
-        <PlanDialog project={planProject} onClose={() => setPlanProjectId(null)} />
+        <PlanDialog project={localizeProject(planProject, locale)} onClose={() => setPlanProjectId(null)} />
       )}
     </>
   );
@@ -398,6 +410,8 @@ function StarShowcase({
   starProjects: StarBoardProject[];
   onSelectTrack: (t: BoardState["track"]) => void;
 }) {
+  const { locale } = useLocale();
+  const t = useTranslations();
   const lead = starProjects[0];
   const rest = starProjects.slice(1, 6);
   return (
@@ -405,10 +419,12 @@ function StarShowcase({
       <div className="section-shell star-shell">
         <div className="star-showcase-head">
           <div>
-            <p className="section-kicker">Rising This Week</p>
-            <h2>明星项目</h2>
+            <p className="section-kicker">{t("board.risingThisWeek")}</p>
+            <h2>{locale === "zh" ? "明星项目" : "Trending Projects"}</h2>
             <p>
-              本周增长最快的 GitHub 项目，来自 GitHub Trending weekly 候选池，并按 “stars this week” 重新排序。
+              {locale === "zh"
+                ? "本周增长最快的 GitHub 项目，来自 GitHub Trending weekly 候选池，并按 'stars this week' 重新排序。"
+                : "Fastest-growing GitHub projects this week, from the GitHub Trending weekly candidate pool, reranked by stars gained."}
             </p>
           </div>
           <div className="star-actions">
@@ -417,12 +433,12 @@ function StarShowcase({
               type="button"
               onClick={() => onSelectTrack("stars")}
             >
-              增长最快的 GitHub 项目
+              {t("board.trending")}
             </button>
-            <a href="https://github.com/trending?since=weekly" target="_blank" rel="noreferrer">查看 GitHub 源</a>
+            <a href="https://github.com/trending?since=weekly" target="_blank" rel="noreferrer">{locale === "zh" ? "查看 GitHub 源" : "View on GitHub"}</a>
           </div>
         </div>
-        <div className="star-showcase-grid" aria-label="明星项目展示">
+        <div className="star-showcase-grid" aria-label="star project showcase">
           {lead && <StarCard project={lead} lead />}
           <div className="star-mini-grid">
             {rest.map((p) => (
@@ -436,6 +452,8 @@ function StarShowcase({
 }
 
 function StarCard({ project, lead }: { project: StarBoardProject; lead?: boolean }) {
+  const { locale } = useLocale();
+  const localized = localizeProject(project, locale);
   return (
     <a
       className={`star-card ${lead ? "star-card-lead" : ""}`}
@@ -445,10 +463,10 @@ function StarCard({ project, lead }: { project: StarBoardProject; lead?: boolean
     >
       <div className="star-card-top">
         <span>#{project.rank}</span>
-        <em>+{formatCount(project.deltaStars)} 近期</em>
+        <em>+{formatCount(project.deltaStars)} {locale === "zh" ? "近期" : "recent"}</em>
       </div>
       <strong>{project.name}</strong>
-      <p>{project.tagline}</p>
+      <p>{localized.tagline}</p>
       <div className="star-card-meta">
         {projectExperienceTags(project, 3).map((tag) => (
           <span key={tag}>{tag}</span>
@@ -473,17 +491,19 @@ function StarterAdvisor({
   poolCount: number;
   onOpenPlan: (id: string) => void;
 }) {
+  const { locale } = useLocale();
+  const t = useTranslations();
   return (
     <section className="section-shell starter-section" id="starter">
       <div className="starter-head">
         <div>
-          <p className="section-kicker">Starter Picker</p>
-          <h2>先挑 3 个最适合你开工的项目</h2>
+          <p className="section-kicker">{t("starter.title")}</p>
+          <h2>{t("starter.subtitle")}</h2>
         </div>
-        <p>选一下时间、目标和硬件意愿，idea 会从 {poolCount} 个候选里给出 3 个更适合现在动手的项目。</p>
+        <p>{locale === "zh" ? `选一下时间、目标和硬件意愿，idea 会从 ${poolCount} 个候选里给出 3 个更适合现在动手的项目。` : `Select your time, goals, and hardware preferences to get 3 projects best suited for immediate action from ${poolCount} candidates.`}</p>
       </div>
       <div className="starter-layout">
-        <div className="starter-picker" aria-label="新手项目选择器">
+        <div className="starter-picker" aria-label="project selector">
           <StarterOrb starter={starter} onSelect={onSelectStarter} />
         </div>
         <div className="starter-results" aria-live="polite">
@@ -510,12 +530,13 @@ function StarterOrb({
   starter: StarterState;
   onSelect: (key: keyof StarterState, value: string) => void;
 }) {
+  const t = useTranslations();
   return (
     <div className="starter-orb-wrap">
-      <div className="starter-orb" role="group" aria-label="气泡标签选择器">
+      <div className="starter-orb" role="group" aria-label="bubble selector">
         <div className="starter-orb-core">
-          <span>4 组气泡</span>
-          <strong>实时推荐</strong>
+          <span>{t("filter.bubbleLayout")}</span>
+          <strong>{t("filter.realtime")}</strong>
         </div>
         {(Object.entries(starterOptions) as [keyof StarterState, typeof starterOptions[keyof StarterState]][]).map(
           ([key, options], groupIndex) => (
@@ -530,7 +551,7 @@ function StarterOrb({
           ),
         )}
       </div>
-      <div className="starter-active-tags" aria-label="已选标签">
+      <div className="starter-active-tags" aria-label="selected tags">
         {(Object.entries(starter) as [keyof StarterState, string][]).map(([key, value]) => (
           <span key={key}>
             <em>{starterGroupLabels[key]}</em>
@@ -574,7 +595,7 @@ function StarterGroup({
         "--zone-tone": style.tone,
         "--zone-delay": `${groupIndex * -0.8}s`,
       } as React.CSSProperties}
-      aria-label={`${starterGroupLabels[groupKey]}选项`}
+      aria-label={`${starterGroupLabels[groupKey]} options`}
     >
       <div className="starter-zone-head">
         <strong>{starterGroupLabels[groupKey]}</strong>
@@ -600,7 +621,7 @@ function StarterGroup({
             data-starter-key={groupKey}
             data-starter-option={option.id}
             aria-pressed={active}
-            aria-label={`${starterGroupLabels[groupKey]}：${option.label}。${option.description}`}
+            aria-label={`${starterGroupLabels[groupKey]}: ${option.label}. ${option.description}`}
             onClick={() => onSelect(groupKey, option.id)}
           >
             <span className="starter-tag-bubble">
@@ -626,12 +647,15 @@ function StarterResult({
   starter: StarterState;
   onOpenPlan: (id: string) => void;
 }) {
-  const t = trackById(project.track);
+  const { locale } = useLocale();
+  const t = useTranslations();
+  const localized = localizeProject(project, locale);
+  const track = trackById(project.track);
   return (
-    <article className="starter-result-card" style={{ "--track": t?.accent } as React.CSSProperties}>
+    <article className="starter-result-card" style={{ "--track": track?.accent } as React.CSSProperties}>
       <div className="starter-result-top">
         <span>#{index + 1}</span>
-        <em>{t?.title}</em>
+        <em>{track?.title}</em>
         <strong>{Math.round(score)}</strong>
       </div>
       <h3>{project.name}</h3>
@@ -647,11 +671,11 @@ function StarterResult({
           className="plan-button action-tile"
           onClick={() => onOpenPlan(project.id)}
         >
-          <span>能不能搓</span>
-          <em>体检 + Prompt</em>
+          <span>{locale === "zh" ? "能不能搓" : "Worth it?"}</span>
+          <em>{locale === "zh" ? "体检 + Prompt" : "Checkup + Prompt"}</em>
         </button>
         <a className="source-link action-tile" href={project.url} target="_blank" rel="noreferrer">
-          <span>看来源</span>
+          <span>{locale === "zh" ? "看来源" : "View source"}</span>
           <em>{project.source}</em>
         </a>
       </div>
@@ -662,25 +686,26 @@ function StarterResult({
 // --- Board sections ---
 
 function FocusHeader({ trackId, count }: { trackId: BoardState["track"]; count: number }) {
-  const t = trackById(trackId);
-  if (!t) return null;
+  const t = useTranslations();
+  const track = trackById(trackId);
+  if (!track) return null;
   return (
-    <div className="track-focus-head" style={{ "--track": t.accent } as React.CSSProperties}>
+    <div className="track-focus-head" style={{ "--track": track.accent } as React.CSSProperties}>
       <div className="focus-mark">
-        <span>{t.eyebrow}</span>
-        <strong>{t.short}</strong>
+        <span>{track.eyebrow}</span>
+        <strong>{track.short}</strong>
       </div>
       <div className="focus-copy">
-        <h3>{t.title}</h3>
-        <p>{t.summary}</p>
+        <h3>{track.title}</h3>
+        <p>{track.summary}</p>
       </div>
       <div className="focus-notes">
-        {focusHeaderNotes[t.id].map((note) => (
+        {focusHeaderNotes[track.id].map((note) => (
           <span key={note}>{note}</span>
         ))}
       </div>
-      <div className="focus-count" aria-label="当前榜单顺序">
-        <span>Order</span>
+      <div className="focus-count" aria-label="current order">
+        <span>{t("metrics.order")}</span>
         <strong>#1 → #{count}</strong>
       </div>
     </div>
@@ -694,36 +719,41 @@ function TrackColumns({
   query: string;
   onOpenPlan: (id: string) => void;
 }) {
+  const { locale } = useLocale();
+  const t = useTranslations();
   return (
     <div className="project-columns" aria-live="polite">
-      {tracks.map((t) => {
-        const columnProjects = projectsForTrack(t.id, query);
+      {tracks.map((tr) => {
+        const columnProjects = projectsForTrack(tr.id, query);
         return (
           <section
-            key={t.id}
+            key={tr.id}
             className="project-column"
-            style={{ "--track": t.accent } as React.CSSProperties}
-            aria-label={t.title}
+            style={{ "--track": tr.accent } as React.CSSProperties}
+            aria-label={tr.title}
           >
             <div className="project-column-head">
-              <span>{t.eyebrow}</span>
-              <strong>{t.title}</strong>
+              <span>{tr.eyebrow}</span>
+              <strong>{tr.title}</strong>
               <em>#1 → #{columnProjects.length}</em>
             </div>
             <div className="project-column-list">
               {columnProjects.length ? (
-                columnProjects.map((project, index) => (
-                  <ProjectCard
-                    key={project.id}
-                    project={project}
-                    index={index}
-                    compact
-                    displayRank={project.rank}
-                    onOpenPlan={onOpenPlan}
-                  />
-                ))
+                columnProjects.map((raw, index) => {
+                  const project = localizeProject(raw, locale);
+                  return (
+                    <ProjectCard
+                      key={project.id}
+                      project={project}
+                      index={index}
+                      compact
+                      displayRank={project.rank}
+                      onOpenPlan={onOpenPlan}
+                    />
+                  );
+                })
               ) : (
-                <div className="empty-column">暂无匹配项目</div>
+                <div className="empty-column">{t("empty.noResults")}</div>
               )}
             </div>
           </section>
@@ -746,23 +776,25 @@ function ProjectCard({
   displayRank?: number;
   onOpenPlan: (id: string) => void;
 }) {
-  const t = trackById(project.track);
+  const { locale } = useLocale();
+  const t = useTranslations();
+  const track = trackById(project.track);
   const rank = displayRank ?? project.rank;
   const skillCount = recommendedSkills(project, compact ? 2 : 3).length;
-  const footerLabel = project.track === "stars" ? "Weekly" : "Skills";
+  const footerLabel = project.track === "stars" ? (locale === "zh" ? "Weekly" : "Weekly") : (locale === "zh" ? "Skills" : "Skills");
   const footerValue =
     project.track === "stars"
       ? `+${formatCount(project.deltaStars ?? 0)}`
-      : `${skillCount} 个`;
+      : `${skillCount} ${locale === "zh" ? "个" : ""}`;
   const skills = recommendedSkills(project, compact ? 2 : 3);
   return (
     <article
       className={`project-card ${compact ? "project-card-compact" : ""} ${project.track === "stars" ? "project-card-star" : ""}`}
-      style={{ "--track": t?.accent } as React.CSSProperties}
+      style={{ "--track": track?.accent } as React.CSSProperties}
     >
       <div className="card-topline">
         <span className="rank">#{rank}</span>
-        <span className="track-label">{t?.title}</span>
+        <span className="track-label">{track?.title}</span>
         <span className="grade">{scoreLabel(project)}</span>
       </div>
       <h3>{project.name}</h3>
@@ -773,7 +805,7 @@ function ProjectCard({
         ))}
       </div>
       <div className="mvp">
-        <span>{compact ? "演示" : "MVP"}</span>
+        <span>{compact ? (locale === "zh" ? "演示" : "Demo") : "MVP"}</span>
         <p>{project.mvp}</p>
       </div>
       <SkillKit project={project} skills={skills} />
@@ -788,8 +820,8 @@ function ProjectCard({
             className="plan-button action-tile"
             onClick={() => onOpenPlan(project.id)}
           >
-            <span>一键开工</span>
-            <em>体检 + Prompt</em>
+            <span>{locale === "zh" ? "一键开工" : "Start building"}</span>
+            <em>{locale === "zh" ? "体检 + Prompt" : "Checkup + Prompt"}</em>
           </button>
           <a
             className="source-link action-tile"
@@ -813,10 +845,11 @@ function SkillKit({
   project: BoardProject;
   skills: { id: string; name: string; signal: string; url: string }[];
 }) {
+  const t = useTranslations();
   return (
     <div className="skill-kit">
       <div className="skill-kit-head">
-        <span>推荐开工 Skill</span>
+        <span>{t("dialog.skills")}</span>
       </div>
       <div className="skill-chip-list">
         {skills.map((skill) => (
