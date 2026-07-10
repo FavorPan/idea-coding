@@ -32,7 +32,9 @@ const TOPIC_TRACK_MAP = {
 const TOPICS = Object.keys(TOPIC_TRACK_MAP);
 
 // 每个 topic 最多拉多少个仓库
-const PER_PAGE = 50;
+const PER_PAGE = 30;
+// 每个 topic 最多保留多少个进入 AI 评估阶段
+const MAX_PER_TOPIC = 10;
 
 // 过滤条件
 const MIN_STARS = 100;          // star 数低于此的不要
@@ -163,8 +165,11 @@ async function main() {
         process.stdout.write(`  [${i / CONCURRENCY + 1}/${Math.ceil(TOPICS.length / CONCURRENCY)}] ${topic}... `);
         const repos = await fetchTopicRepos(topic);
         const filtered = filterRepos(repos, topic);
-        console.log(`${repos.length} → ${filtered.length} passed`);
-        return { topic, repos: filtered };
+        // 每个 topic 只保留 star 最高的前 MAX_PER_TOPIC 个
+        filtered.sort((a, b) => b.stargazersCount - a.stargazersCount);
+        const capped = filtered.slice(0, MAX_PER_TOPIC);
+        console.log(`${repos.length} → ${filtered.length} → ${capped.length} passed`);
+        return { topic, repos: capped };
       })
     );
     allResults.push(...batchResults);
