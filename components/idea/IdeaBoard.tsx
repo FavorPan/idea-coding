@@ -147,17 +147,20 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
               <img className="brand-mark" src="/logo.png" alt="" width={26} height={26} />
               <span>Idea Coding</span>
             </a>
-            <nav className="topnav" aria-label="board navigation">
-              {boardTabs.map((t) => (
-                <button
-                  key={t.id}
-                  className={`nav-pill ${track === t.id ? "active" : ""}`}
-                  data-track={t.id}
-                  onClick={() => selectFilter(t.id as BoardState["track"])}
-                >
-                  {t.nav ?? t.short}
-                </button>
-              ))}
+            <nav className="topnav" aria-label={t("nav.boardNav")}>
+              {boardTabs.map((tab) => {
+                const lt = localizeTrack(tab, locale);
+                return (
+                  <button
+                    key={tab.id}
+                    className={`nav-pill ${track === tab.id ? "active" : ""}`}
+                    data-track={tab.id}
+                    onClick={() => selectFilter(tab.id as BoardState["track"])}
+                  >
+                    {lt.nav ?? lt.short}
+                  </button>
+                );
+              })}
               <LanguageSwitcher />
             </nav>
           </div>

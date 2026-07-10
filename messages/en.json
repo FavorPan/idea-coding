@@ -1,5 +1,5 @@
 {
-  "nav": { "beginnerFriendly": "Beginner-Friendly", "active": "ACTIVE", "premium": "PREMIUM" },
+  "nav": { "beginnerFriendly": "Beginner-Friendly", "active": "ACTIVE", "premium": "PREMIUM", "boardNav": "Board navigation" },
   "hero": {
     "subtitle": "Pick projects that match your goals",
     "ctaRecommend": "Projects for me",

@@ -294,6 +294,7 @@ export function localizeTrack(
     eyebrow: track.eyebrowEn || track.eyebrow,
     title: track.titleEn || track.title,
     short: track.shortEn || track.short,
+    nav: track.navEn || track.nav,
     summary: track.summaryEn || track.summary,
   };
 }

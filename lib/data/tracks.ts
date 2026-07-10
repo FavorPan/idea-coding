@@ -36,6 +36,7 @@ export const tracks: Track[] = [
     "short": "好搓",
     "shortEn": "Hardware",
     "nav": "好搓（硬件）",
+    "navEn": "Hardware",
     "accent": "#FF9500",
     "summary": "小预算也能跑通，硬件反馈明确，适合从 ESP32 和 Raspberry Pi 起步。",
     "summaryEn": "Small budget, clear hardware feedback — great for getting started with ESP32 and Raspberry Pi."
@@ -51,6 +52,7 @@ export const starTrack: Track = {
   "short": "明星",
   "shortEn": "Trending",
   "nav": "明星项目",
+  "navEn": "Trending",
   "accent": "#AF52DE",
   "summary": "基于 GitHub Trending weekly 候选池，并按本周新增 stars 重新排序，追踪正在冒头的开源项目。",
   "summaryEn": "Ranked by weekly star growth from the GitHub Trending candidate pool — tracking open-source projects that are heating up right now."

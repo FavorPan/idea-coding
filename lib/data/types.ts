@@ -14,6 +14,7 @@ export interface Track {
   eyebrowEn?: string;
   titleEn?: string;
   shortEn?: string;
+  navEn?: string;
   summaryEn?: string;
 }
 

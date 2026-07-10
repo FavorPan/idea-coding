@@ -1,5 +1,5 @@
 {
-  "nav": { "beginnerFriendly": "新手友好", "active": "活跃中", "premium": "精选" },
+  "nav": { "beginnerFriendly": "新手友好", "active": "活跃中", "premium": "精选", "boardNav": "项目看板导航" },
   "hero": {
     "subtitle": "按你的目标挑项目",
     "ctaRecommend": "适合我的项目",
