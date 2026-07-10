@@ -6,6 +6,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import OpenAI from "openai";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -18,6 +19,8 @@ if (!AGNES_API_KEY) {
   console.error("❌ AGNES_API_KEY environment variable not set.");
   process.exit(1);
 }
+
+const agnes = new OpenAI({ apiKey: AGNES_API_KEY, baseURL: AGNES_BASE_URL });
 
 // ── Config ───────────────────────────────────────────────────────────────────
 const CANDIDATES_FILE = path.join(ROOT, "lib", "generated", "temp-candidates.json");
@@ -155,33 +158,30 @@ IMPORTANT: tagline and taglineEn must have the same meaning (Chinese vs English)
   };
 }
 
-async function callAgnes(messages) {
-  const res = await fetch(`${AGNES_BASE_URL}/chat/completions`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${AGNES_API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: AGNES_MODEL,
-      messages,
-      temperature: 0.3,
-      max_tokens: 800,
-    }),
-  });
-
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Agnes API error ${res.status}: ${text}`);
+async function callAgnes(messages, retries = 2) {
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const res = await agnes.chat.completions.create({
+        model: AGNES_MODEL,
+        messages,
+        temperature: 0.3,
+        max_tokens: 800,
+        response_format: { type: "json_object" },
+      });
+      const raw = res.choices?.[0]?.message?.content;
+      if (!raw) throw new Error("empty response content");
+      const match = raw.match(/\{[\s\S]*\}/);
+      if (!match) throw new Error(`no JSON object found: ${raw.slice(0, 100)}`);
+      return JSON.parse(match[0]);
+    } catch (e) {
+      if (attempt < retries) {
+        const delay = 2 ** (attempt + 1) * 1000;
+        await new Promise((r) => setTimeout(r, delay));
+        continue;
+      }
+      throw e;
+    }
   }
-
-  const data = await res.json();
-  const content = data.choices?.[0]?.message?.content;
-  if (!content) throw new Error("No content from Agnes API");
-
-  // 尝试解析 JSON,去掉可能的 markdown 代码块包装
-  const jsonStr = content.replace(/^```json\n?/, "").replace(/\n?```$/, "").trim();
-  return JSON.parse(jsonStr);
 }
 
 // ── Main evaluation logic ─────────────────────────────────────────────────────
