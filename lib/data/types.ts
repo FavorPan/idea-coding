@@ -11,6 +11,10 @@ export interface Track {
   nav?: string;
   accent: string;
   summary: string;
+  eyebrowEn?: string;
+  titleEn?: string;
+  shortEn?: string;
+  summaryEn?: string;
 }
 
 // A curated project in one of the fun/useful/hardware tracks.
@@ -19,6 +23,8 @@ export interface Project {
   tagline: string;
   stack: string[];
   mvp: string;
+  taglineEn?: string;
+  mvpEn?: string;
   wow: number;
   useful: number;
   easy: number;
@@ -47,6 +53,8 @@ export interface StarProject {
   deltaStars: number;
   trendingRank: number;
   mvp: string;
+  taglineEn?: string;
+  mvpEn?: string;
   wow: number;
   useful: number;
   easy: number;
@@ -72,6 +80,8 @@ export interface BoardProject {
   tagline: string;
   stack: string[];
   mvp: string;
+  taglineEn?: string;
+  mvpEn?: string;
   wow: number;
   useful: number;
   easy: number;
@@ -91,6 +101,8 @@ export interface Skill {
   signal: string;
   url: string;
   description: string;
+  nameEn?: string;
+  descriptionEn?: string;
 }
 
 export type SkillId = string;
@@ -99,6 +111,8 @@ export interface StarterOption {
   id: string;
   label: string;
   description: string;
+  labelEn?: string;
+  descriptionEn?: string;
 }
 
 export type StarterDimension = "time" | "goal" | "skill" | "hardware";

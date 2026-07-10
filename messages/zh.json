@@ -1,0 +1,38 @@
+{
+  "nav": { "beginnerFriendly": "新手友好", "active": "活跃中", "premium": "精选" },
+  "hero": {
+    "subtitle": "按你的目标挑项目",
+    "ctaRecommend": "适合我的项目",
+    "ctaTrending": "查看榜单",
+    "ctaStars": "明星项目"
+  },
+  "board": {
+    "projectBoard": "项目看板",
+    "risingThisWeek": "本周增长",
+    "trending": "增长最快的 GitHub 项目"
+  },
+  "filter": { "search": "搜索", "all": "全部", "layout": "布局", "bubbleLayout": "四组气泡", "realtime": "实时推荐" },
+  "metrics": { "selectionIndex": "精选指数", "tracks": "轨道", "topScore": "最高分", "mvpSpan": "MVP 跨度", "layout": "布局", "order": "排序" },
+  "starter": { "title": "Starter Picker", "subtitle": "先挑 3 个最适合你开工的项目" },
+  "dialog": {
+    "copyPrompt": "复制开工提示词",
+    "copied": "已复制",
+    "openDemo": "打开演示入口",
+    "openSource": "打开项目来源",
+    "close": "关闭开工计划",
+    "worthIt": "值不值得搓",
+    "difficulty": "难不难",
+    "prep": "先准备什么",
+    "doFirst": "先做这个效果",
+    "watchOut": "可能会卡在这里",
+    "source": "项目来源",
+    "demo": "演示入口",
+    "skills": "用得上的 Skill / 工具",
+    "downloadSkills": "下载 Skill 清单 (Markdown)"
+  },
+  "scale": { "easy": "轻松跑", "medium": "有点折腾", "hard": "需要耐心", "expert": "新手慎入" },
+  "verdict": { "recommended": "推荐搓", "caution": "新手慎入", "optional": "可以试试" },
+  "footer": { "discoveredVia": "发现渠道", "copyright": "Idea Coding · Project Discovery for AI Coding Beginners" },
+  "empty": { "noResults": "暂无匹配项目" },
+  "language": { "zh": "中文", "en": "English" }
+}

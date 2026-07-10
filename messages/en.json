@@ -1,0 +1,41 @@
+{
+  "nav": { "beginnerFriendly": "Beginner-Friendly", "active": "ACTIVE", "premium": "PREMIUM" },
+  "hero": {
+    "subtitle": "Pick projects that match your goals",
+    "ctaRecommend": "Projects for me",
+    "ctaTrending": "View board",
+    "ctaStars": "Star projects"
+  },
+  "board": {
+    "projectBoard": "Project Board",
+    "risingThisWeek": "Rising This Week",
+    "trending": "Fastest-growing GitHub projects this week"
+  },
+  "filter": { "search": "Search", "all": "All", "layout": "Layout", "bubbleLayout": "Bubble groups", "realtime": "Live" },
+  "metrics": { "selectionIndex": "Selection Index", "tracks": "Tracks", "topScore": "Top Score", "mvpSpan": "MVP Span", "layout": "Layout", "order": "Order" },
+  "starter": {
+    "title": "Starter Picker",
+    "subtitle": "Pick 3 projects that best fit your start"
+  },
+  "dialog": {
+    "copyPrompt": "Copy starter prompt",
+    "copied": "Copied",
+    "openDemo": "Open demo",
+    "openSource": "Open source",
+    "close": "Close plan",
+    "worthIt": "Worth it?",
+    "difficulty": "How hard?",
+    "prep": "Prepare first",
+    "doFirst": "Build this first",
+    "watchOut": "Might get stuck here",
+    "source": "Source",
+    "demo": "Demo",
+    "skills": "Skills / tools",
+    "downloadSkills": "Download skill list (Markdown)"
+  },
+  "scale": { "easy": "Easy run", "medium": "Some tinkering", "hard": "Needs patience", "expert": "Beginners beware" },
+  "verdict": { "recommended": "Recommended", "caution": "Beginners beware", "optional": "Give it a try" },
+  "footer": { "discoveredVia": "Discovery", "copyright": "Idea Coding · Project Discovery for AI Coding Beginners" },
+  "empty": { "noResults": "No matching projects" },
+  "language": { "zh": "中文", "en": "English" }
+}

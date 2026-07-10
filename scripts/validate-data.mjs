@@ -57,6 +57,19 @@ function validateContentQuality(stars) {
     if (s.mvp && !s.mvp.startsWith("先做") && !s.mvp.startsWith("先构建")) {
       warn(`${s.repo}: mvp doesn't start with "先做/先构建": "${s.mvp}"`);
     }
+    // taglineEn / mvpEn bilingual field checks (warning-level, non-blocking)
+    if (!s.taglineEn) {
+      warn(`${s.repo}: missing taglineEn (English tagline)`);
+    }
+    if (!s.mvpEn) {
+      warn(`${s.repo}: missing mvpEn (English MVP description)`);
+    }
+    if (s.mvpEn && !s.mvpEn.startsWith("First build")) {
+      warn(`${s.repo}: mvpEn doesn't start with "First build": "${s.mvpEn}"`);
+    }
+    if (s.taglineEn && s.taglineEn.length > 30) {
+      warn(`${s.repo}: taglineEn too long (${s.taglineEn.length} chars): "${s.taglineEn}"`);
+    }
     // 评分全一样(可能是 AI 偷懒)
     if (s.wow === s.useful && s.useful === s.easy && s.wow === 50) {
       warn(`${s.repo}: all three scores are 50 — possible AI laziness`);

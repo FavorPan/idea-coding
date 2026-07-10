@@ -1,27 +1,39 @@
 import type { Metadata } from "next";
+import { LocaleProvider } from "@/i18n/client";
+import { defaultLocale, type Locale } from "@/i18n/config";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Idea Coding",
   description:
-    "Idea Coding：90 个最好玩、最好用、最好搓的项目推荐榜单，带新手选择器、项目体检、开工提示词和本周增长最快的 GitHub 明星项目。",
-  icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
-  },
+    "Idea Coding: 90 of the most fun, useful, and buildable projects for AI-coding beginners, with a starter picker, project health check, starter prompts, and the fastest-growing GitHub star projects this week.",
+  icons: { icon: "/logo.png", apple: "/logo.png" },
 };
 
-export default function RootLayout({
+function readCookieLocale(cookieHeader: string | undefined): Locale {
+  if (!cookieHeader) return defaultLocale;
+  const match = cookieHeader
+    .split("; ")
+    .find((row) => row.startsWith("NEXT_LOCALE="));
+  const value = match?.split("=")[1] as Locale | undefined;
+  return value === "zh" || value === "en" ? value : defaultLocale;
+}
+
+export default async function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
+  const locale = readCookieLocale(
+    typeof document !== "undefined" ? document.cookie : undefined
+  );
+
   return (
-    <html lang="zh-CN">
+    <html lang={locale === "zh" ? "zh-CN" : "en"}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body>{children}</body>
+      <body>
+        <LocaleProvider initialLocale={locale}>{children}</LocaleProvider>
+      </body>
     </html>
   );
 }
