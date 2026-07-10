@@ -48,5 +48,8 @@ next-env.d.ts
 # Local temp files
 temp/
 
+# Codebase memory (local-only)
+.codebase-memory/
+
 # Docs (local-only)
 docs/
