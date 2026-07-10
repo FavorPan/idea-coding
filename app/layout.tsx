@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
 import { LocaleProvider } from "@/i18n/client";
 import { defaultLocale, type Locale } from "@/i18n/config";
 import "./globals.css";
@@ -27,7 +25,6 @@ export default async function RootLayout({
   const locale = readCookieLocale(
     typeof document !== "undefined" ? document.cookie : undefined
   );
-  const messages = await getMessages();
 
   return (
     <html lang={locale === "zh" ? "zh-CN" : "en"}>
@@ -35,9 +32,7 @@ export default async function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <LocaleProvider initialLocale={locale}>{children}</LocaleProvider>
-        </NextIntlClientProvider>
+        <LocaleProvider initialLocale={locale}>{children}</LocaleProvider>
       </body>
     </html>
   );
