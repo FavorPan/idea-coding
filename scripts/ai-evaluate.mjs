@@ -56,8 +56,8 @@ async function ghFetch(url, retries = 2) {
         continue;
       }
       return res;
-    } catch {
-      if (i === retries) throw;
+    } catch (e) {
+      if (i === retries) throw e;
       await new Promise((r) => setTimeout(r, (i + 1) * 1500));
     }
   }
@@ -76,7 +76,7 @@ async function fetchReadme(repo) {
       if (data.encoding === "base64") {
         return Buffer.from(data.content, "base64").toString("utf-8");
       }
-    } catch { /* skip */ }
+    } catch (_e) { /* skip */ }
   }
   return null;
 }
