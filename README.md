@@ -1,164 +1,177 @@
+<div align="center">
+
+<p>
+  <a href="README.md">English</a>&nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="README.zh-CN.md">简体中文</a>
+</p>
+
+<img src="public/logo.png" alt="Idea Coding logo" width="120" />
+
 # Idea Coding
 
-Idea Coding 是一个给 AI Coding 新手看的项目发现网站，也是一枚可以装进 Codex 的项目推荐 Skill：帮你找到值得搓的项目、看清项目亮点、匹配用得上的 Skill / 工具，并复制一段能直接交给 Codex、Cursor 或 Claude Code 的开工提示词。
+Project discovery for AI-coding beginners — plus a Codex Skill that recommends projects, skills, and starter prompts from inside a chat.
 
-公开站点：[https://ideacoding.favorhub.top](https://ideacoding.favorhub.top)
+**Live site:** [https://ideacoding.favorhub.top](https://ideacoding.favorhub.top)
 
-- **网站**：Next.js 应用。四大方向——好玩 / 好用 / 好搓（硬件）/ 增长最快的 GitHub 项目。
-- **Skill**：装进 Codex 的项目推荐能力包，在对话里直接推荐项目、推荐 Skill、生成开工提示词。
+</div>
 
-## 这个仓库是什么
+Idea Coding helps you find a project worth building, see what makes it interesting, match the skills and tools you'll need, and copy a starter prompt you can hand straight to Codex, Cursor, or Claude Code.
 
-一个仓库，两个产品：
+- **Web app** — a Next.js board with four tracks: Fun / Useful / Hands-on (hardware) / Fastest-growing GitHub projects.
+- **Skill** — a project-recommendation pack that drops into Codex and recommends projects, skills, and starter prompts from inside a conversation.
 
-- 一个可浏览、可分享的 Next.js 网页看板，展示约 90 个精挑细选的项目、Skill 榜单与开工建议器。
-- 一个独立的 Codex Skill（`skills/idea-coding/`），在对话里提供同样的推荐能力。
+## What this repo is
+
+One repo, two products:
+
+- A browsable, shareable Next.js board showcasing ~90 hand-curated projects, a skill catalog, and a starter advisor.
+- A standalone Codex Skill (`skills/idea-coding/`) that provides the same recommendations inside a chat.
 
 ```
-components/idea/      # 看板 UI（IdeaBoard 看板 / IdeaCanvas 建议器 / PlanDialog 开工对话）
-lib/data/             # 精选数据层：约 90 个项目、四轨道、Skill 目录、建议器选项
-lib/generated/        # 自动生成数据层（每天由 GitHub Actions 刷新，勿手改）
-lib/logic/            # 筛选、Skill 匹配、开工提示词组装
-lib/github/trending.ts  # 明星项目数据层
-scripts/              # 数据刷新链路：discover / ai-evaluate / validate
-skills/idea-coding/   # Codex Skill 版本
-public/               # 静态 SEO 专题页与站点文件
+components/idea/      # Board UI (IdeaBoard / IdeaCanvas advisor / PlanDialog starter dialog)
+lib/data/             # Curated data layer: ~90 projects, four tracks, skill catalog, advisor options
+lib/generated/        # Auto-generated data layer (refreshed daily by GitHub Actions — do not edit by hand)
+lib/logic/            # Filtering, skill matching, starter-prompt assembly
+lib/github/trending.ts  # Star-project data layer
+scripts/              # Data-refresh pipeline: discover / ai-evaluate / validate
+skills/idea-coding/   # Codex Skill version
+public/               # Static SEO topic pages and site files
 ```
 
-## 四大轨道
+## The four tracks
 
-看板把所有项目分成四个轨道，对应新手关心的四种「值不值得做」：
+The board splits every project into one of four tracks, each answering a different flavor of "is this worth building?":
 
-| 轨道 | 定位 |
+| Track | Focus |
 |---|---|
-| **好玩**（fun） | 即时反馈、强互动，一天能做出给朋友看的版本。 |
-| **好用**（useful） | 做完能进入日常工作流，优先解决信息、文档、财务、个人知识管理。 |
-| **好搓**（hardware） | 小预算也能跑通，硬件反馈明确，从 ESP32、树莓派起步。 |
-| **明星**（stars） | 最近 star 增长最快的 GitHub 项目，追踪正在冒头的开源新货。 |
+| **Fun** (`fun`) | Instant feedback, highly interactive — something you can ship to show friends in a day. |
+| **Useful** (`useful`) | Enters your daily workflow once done; prioritizes info, docs, finance, personal knowledge management. |
+| **Hands-on** (`hardware`) | Runs on a small budget with clear hardware feedback — start from ESP32 or Raspberry Pi. |
+| **Stars** (`stars`) | GitHub projects with the fastest recent star growth — track open-source releases that are taking off. |
 
-前三个轨道是手维护的精选项目（约 90 个，见 `lib/data/`）；明星轨道由 GitHub Actions 每天自动刷新（见 `lib/generated/`）。四者在看板上统一呈现，每个项目都带三个评分。
+The first three are hand-curated (~90 projects, see `lib/data/`); the Stars track is refreshed daily by GitHub Actions (see `lib/generated/`). All four render uniformly on the board, and each project carries three scores.
 
-## 三个评分维度
+## Three scoring dimensions
 
-每个项目都有三个 0–5 的评分，帮新手快速判断「值不值得做」：
+Every project has three 0–5 scores that help beginners quickly judge "is this worth building?":
 
-- **wow** — 惊喜感 / 炫不炫。做完能不能让人眼前一亮、想分享。
-- **useful** — 实用度。做完是不是真的能进日常用。
-- **easy** — 上手友好度。步骤清不清晰、要不要踩坑、环境复杂不复杂。
+- **wow** — surprise / flashiness. Does the finished project make people go "whoa" and want to share it?
+- **useful** — practicality. Will it actually enter daily use once built?
+- **easy** — beginner-friendliness. Are the steps clear, is there trap-avoidance, is the environment complex?
 
-看板支持按任一维度排序，配合轨道筛选快速定位。比如「好玩 + 按 wow 排序」找最炫的演示项目，「好用 + 按 useful 排序」找最值得长期用的工具。
+The board sorts by any dimension and filters by track, so you can pinpoint fast. For example, "Fun + sort by wow" surfaces the flashiest demos; "Useful + sort by useful" surfaces the tools most worth keeping long-term.
 
-## 数据从哪来：自动刷新链路
+## Where the data comes from: the auto-refresh pipeline
 
-明星轨道的数据每天自动更新。`.github/workflows/data-refresh.yml` 每天北京时间 11:00 自动跑，分三步，全部成功才会 commit：
+The Stars track updates automatically every day. `.github/workflows/data-refresh.yml` runs daily at 11:00 Beijing time in three steps — all must succeed before a commit lands:
 
-1. **发现** — `scripts/discover-topics.mjs` 对 13 个 GitHub Topics（`creative-coding` / `ai-agents` / `esp32` 等，硬编码映射到 `fun` / `useful` / `hardware` 三轨道）调 Search API，过滤掉 star < 100 或超过 12 个月未更新的仓库，输出候选列表。
-2. **评估** — `scripts/ai-evaluate.mjs` 读每个候选的 README 和 issue 区，交给 Agnes AI（`agnes-2.0-flash`）生成 `tagline` / `mvp` / `wow·useful·easy` 评分 / Skill 推荐，每轨道留 Top 30。
-3. **校验** — `scripts/validate-data.mjs` 跑数据质量校验，失败则 abort workflow，不会污染数据。
+1. **Discover** — `scripts/discover-topics.mjs` queries the Search API across 13 GitHub Topics (`creative-coding` / `ai-agents` / `esp32`, etc., hard-mapped onto the `fun` / `useful` / `hardware` tracks), filters out repos with star < 100 or no updates in 12 months, and outputs a candidate list.
+2. **Evaluate** — `scripts/ai-evaluate.mjs` reads each candidate's README and issue area, hands them to Agnes AI (`agnes-2.0-flash`) to generate `tagline` / `mvp` / `wow·useful·easy` scores / skill recommendations, and keeps the Top 30 per track.
+3. **Validate** — `scripts/validate-data.mjs` runs data-quality checks; on failure it aborts the workflow so the data is never polluted.
 
-通过后把结果 commit 进 `lib/generated/`：`stars.ts`（评估结果）、`lastSnapshot.ts`（上次刷新的 star 快照）、`metadata.ts`（刷新时间）。**这个目录不要手改**，一切由脚本写入。
+On success the results are committed to `lib/generated/`: `stars.ts` (evaluation results), `lastSnapshot.ts` (star snapshot from the previous refresh), and `metadata.ts` (refresh timestamp). **Do not hand-edit this directory** — everything here is script-written.
 
-### 明星轨道怎么算出来
+### How the Stars track is computed
 
-1. 候选池来自上一步 AI 评估通过的 Top 项目（带预填的 wow/useful/easy 评分和 tagline）。
-2. 每次构建时并发拉取这些仓库的实时 `stargazers_count`，用 `当前总数 − 上次快照` 算出增量，按增量排序。
-3. 上次快照就存在 git 里——Actions 每天跑一次，每次把当天的 star 数写进 `lib/generated/lastSnapshot.ts` 并 commit。下次构建时拿这个快照来 diff，所以「增量」实际是「距上一次每日刷新的增长量」。
+1. The candidate pool comes from the Top projects that passed AI evaluation (carrying pre-filled wow/useful/easy scores and a tagline).
+2. At each build, live `stargazers_count` for these repos is fetched concurrently, and the delta is computed as `current total − previous snapshot`, then ranked by delta.
+3. The previous snapshot lives in git — Actions runs daily, writing that day's star counts into `lib/generated/lastSnapshot.ts` and committing them. The next build diffs against this snapshot, so the "delta" is really "growth since the last daily refresh".
 
-也就是说，明星轨道的「排名」是构建时算的，数据新鲜度取决于上一次构建。要是没有配 `GITHUB_TOKEN`，star 数不会实时刷新，只会用 commit 进 `lib/generated/` 的快照值。
+In other words, the Stars track's "ranking" is computed at build time, and freshness depends on the last build. If no `GITHUB_TOKEN` is configured, star counts are not refreshed live and only the snapshot committed to `lib/generated/` is used.
 
-## 命令
+## Commands
 
 ```bash
-pnpm dev          # 本地开发
-pnpm build        # 构建（输出到 out/，纯静态）
-pnpm test         # 数据质量测试
+pnpm dev          # local development
+pnpm build        # build (outputs to out/, fully static)
+pnpm test         # data-quality tests
 
-pnpm data:refresh # 手动跑一次数据刷新链路（discover + evaluate + validate）
+pnpm data:refresh # run the data-refresh pipeline once (discover + evaluate + validate)
 ```
 
-部署是分工的：GitHub Actions 只刷新数据并 commit `lib/generated/` 回 main；push 到 main 后，由托管平台的 Git 集成自动拉取代码、构建、部署。Actions 里不跑构建、不部署。
+Deployment is split: GitHub Actions only refreshes data and commits `lib/generated/` back to main; after the push to main, the hosting platform's Git integration pulls the code, builds, and deploys. Actions does not build or deploy.
 
-需要的环境变量：
+Required environment variables:
 
-- `GITHUB_TOKEN` — 数据刷新链路拉候选仓库用（Actions 自动提供）；构建时也用它实时拉 star 数，不配的话明星轨道 star 数不会刷新。
-- `AGNES_API_KEY` — AI 评估用，只在数据刷新链路里需要。
+- `GITHUB_TOKEN` — used by the data-refresh pipeline to fetch candidate repos (provided automatically by Actions); also used at build time to fetch live star counts. Without it, the Stars track's star counts will not refresh.
+- `AGNES_API_KEY` — used for AI evaluation, only needed inside the data-refresh pipeline.
 
-## 开工建议器
+## Starter advisor
 
-看板上的「开工建议器」（IdeaCanvas）是一个四维度的小问答，帮不知道做什么的新手缩小范围：
+The board's "Starter advisor" (IdeaCanvas) is a four-dimension mini-questionnaire that narrows the field for beginners who don't know what to build:
 
-- **时间** — 今天 2 小时 / 周末 1-2 天 / 一周慢慢做
-- **目标** — 给朋友演示 / 自己日常用 / 动手搓设备 / 追前沿动态
-- **熟练度** — 刚开始 / 会一点 / 愿意折腾
-- **硬件** — 不买硬件 / 几十块可以 / 已经有设备
+- **Time** — 2 hours today / a 1–2 day weekend / a week, take it slow
+- **Goal** — show friends / use daily / build a device / chase the frontier
+- **Skill level** — just starting / know a bit / willing to tinker
+- **Hardware** — buy nothing / tens of bucks is fine / already have devices
 
-选完四个维度后，看板会推荐一个最匹配的项目，并生成一段**开工提示词**——包含项目来源链接、推荐 Skill 及每个 Skill 的使用理由、难度评估、风险清单、准备清单，最终拼成一段可以直接复制粘贴给 Codex / Cursor / Claude Code 的 prompt。这是整个项目的核心交付：不只是「推荐项目」，而是「给新手一个能直接开工的起点」。
+After the four dimensions are picked, the board recommends the best-matched project and generates a **starter prompt** — including the project source links, recommended skills with a per-skill use reason, difficulty estimate, risk list, and prep checklist, assembled into a prompt you can paste straight into Codex / Cursor / Claude Code. This is the project's core deliverable: not just "recommend a project", but "give a beginner a starting point they can act on immediately".
 
-## Skill 推荐
+## Skill recommendations
 
-每个项目会匹配若干个值得搭配的 Skill / 工具（比如做网页的配 HTML/CSS Skill，做自动化的配脚本 Skill）。匹配规则在 `lib/data/` 里，按项目轨道和技术栈正则匹配。开工提示词里会逐个说明「这个 Skill 在本项目里用在哪一步」，而不是干巴巴列一串工具名。
+Each project is matched with several skills and tools worth pairing (e.g. an HTML/CSS skill for web projects, a scripting skill for automation). Matching rules live in `lib/data/` and match on project track and tech stack via regex. The starter prompt explains, skill by skill, "where this skill is used in this project", rather than dumping a bare list of tool names.
 
-## 数据层
+## Data layer
 
-`lib/data/` 是精选数据层：约 90 个项目、四轨道定义、Skill 目录、开工建议器选项、标签和 Skill 匹配规则。直接手改这些 `.ts` 文件即可——文件头的 `AUTO-GENERATED` 注释是历史遗留，已不再有生成脚本。增删改项目时，记得同步更新同文件里的 `projectTagOverrides` 和 `projectTagRules` / `projectSkillRules`，否则标签和 Skill 匹配会不一致。
+`lib/data/` is the curated data layer: ~90 projects, four-track definitions, a skill catalog, starter-advisor options, and tag and skill matching rules. Edit these `.ts` files directly by hand — the `AUTO-GENERATED` header at the top is a historical leftover; there is no generator script anymore. When adding, removing, or renaming a project, remember to update `projectTagOverrides` and `projectTagRules` / `projectSkillRules` in the same file, or tags and skill matching will drift out of sync.
 
 ## Codex Skill
 
-`skills/idea-coding/SKILL.md` 是自包含的：它的工作流读取 `references/projects.md`、`references/skills.md`、`references/starter-prompts.md`。Skill 的内容与 Web 应用的 `lib/data/` **分开维护**——若要在两边同步项目 / Skill 推荐，需同时更新。
+`skills/idea-coding/SKILL.md` is self-contained: its workflow reads `references/projects.md`, `references/skills.md`, `references/starter-prompts.md`. The Skill's content is **maintained separately** from the web app's `lib/data/` — if you reconcile project / skill recommendations between the two, update both.
 
-内置 Skill 路径：
+Built-in Skill path:
 
 ```text
 skills/idea-coding/
 ```
 
-可以把这个目录安装到 Codex 的 Skills 目录，或让支持 Skill 的代理直接读取这个目录。
+You can install this directory into Codex's Skills directory, or have a Skill-aware agent read it directly.
 
-### 调用示例
+### Invocation examples
 
 ```text
 Use Idea Coding to find 5 fun beginner-friendly Vibe Coding projects.
-每个项目给我：为什么值得做、推荐 Skill / 工具、GitHub 或来源链接、复制给 Codex 的开工提示词。
+For each: why it's worth building, recommended skills/tools, GitHub or source links, and a starter prompt to copy into Codex.
 ```
 
 ```text
-我想做一个能发朋友圈的 AI 小网页，帮我找项目并给我开工提示词。
+I want to build a small AI web page I can share on social — find me a project and give me a starter prompt.
 ```
 
 ```text
-我要做网页 / PPT / 部署 / 自动化，有什么 Skill 值得装？
+I'm working on web / slides / deployment / automation — what skills are worth installing?
 ```
 
-## 静态 SEO 内容
+## Static SEO content
 
-`public/guides/` 和 `public/projects/` 是手写的静态 HTML 专题页，面向搜索引擎和 AI 爬虫。`public/llms.txt`、`public/sitemap.xml`、`public/feed.xml`、`public/robots.txt` 也由手工维护。`scripts/check-geo-seo.mjs` 和 `scripts/submit-indexnow.mjs` 是独立的 SEO 辅助脚本（IndexNow ping、地理 / SEO 检查）。
+`public/guides/` and `public/projects/` are hand-authored static HTML topic pages aimed at search engines and AI crawlers. `public/llms.txt`, `public/sitemap.xml`, `public/feed.xml`, and `public/robots.txt` are also hand-maintained. `scripts/check-geo-seo.mjs` and `scripts/submit-indexnow.mjs` are standalone SEO helpers (IndexNow ping, geo/SEO checks), unrelated to the Next.js build.
 
-## 测试
+## Testing
 
-唯一的测试套件 [test/project-data-quality.test.mjs](test/project-data-quality.test.mjs) 守护前 30 个 `fun` 项目的数据质量：断言特定 URL / Demo 链接未失效或归档，库类推荐被标注为参考，且 [test/first-page-project-audit.md](test/first-page-project-audit.md) 正好覆盖这 30 行。该测试通过 eval 从 `lib/data/projects.ts` 抽出对象字面量加载（不走 TS import）。改了 `fun` 项目的 name / url / demoUrl 时，这个套件和审计 markdown 需同步更新。
+The single test suite [test/project-data-quality.test.mjs](test/project-data-quality.test.mjs) guards data quality for the first 30 `fun` projects: it asserts specific URLs / demo links are not stale or archived, that library-like recommendations are labeled as references, and that [test/first-page-project-audit.md](test/first-page-project-audit.md) covers exactly those 30 rows. The test loads `projectGroups` by eval-ing the object literal out of `lib/data/projects.ts` (not via a TS import). When you change a `fun` project's name / url / demoUrl, expect this suite and the audit markdown to need updating in lockstep.
 
-## 适合用来做什么
+## Good for
 
-- 找一个适合新手的 Vibe Coding 项目。
-- 找一个好玩、好用、能部署、能发朋友圈或适合周末做的项目。
-- 找适合 AI Coding 新手的 Skill / 工具。
-- 给某个项目生成一段可以直接复制给 Codex 的开工提示词。
-- 维护自己的项目榜单、Skill 榜单或 AI 编程资料站。
+- Finding a Vibe Coding project suited to beginners.
+- Finding a project that's fun, useful, deployable, shareable, or weekend-friendly.
+- Finding skills / tools suited to AI-coding beginners.
+- Generating a starter prompt for a project that you can paste straight into Codex.
+- Maintaining your own project board, skill list, or AI-coding resource site.
 
-## 开源协议
+## License
 
-代码、Skill 工作流、提示词模板和项目整理格式使用 MIT License。
+Code, Skill workflow, prompt templates, and the project-curation format use the MIT License.
 
-`Idea Coding` 名称、`ideacoding.favorhub.top` 域名和项目视觉识别不包含在 MIT 授权中。你可以 fork、改造和二创，但公开衍生版本请使用不同名称，不要暗示官方关联。详见 [TRADEMARK.md](TRADEMARK.md)。
+The `Idea Coding` name, the `ideacoding.favorhub.top` domain, and the project's visual identity are not covered by the MIT license. You may fork, modify, and remix, but please use a different name for any public derivative and do not imply official affiliation. See [TRADEMARK.md](TRADEMARK.md).
 
-## 贡献
+## Contributing
 
-欢迎贡献：
+Contributions welcome:
 
-- 新的 Vibe Coding 项目来源。
-- 更准确的 GitHub / Demo 链接。
-- 更适合新手的 Skill / 工具推荐。
-- 更清晰的开工提示词模板。
-- 页面排版、可访问性、移动端体验改进。
+- New Vibe Coding project sources.
+- More accurate GitHub / demo links.
+- Skill / tool recommendations better suited to beginners.
+- Clearer starter-prompt templates.
+- Improvements to layout, accessibility, and mobile experience.
 
-请尽量附上项目来源、GitHub 链接、Demo 链接或社区热度证据。
+Please include project sources, GitHub links, demo links, or evidence of community traction where possible.
