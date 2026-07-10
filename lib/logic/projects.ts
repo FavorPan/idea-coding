@@ -43,9 +43,12 @@ export function projectText(project: BoardProject): string {
     .toLowerCase();
 }
 
-export function scoreLabel(project: Pick<BoardProject, "track">): string {
+export function scoreLabel(
+  project: Pick<BoardProject, "track">,
+  locale: Locale = defaultLocale,
+): string {
   if (project.track === "stars") return "HOT";
-  return "开工包";
+  return locale === "en" ? "Starter kit" : "开工包";
 }
 
 export function recommendedSkillIds(
@@ -74,11 +77,20 @@ export function recommendedSkillIds(
 export function recommendedSkills(
   project: BoardProject,
   limit = 3,
+  locale: Locale = defaultLocale,
 ) {
-  return recommendedSkillIds(project, limit).map((skillId) => ({
-    id: skillId,
-    ...skillCatalog[skillId],
-  }));
+  return recommendedSkillIds(project, limit).map((skillId) => {
+    const skill = skillCatalog[skillId];
+    if (locale === "en") {
+      return {
+        id: skillId,
+        ...skill,
+        name: skill.nameEn || skill.name,
+        description: skill.descriptionEn || skill.description,
+      };
+    }
+    return { id: skillId, ...skill };
+  });
 }
 
 const SKILL_USE_REASONS: Record<string, (project: BoardProject) => string> = {
@@ -216,6 +228,7 @@ export function projectRiskItems(project: BoardProject): string[] {
 export function projectExperienceTags(
   project: BoardProject,
   limit = 4,
+  locale: Locale = defaultLocale,
 ): string[] {
   const text = projectText(project);
   const overrideTags = projectTagOverrides[project.name] ?? [];
@@ -227,7 +240,10 @@ export function projectExperienceTags(
     });
   }
 
-  if (project.deltaStars) tags.push(`近期 +${formatCount(project.deltaStars)}`);
+  if (project.deltaStars) {
+    const recentLabel = locale === "en" ? "Recent" : "近期";
+    tags.push(`${recentLabel} +${formatCount(project.deltaStars)}`);
+  }
 
   if (tags.length < 2 && project.track === "fun") tags.push("互动 Demo");
   if (tags.length < 2 && project.track === "useful") tags.push("真实工作流");
@@ -248,7 +264,11 @@ export function projectPrimaryUrl(project: BoardProject): string {
   return project.demoUrl || project.url || "#";
 }
 
-export function projectPrimaryActionLabel(project: BoardProject): string {
+export function projectPrimaryActionLabel(
+  project: BoardProject,
+  locale: Locale = defaultLocale,
+): string {
+  if (locale === "en") return project.demoUrl ? "View demo" : "View source";
   return project.demoUrl ? "看演示" : "看来源";
 }
 
@@ -259,6 +279,23 @@ export function trackOrder(id: TrackId | "all"): number {
 export function trackById(id: TrackId | "all") {
   if (id === "all") return undefined;
   return boardTabs.find((track) => track.id === id);
+}
+
+// Returns a track copy with eyebrow/title/short/summary swapped to the
+// locale-appropriate version (falling back to the Chinese value when the
+// En field is missing). Pure — locale passed explicitly.
+export function localizeTrack(
+  track: NonNullable<ReturnType<typeof trackById>>,
+  locale: Locale = defaultLocale,
+) {
+  if (locale === "zh") return track;
+  return {
+    ...track,
+    eyebrow: track.eyebrowEn || track.eyebrow,
+    title: track.titleEn || track.title,
+    short: track.shortEn || track.short,
+    summary: track.summaryEn || track.summary,
+  };
 }
 
 // A star-project-augmented board project (with id/track/rank/source/stack).
@@ -333,7 +370,9 @@ export function projectsForTrack(
 export function toStarBoardProject(
   star: StarProject,
   index: number,
+  locale: Locale = defaultLocale,
 ): StarBoardProject {
+  const recentLabel = locale === "en" ? "Recent" : "近期";
   return {
     id: `stars-${index + 1}`,
     track: "stars",
@@ -341,7 +380,7 @@ export function toStarBoardProject(
     source: "GitHub",
     stack: [
       star.language,
-      `+${formatCount(star.deltaStars)} 近期`,
+      `+${formatCount(star.deltaStars)} ${recentLabel}`,
       `Trending #${star.trendingRank}`,
     ],
     name: star.name,

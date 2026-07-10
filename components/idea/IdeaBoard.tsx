@@ -5,6 +5,7 @@ import type { BoardProject, StarBoardProject } from "@/lib/logic/projects";
 import {
   filteredProjects,
   localizeProject,
+  localizeTrack,
   projectById,
   projectExperienceTags,
   projectPrimaryActionLabel,
@@ -17,9 +18,18 @@ import {
   skillUseReason,
   type BoardState,
 } from "@/lib/logic/projects";
-import type { StarterState } from "@/lib/data/types";
+import type { StarterState, StarterOption } from "@/lib/data/types";
 import { starterRecommendations, starterReason } from "@/lib/logic/starter";
-import { starterOptions, starterGroupLabels, starterGroupHints, starterGroupStyles, starterLabels } from "@/lib/data/starter";
+import {
+  starterOptions,
+  starterGroupLabels,
+  starterGroupLabelsEn,
+  starterGroupHints,
+  starterGroupHintsEn,
+  starterGroupStyles,
+  starterLabels,
+  starterLabelsEn,
+} from "@/lib/data/starter";
 import { boardThemes, focusHeaderNotes, focusPalettes } from "@/lib/data/board";
 import { tracks, boardTabs } from "@/lib/data/tracks";
 import { formatCount, formatUpdatedDate } from "@/lib/logic/format";
@@ -468,7 +478,7 @@ function StarCard({ project, lead }: { project: StarBoardProject; lead?: boolean
       <strong>{project.name}</strong>
       <p>{localized.tagline}</p>
       <div className="star-card-meta">
-        {projectExperienceTags(project, 3).map((tag) => (
+        {projectExperienceTags(project, 3, locale).map((tag) => (
           <span key={tag}>{tag}</span>
         ))}
       </div>
@@ -531,6 +541,7 @@ function StarterOrb({
   onSelect: (key: keyof StarterState, value: string) => void;
 }) {
   const t = useTranslations();
+  const { locale } = useLocale();
   return (
     <div className="starter-orb-wrap">
       <div className="starter-orb" role="group" aria-label="bubble selector">
@@ -552,12 +563,16 @@ function StarterOrb({
         )}
       </div>
       <div className="starter-active-tags" aria-label="selected tags">
-        {(Object.entries(starter) as [keyof StarterState, string][]).map(([key, value]) => (
-          <span key={key}>
-            <em>{starterGroupLabels[key]}</em>
-            <strong>{starterLabels[key][value]}</strong>
-          </span>
-        ))}
+        {(Object.entries(starter) as [keyof StarterState, string][]).map(([key, value]) => {
+          const groupLabels = locale === "en" ? starterGroupLabelsEn : starterGroupLabels;
+          const labels = locale === "en" ? starterLabelsEn : starterLabels;
+          return (
+            <span key={key}>
+              <em>{groupLabels[key]}</em>
+              <strong>{labels[key][value]}</strong>
+            </span>
+          );
+        })}
       </div>
     </div>
   );
@@ -571,11 +586,14 @@ function StarterGroup({
   onSelect,
 }: {
   groupKey: keyof StarterState;
-  options: { id: string; label: string; description: string }[];
+  options: StarterOption[];
   groupIndex: number;
   starter: StarterState;
   onSelect: (key: keyof StarterState, value: string) => void;
 }) {
+  const { locale } = useLocale();
+  const groupLabels = locale === "en" ? starterGroupLabelsEn : starterGroupLabels;
+  const groupHints = locale === "en" ? starterGroupHintsEn : starterGroupHints;
   const style = starterGroupStyles[groupKey] as {
     x: number; y: number; width: number; height: number;
     label: { x: number; y: number };
@@ -595,17 +613,19 @@ function StarterGroup({
         "--zone-tone": style.tone,
         "--zone-delay": `${groupIndex * -0.8}s`,
       } as React.CSSProperties}
-      aria-label={`${starterGroupLabels[groupKey]} options`}
+      aria-label={`${groupLabels[groupKey]} options`}
     >
       <div className="starter-zone-head">
-        <strong>{starterGroupLabels[groupKey]}</strong>
-        <span>{starterGroupHints[groupKey]}</span>
+        <strong>{groupLabels[groupKey]}</strong>
+        <span>{groupHints[groupKey]}</span>
       </div>
       {options.map((option, index) => {
         const active = starter[groupKey] === option.id;
         const position = style.positions[index % style.positions.length];
         const drift = 3 + ((index + groupIndex) % 3);
         const delay = -0.4 * index - 0.7 * groupIndex;
+        const label = locale === "en" ? (option.labelEn || option.label) : option.label;
+        const description = locale === "en" ? (option.descriptionEn || option.description) : option.description;
         return (
           <button
             key={option.id}
@@ -621,11 +641,11 @@ function StarterGroup({
             data-starter-key={groupKey}
             data-starter-option={option.id}
             aria-pressed={active}
-            aria-label={`${starterGroupLabels[groupKey]}: ${option.label}. ${option.description}`}
+            aria-label={`${groupLabels[groupKey]}: ${label}. ${description}`}
             onClick={() => onSelect(groupKey, option.id)}
           >
             <span className="starter-tag-bubble">
-              <strong>{option.label}</strong>
+              <strong>{label}</strong>
             </span>
           </button>
         );
@@ -649,7 +669,8 @@ function StarterResult({
 }) {
   const { locale } = useLocale();
   const t = useTranslations();
-  const track = trackById(project.track);
+  const rawTrack = trackById(project.track);
+  const track = rawTrack ? localizeTrack(rawTrack, locale) : undefined;
   return (
     <article className="starter-result-card" style={{ "--track": track?.accent } as React.CSSProperties}>
       <div className="starter-result-top">
@@ -660,7 +681,7 @@ function StarterResult({
       <h3>{project.name}</h3>
       <p>{starterReason(project, starter)}</p>
       <div className="feature-list">
-        {projectExperienceTags(project, 3).map((tag) => (
+        {projectExperienceTags(project, 3, locale).map((tag) => (
           <span key={tag}>{tag}</span>
         ))}
       </div>
@@ -686,7 +707,9 @@ function StarterResult({
 
 function FocusHeader({ trackId, count }: { trackId: BoardState["track"]; count: number }) {
   const t = useTranslations();
-  const track = trackById(trackId);
+  const { locale } = useLocale();
+  const rawTrack = trackById(trackId);
+  const track = rawTrack ? localizeTrack(rawTrack, locale) : undefined;
   if (!track) return null;
   return (
     <div className="track-focus-head" style={{ "--track": track.accent } as React.CSSProperties}>
@@ -722,7 +745,8 @@ function TrackColumns({
   const t = useTranslations();
   return (
     <div className="project-columns" aria-live="polite">
-      {tracks.map((tr) => {
+      {tracks.map((rawTr) => {
+        const tr = localizeTrack(rawTr, locale);
         const columnProjects = projectsForTrack(tr.id, query);
         return (
           <section
@@ -777,16 +801,18 @@ function ProjectCard({
 }) {
   const { locale } = useLocale();
   const t = useTranslations();
-  const track = trackById(project.track);
+  const rawTrack = trackById(project.track);
+  const track = rawTrack ? localizeTrack(rawTrack, locale) : undefined;
   const rank = displayRank ?? project.rank;
-  const skillCount = recommendedSkills(project, compact ? 2 : 3).length;
-  // TODO: replace with proper i18n translation keys once "Weekly"/"Skills" labels need localization
-  const footerLabel = project.track === "stars" ? "Weekly" : "Skills";
+  const skillCount = recommendedSkills(project, compact ? 2 : 3, locale).length;
+  const footerLabel = project.track === "stars"
+    ? (locale === "zh" ? "本周" : "Weekly")
+    : (locale === "zh" ? "技能" : "Skills");
   const footerValue =
     project.track === "stars"
       ? `+${formatCount(project.deltaStars ?? 0)}`
       : `${skillCount} ${locale === "zh" ? "个" : ""}`;
-  const skills = recommendedSkills(project, compact ? 2 : 3);
+  const skills = recommendedSkills(project, compact ? 2 : 3, locale);
   return (
     <article
       className={`project-card ${compact ? "project-card-compact" : ""} ${project.track === "stars" ? "project-card-star" : ""}`}
@@ -795,12 +821,12 @@ function ProjectCard({
       <div className="card-topline">
         <span className="rank">#{rank}</span>
         <span className="track-label">{track?.title}</span>
-        <span className="grade">{scoreLabel(project)}</span>
+        <span className="grade">{scoreLabel(project, locale)}</span>
       </div>
       <h3>{project.name}</h3>
       <p className="tagline">{project.tagline}</p>
       <div className="feature-list">
-        {projectExperienceTags(project, compact ? 3 : 5).map((tag) => (
+        {projectExperienceTags(project, compact ? 3 : 5, locale).map((tag) => (
           <span key={tag}>{tag}</span>
         ))}
       </div>
@@ -829,7 +855,7 @@ function ProjectCard({
             target="_blank"
             rel="noreferrer"
           >
-            <span>{projectPrimaryActionLabel(project)}</span>
+            <span>{projectPrimaryActionLabel(project, locale)}</span>
             <em>{project.source}</em>
           </a>
         </div>
