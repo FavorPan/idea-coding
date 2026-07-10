@@ -5,111 +5,147 @@ import type { Skill, SkillId } from "./types";
 export const skillCatalog: Record<SkillId, Skill> = {
   "openai-skills": {
     "name": "OpenAI Skills Catalog",
+    "nameEn": "OpenAI Skills Catalog",
     "signal": "Codex 官方目录",
     "url": "https://github.com/openai/skills",
-    "description": "先从官方目录理解 Skill 怎么安装、触发和复用，适合作为所有项目的起点。"
+    "description": "先从官方目录理解 Skill 怎么安装、触发和复用，适合作为所有项目的起点。",
+    "descriptionEn": "Start from the official catalog to understand how to install, trigger, and reuse Skills — a great starting point for any project."
   },
   "openai-docs": {
     "name": "OpenAI Cookbook",
+    "nameEn": "OpenAI Cookbook",
     "signal": "模型/API 示例",
     "url": "https://github.com/openai/openai-cookbook",
-    "description": "用于参考模型选择、API 调用、流式输出、工具调用和结构化输出等示例。"
+    "description": "用于参考模型选择、API 调用、流式输出、工具调用和结构化输出等示例。",
+    "descriptionEn": "A reference for model selection, API calls, streaming, tool use, and structured output examples."
   },
   "agent-skills": {
     "name": "Addy Osmani Agent Skills",
+    "nameEn": "Addy Osmani Agent Skills",
     "signal": "工程 Skill · 68.4k stars",
     "url": "https://github.com/addyosmani/agent-skills",
-    "description": "生产级 AI coding agent 工程 Skill，适合让 Codex 更稳定地读项目、改代码、跑验收。"
+    "description": "生产级 AI coding agent 工程 Skill，适合让 Codex 更稳定地读项目、改代码、跑验收。",
+    "descriptionEn": "Production-grade AI coding agent engineering Skills that help Codex read projects, edit code, and run acceptance checks more reliably."
   },
   "skillspector": {
     "name": "NVIDIA SkillSpector",
+    "nameEn": "NVIDIA SkillSpector",
     "signal": "安全扫描 · +1,387/7d",
     "url": "https://github.com/NVIDIA/SkillSpector",
-    "description": "安装第三方 Skill 前先扫描危险命令、可疑网络请求和高风险权限。"
+    "description": "安装第三方 Skill 前先扫描危险命令、可疑网络请求和高风险权限。",
+    "descriptionEn": "Scan third-party Skills for dangerous commands, suspicious network requests, and high-risk permissions before installing them."
   },
   "frontend-design": {
     "name": "Vercel Web Guidelines",
+    "nameEn": "Vercel Web Guidelines",
     "signal": "UI 验收规则",
     "url": "https://github.com/vercel-labs/web-interface-guidelines",
-    "description": "用公开的 Web 界面准则检查布局、焦点态、移动端和可访问性。"
+    "description": "用公开的 Web 界面准则检查布局、焦点态、移动端和可访问性。",
+    "descriptionEn": "Use public web interface guidelines to check layout, focus states, mobile responsiveness, and accessibility."
   },
   "playwright-skill": {
     "name": "Playwright Skill",
+    "nameEn": "Playwright Skill",
     "signal": "真浏览器验收",
     "url": "https://github.com/lackeyjb/playwright-skill",
-    "description": "让 AI 打开页面测试按钮、表单、响应式和关键流程，避免 demo 只在想象里可用。"
+    "description": "让 AI 打开页面测试按钮、表单、响应式和关键流程，避免 demo 只在想象里可用。",
+    "descriptionEn": "Let AI open pages to test buttons, forms, responsive layouts, and key flows — so your demo actually works in a real browser, not just in theory."
   },
   "vercel-deploy": {
     "name": "Vercel Deploy Skills",
+    "nameEn": "Vercel Deploy Skills",
     "signal": "公开链接",
     "url": "https://github.com/vercel-labs/agent-skills",
-    "description": "做完网页后生成预览、部署公开链接，并检查上线前的基础问题。"
+    "description": "做完网页后生成预览、部署公开链接，并检查上线前的基础问题。",
+    "descriptionEn": "After building a web app, generate preview deployments, publish public links, and check for common pre-launch issues."
   },
   "shadcn-skill": {
     "name": "shadcn/ui Skill",
+    "nameEn": "shadcn/ui Skill",
     "signal": "常用组件 · 117.8k stars",
     "url": "https://github.com/shadcn-ui/ui/blob/main/skills/shadcn/SKILL.md",
-    "description": "快速把按钮、表单、弹窗、表格等 Web App 常用组件接进项目。"
+    "description": "快速把按钮、表单、弹窗、表格等 Web App 常用组件接进项目。",
+    "descriptionEn": "Quickly add common web app components like buttons, forms, dialogs, and tables to your project."
   },
   "figma-skills": {
     "name": "Figma Skills",
+    "nameEn": "Figma Skills",
     "signal": "设计协作",
     "url": "https://claude.com/skills",
-    "description": "把界面、组件库和设计稿整理成 AI 能继续执行的设计上下文。"
+    "description": "把界面、组件库和设计稿整理成 AI 能继续执行的设计上下文。",
+    "descriptionEn": "Turn interfaces, component libraries, and design files into design context that AI can act on."
   },
   "canva-skills": {
     "name": "Canva Skills",
+    "nameEn": "Canva Skills",
     "signal": "素材出图",
     "url": "https://claude.com/skills",
-    "description": "适合做封面、海报、社媒图和视觉素材，不必先学复杂设计软件。"
+    "description": "适合做封面、海报、社媒图和视觉素材，不必先学复杂设计软件。",
+    "descriptionEn": "Great for making covers, posters, social media graphics, and visual assets without learning complex design software."
   },
   "guizang-ppt": {
     "name": "归藏 PPT Skill",
+    "nameEn": "Guizang PPT Skill",
     "signal": "中文爆款视觉 · +887/7d",
     "url": "https://github.com/op7418/guizang-ppt-skill",
-    "description": "适合把项目做成发布会式网页 PPT、长图或可分享的视觉说明。"
+    "description": "适合把项目做成发布会式网页 PPT、长图或可分享的视觉说明。",
+    "descriptionEn": "Turn your project into launch-style web slides, infographics, or shareable visual explainers."
   },
   "document-skills": {
     "name": "Document Skills",
+    "nameEn": "Document Skills",
     "signal": "文档表格",
     "url": "https://github.com/anthropics/skills",
-    "description": "处理 Word、Excel、PPT、PDF 和资料整理类项目时最容易马上见效。"
+    "description": "处理 Word、Excel、PPT、PDF 和资料整理类项目时最容易马上见效。",
+    "descriptionEn": "The fastest to show results when working on Word, Excel, PPT, PDF, or document-organization projects."
   },
   "opencli": {
     "name": "OpenCLI",
+    "nameEn": "OpenCLI",
     "signal": "真实网页操作 · +643/7d",
     "url": "https://github.com/jackwener/opencli",
-    "description": "把网页、平台和公开 API 变成 AI 可以稳定调用的命令行工具。"
+    "description": "把网页、平台和公开 API 变成 AI 可以稳定调用的命令行工具。",
+    "descriptionEn": "Turn websites, platforms, and public APIs into command-line tools that AI can call reliably."
   },
   "lark-cli": {
     "name": "飞书 / Lark CLI",
+    "nameEn": "Feishu / Lark CLI",
     "signal": "中文团队工作流 · +342/7d",
     "url": "https://github.com/larksuite/cli",
-    "description": "适合会议纪要、文档、多维表格、日历和任务流这类中文办公项目。"
+    "description": "适合会议纪要、文档、多维表格、日历和任务流这类中文办公项目。",
+    "descriptionEn": "Suited for Chinese-office projects like meeting notes, docs, spreadsheets, calendars, and task workflows."
   },
   "github-cli": {
     "name": "GitHub CLI",
+    "nameEn": "GitHub CLI",
     "signal": "复现开源项目",
     "url": "https://cli.github.com/",
-    "description": "让 AI 更顺地 clone、看 issue、开 PR、跑 release 和管理项目来源。"
+    "description": "让 AI 更顺地 clone、看 issue、开 PR、跑 release 和管理项目来源。",
+    "descriptionEn": "Helps AI smoothly clone repos, read issues, open PRs, run releases, and manage project sources."
   },
   "supabase-skills": {
     "name": "Supabase Agent Skills",
+    "nameEn": "Supabase Agent Skills",
     "signal": "登录数据库",
     "url": "https://github.com/supabase/agent-skills",
-    "description": "新手做账号、权限、数据库、实时数据时，用它减少后端卡点。"
+    "description": "新手做账号、权限、数据库、实时数据时，用它减少后端卡点。",
+    "descriptionEn": "Reduces backend friction for beginners building auth, permissions, databases, and real-time data."
   },
   "huggingface-skills": {
     "name": "Hugging Face Skills",
+    "nameEn": "Hugging Face Skills",
     "signal": "AI Demo",
     "url": "https://github.com/huggingface/skills",
-    "description": "适合把模型、数据集、Gradio、Spaces 接进 AI 项目和演示页面。"
+    "description": "适合把模型、数据集、Gradio、Spaces 接进 AI 项目和演示页面。",
+    "descriptionEn": "Integrate models, datasets, Gradio, and Spaces into your AI projects and demo pages."
   },
   "sentry-skills": {
     "name": "Sentry Agent Skills",
+    "nameEn": "Sentry Agent Skills",
     "signal": "上线稳定性",
     "url": "https://github.com/getsentry/skills",
-    "description": "公开项目上线后，用来定位错误、修 issue、维护监控接入。"
+    "description": "公开项目上线后，用来定位错误、修 issue、维护监控接入。",
+    "descriptionEn": "After your project goes live, use it to track down errors, fix issues, and maintain monitoring."
   }
 };
 
