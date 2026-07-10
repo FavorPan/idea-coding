@@ -141,12 +141,16 @@ ${issueTitles.length > 0 ? `Recent open issue titles (for difficulty calibration
 Evaluate and return JSON with exactly this shape:
 {
   "tagline": "One compelling Chinese sentence (≤30 chars) describing what makes this project fun/useful to try",
+  "taglineEn": "English tagline (≤30 chars, same meaning as tagline)",
   "mvp": "A specific, concrete MVP description in Chinese: what to build first and what result to show. Start with '先做...'. 20-40 chars.",
+  "mvpEn": "English MVP description. Start with 'First build'. 20-40 chars, same meaning as mvp.",
   "wow": integer 0-100, how impressive/memorable the demo result is,
   "useful": integer 0-100, how practical this is for daily use or real work,
   "easy": integer 0-100, how accessible this is for AI coding beginners (higher = easier, 100 = "just describe it to AI and it works"),
   "skills": ["skill-id-1", "skill-id-2"] // up to 3 skill IDs from: github-cli, agent-skills, skillspector, opencli, playwright-skill, vercel-deploy, frontend-design, shadcn-skill, figma-skills, canva-skills, guizang-ppt, document-skills, supabase-skills, huggingface-skills, sentry-skills, lark-cli, openai-skills, openai-docs
 }
+
+IMPORTANT: tagline and taglineEn must have the same meaning (Chinese vs English). mvp and mvpEn must have the same meaning (Chinese vs English).
 `,
   };
 }
@@ -162,7 +166,7 @@ async function callAgnes(messages) {
       model: AGNES_MODEL,
       messages,
       temperature: 0.3,
-      max_tokens: 600,
+      max_tokens: 800,
     }),
   });
 
@@ -208,17 +212,21 @@ async function evaluateCandidate(candidate) {
     const easy = Math.min(100, Math.max(0, parseInt(result.easy) || 50));
     const tagline = (result.tagline || description || "").slice(0, 80);
     const mvp = (result.mvp || "先做一个可运行的最小 demo。").slice(0, 80);
+    const taglineEn = (result.taglineEn || tagline).slice(0, 80);
+    const mvpEn = (result.mvpEn || mvp).slice(0, 80);
     const skills = Array.isArray(result.skills) ? result.skills.slice(0, 3) : [];
 
     return {
       repo,
       name: repo.split("/")[1],
       tagline,
+      taglineEn,
       language: language || null,
       totalStars: stargazersCount,
       deltaStars: 0, // Actions 会更新 lastSnapshot.ts 后算出来
       trendingRank: 0, // 排序后填
       mvp,
+      mvpEn,
       wow,
       useful,
       easy,
