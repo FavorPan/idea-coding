@@ -15,6 +15,7 @@ import {
 } from "@/lib/data/skills";
 import { projectTagOverrides, projectTagRules } from "@/lib/data/projects";
 import { formatCount } from "./format";
+import { defaultLocale, type Locale } from "@/i18n/config";
 
 export type { BoardProject } from "@/lib/data/types";
 
@@ -444,5 +445,19 @@ export function skillBundleMarkdown(project: BoardProject): string {
   ]
     .filter(Boolean)
     .join("\n");
+}
+
+// 返回根据 locale 替换好 tagline/mvp 的项目副本（纯函数）。
+// 缺失英文字段时回退到原中文值。
+export function localizeProject(
+  project: BoardProject,
+  locale: Locale = defaultLocale
+): BoardProject {
+  if (locale === "zh") return project;
+  return {
+    ...project,
+    tagline: project.taglineEn || project.tagline,
+    mvp: project.mvpEn || project.mvp,
+  };
 }
 
