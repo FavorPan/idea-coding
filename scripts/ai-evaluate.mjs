@@ -166,10 +166,13 @@ async function callAgnes(messages, retries = 2) {
         messages,
         temperature: 0.3,
         max_tokens: 800,
-        response_format: { type: "json_object" },
       });
       const raw = res.choices?.[0]?.message?.content;
-      if (!raw) throw new Error("empty response content");
+      if (!raw) {
+        // Log debug info for the first failure
+        console.error(`  ⚠️ Agnes debug: id=${res.id} model=${res.model} choices_len=${res.choices?.length} usage=${JSON.stringify(res.usage)} finish=${res.choices?.[0]?.finish_reason}`);
+        throw new Error("empty response content");
+      }
       const match = raw.match(/\{[\s\S]*\}/);
       if (!match) throw new Error(`no JSON object found: ${raw.slice(0, 100)}`);
       return JSON.parse(match[0]);
