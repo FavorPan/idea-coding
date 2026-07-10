@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
+import { useLocale } from "@/i18n/client";
 import type { BoardProject } from "@/lib/logic/projects";
 import { buildStarterPlan, skillBundleMarkdown, skillUseReason, trackById } from "@/lib/logic/projects";
 
@@ -10,6 +12,8 @@ interface PlanDialogProps {
 }
 
 export function PlanDialog({ project, onClose }: PlanDialogProps) {
+  const t = useTranslations("dialog");
+  const { locale } = useLocale();
   const dialogRef = useRef<HTMLDivElement>(null);
   const [copied, setCopied] = useState(false);
   const plan = buildStarterPlan(project);
@@ -81,7 +85,7 @@ export function PlanDialog({ project, onClose }: PlanDialogProps) {
             </p>
             <div className="plan-dialog-actions">
               <button type="button" className="copy-plan" onClick={copyPrompt}>
-                {copied ? "已复制" : "复制开工提示词"}
+                {copied ? t("copied") : t("copyPrompt")}
               </button>
               <a
                 className="plan-header-source"
@@ -89,7 +93,7 @@ export function PlanDialog({ project, onClose }: PlanDialogProps) {
                 target="_blank"
                 rel="noreferrer"
               >
-                {plan.demoUrl ? "打开演示入口" : "打开项目来源"}
+                {plan.demoUrl ? t("openDemo") : t("openSource")}
               </a>
             </div>
           </div>
@@ -97,7 +101,7 @@ export function PlanDialog({ project, onClose }: PlanDialogProps) {
             type="button"
             className="plan-close"
             onClick={onClose}
-            aria-label="关闭开工计划"
+            aria-label={t("close")}
           >
             ×
           </button>
@@ -105,13 +109,13 @@ export function PlanDialog({ project, onClose }: PlanDialogProps) {
 
         <div className="plan-diagnosis">
           <section className={`plan-verdict-card plan-verdict-${plan.verdict.tone}`}>
-            <span>值不值得搓</span>
+            <span>{t("worthIt")}</span>
             <strong>{plan.verdict.label}</strong>
             <p>{plan.verdict.reason}</p>
           </section>
           <section className="plan-scale-card">
             <div>
-              <span>难不难</span>
+              <span>{t("difficulty")}</span>
               <strong>Scale {plan.scale.value}/5</strong>
             </div>
             <div
@@ -125,7 +129,7 @@ export function PlanDialog({ project, onClose }: PlanDialogProps) {
             </p>
           </section>
           <section className="plan-prep-card">
-            <span>先准备什么</span>
+            <span>{t("prep")}</span>
             <div className="plan-prep-list">
               {plan.prepItems.map((item) => (
                 <em key={item}>{item}</em>
@@ -136,11 +140,11 @@ export function PlanDialog({ project, onClose }: PlanDialogProps) {
 
         <div className="plan-grid plan-grid-simple">
           <section className="plan-block plan-demo-block">
-            <h3>先做这个效果</h3>
+            <h3>{t("doFirst")}</h3>
             <p>{project.mvp}</p>
           </section>
           <section className="plan-block plan-risk-block">
-            <h3>可能会卡在这里</h3>
+            <h3>{t("watchOut")}</h3>
             <ul className="plan-list">
               {plan.risks.map((risk) => (
                 <li key={risk}>{risk}</li>
@@ -153,7 +157,7 @@ export function PlanDialog({ project, onClose }: PlanDialogProps) {
             target="_blank"
             rel="noreferrer"
           >
-            <span>项目来源</span>
+            <span>{t("source")}</span>
             <strong>{plan.sourceName}</strong>
             <em>{plan.sourceUrl}</em>
           </a>
@@ -164,14 +168,14 @@ export function PlanDialog({ project, onClose }: PlanDialogProps) {
               target="_blank"
               rel="noreferrer"
             >
-              <span>演示入口</span>
+              <span>{t("demo")}</span>
               <strong>先看能不能跑出效果</strong>
               <em>{plan.demoUrl}</em>
             </a>
           )}
           <details className="plan-block plan-skill-block">
             <summary>
-              <span>用得上的 Skill / 工具</span>
+              <span>{t("skills")}</span>
               <em>可选展开</em>
             </summary>
             <p>
@@ -196,7 +200,7 @@ export function PlanDialog({ project, onClose }: PlanDialogProps) {
               data-download-skills
               onClick={downloadSkillBundle}
             >
-              下载 Skill 清单 (Markdown)
+              {t("downloadSkills")}
             </button>
 
           </details>
@@ -204,7 +208,7 @@ export function PlanDialog({ project, onClose }: PlanDialogProps) {
             <div className="plan-block-head">
               <h3>复制给 Codex 的开工提示词</h3>
               <button type="button" className="copy-plan" onClick={copyPrompt}>
-                {copied ? "已复制" : "复制提示词"}
+                {copied ? t("copied") : t("copyPrompt")}
               </button>
             </div>
             <pre id="planPrompt">{plan.codexPrompt}</pre>
