@@ -649,7 +649,6 @@ function StarterResult({
 }) {
   const { locale } = useLocale();
   const t = useTranslations();
-  const localized = localizeProject(project, locale);
   const track = trackById(project.track);
   return (
     <article className="starter-result-card" style={{ "--track": track?.accent } as React.CSSProperties}>
@@ -781,7 +780,8 @@ function ProjectCard({
   const track = trackById(project.track);
   const rank = displayRank ?? project.rank;
   const skillCount = recommendedSkills(project, compact ? 2 : 3).length;
-  const footerLabel = project.track === "stars" ? (locale === "zh" ? "Weekly" : "Weekly") : (locale === "zh" ? "Skills" : "Skills");
+  // TODO: replace with proper i18n translation keys once "Weekly"/"Skills" labels need localization
+  const footerLabel = project.track === "stars" ? "Weekly" : "Skills";
   const footerValue =
     project.track === "stars"
       ? `+${formatCount(project.deltaStars ?? 0)}`
