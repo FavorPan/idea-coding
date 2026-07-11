@@ -103,19 +103,15 @@ async function main() {
   if (!fs.existsSync(STARS_FILE)) {
     error(`Stars file not found: ${STARS_FILE}`);
   } else {
-    // 从 TypeScript 文件里提取 JSON (简单粗暴,不用 eval)
+    // 从 TypeScript 文件里提取 JSON
+    // 用贪婪匹配到行尾的 ";"，避免被 skills 等嵌套数组里的 "]" 截断
     const content = fs.readFileSync(STARS_FILE, "utf-8");
-    const match = content.match(/export const generatedStars: StarProject\[\] = (\[[\s\S]*?\]);?$/);
+    const match = content.match(/export const generatedStars:[^\n]*=\s*(\[[\s\S]*\]);\s*$/);
     if (!match) {
       error("Could not parse generatedStars from stars.ts");
     } else {
       try {
-        // 把 TypeScript 类型去掉,只留 JSON
-        const jsonStr = match[1]
-          .replace(/:\s*\w+\[\]/g, "")   // 去掉类型注解
-          .replace(/:\s*\w+/g, "")        // 去掉字段类型
-          .replace(/StarProject/g, "");
-        const stars = JSON.parse(jsonStr);
+        const stars = JSON.parse(match[1]);
         console.log(`📋 ${stars.length} projects to validate`);
 
         validateRequiredFields(stars);
