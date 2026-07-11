@@ -27,7 +27,7 @@ const CANDIDATES_FILE = path.join(ROOT, "lib", "generated", "temp-candidates.jso
 const OUTPUT_STARS = path.join(ROOT, "lib", "generated", "stars.ts");
 const OUTPUT_META = path.join(ROOT, "lib", "generated", "metadata.ts");
 const OUTPUT_LAST_SNAPSHOT = path.join(ROOT, "lib", "generated", "lastSnapshot.ts");
-const CONCURRENCY = 5; // 并发 AI 评估数
+const CONCURRENCY = 10; // 并发 AI 评估数
 const TOP_N_PER_TRACK = 30; // 每个轨道最多留多少个
 
 // ── GitHub API helpers ────────────────────────────────────────────────────────
