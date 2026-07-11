@@ -165,7 +165,10 @@ async function callAgnes(messages, retries = 2) {
         model: AGNES_MODEL,
         messages,
         temperature: 0.3,
-        max_tokens: 800,
+        // agnes-2.0-flash is a reasoning model: it spends tokens on internal
+        // reasoning before emitting text. 800 budget got fully consumed by
+        // reasoning with text_tokens=0. Give it headroom for both.
+        max_tokens: 4096,
       });
       const raw = res.choices?.[0]?.message?.content;
       if (!raw) {
