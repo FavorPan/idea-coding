@@ -2,7 +2,7 @@
 import type { GeneratedMeta } from "@/lib/generated/metadata";
 
 export const generatedMeta: GeneratedMeta = {
-  "refreshedAt": "2026-07-11T11:10:41.971Z",
+  "refreshedAt": "2026-07-12T07:33:15.662Z",
   "topics": [
     "self-hosted",
     "ai-agents",
@@ -10,9 +10,9 @@ export const generatedMeta: GeneratedMeta = {
     "canvas",
     "game-development",
     "webgl",
-    "home-automation",
-    "esp32",
     "raspberry-pi",
+    "esp32",
+    "home-automation",
     "3d-printing",
     "creative-coding",
     "web-audio",
