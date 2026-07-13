@@ -65,8 +65,8 @@ public/               # 静态 SEO 专题页与站点文件
 
 明星轨道的数据每天自动更新。`.github/workflows/data-refresh.yml` 每天北京时间 11:00 自动跑，分三步，全部成功才会 commit：
 
-1. **发现** — `scripts/discover-topics.mjs` 对 13 个 GitHub Topics（`creative-coding` / `ai-agents` / `esp32` 等，硬编码映射到 `fun` / `useful` / `hardware` 三轨道）调 Search API，过滤掉 star < 100 或超过 12 个月未更新的仓库，输出候选列表。
-2. **评估** — `scripts/ai-evaluate.mjs` 读每个候选的 README 和 issue 区，交给 Agnes AI（`agnes-2.0-flash`）生成 `tagline` / `mvp` / `wow·useful·easy` 评分 / Skill 推荐，每轨道留 Top 30。
+1. **抓取** — `scripts/fetch-trending.mjs` 抓取 `github.com/trending` 多语言视图（全部 / Python / TypeScript / JavaScript，`since=daily`），仅保留仓库名或描述命中 AI coding 关键词的项目（过滤掉纯框架、awesome-list 等噪声），输出候选列表。所有候选统一归入 `stars` 轨道。
+2. **评估** — `scripts/ai-evaluate.mjs` 读每个候选的 README 和 issue 区，交给 Agnes AI（`agnes-2.0-flash`）生成 `tagline` / `mvp` / `wow·useful·easy` 评分 / Skill 推荐，留 Top 30。
 3. **校验** — `scripts/validate-data.mjs` 跑数据质量校验，失败则 abort workflow，不会污染数据。
 
 通过后把结果 commit 进 `lib/generated/`：`stars.ts`（评估结果）、`lastSnapshot.ts`（上次刷新的 star 快照）、`metadata.ts`（刷新时间）。**这个目录不要手改**，一切由脚本写入。

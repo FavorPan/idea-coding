@@ -36,9 +36,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # ── Step 1: Discover topics ──────────────────────────────────────────────
-      - name: Discover GitHub Topics
-        run: node scripts/discover-topics.mjs
+      # ── Step 1: Fetch GitHub Trending ──────────────────────────────────────────
+      - name: Fetch GitHub Trending
+        run: node scripts/fetch-trending.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

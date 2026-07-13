@@ -65,8 +65,8 @@ The board sorts by any dimension and filters by track, so you can pinpoint fast.
 
 The Stars track updates automatically every day. `.github/workflows/data-refresh.yml` runs daily at 11:00 Beijing time in three steps — all must succeed before a commit lands:
 
-1. **Discover** — `scripts/discover-topics.mjs` queries the Search API across 13 GitHub Topics (`creative-coding` / `ai-agents` / `esp32`, etc., hard-mapped onto the `fun` / `useful` / `hardware` tracks), filters out repos with star < 100 or no updates in 12 months, and outputs a candidate list.
-2. **Evaluate** — `scripts/ai-evaluate.mjs` reads each candidate's README and issue area, hands them to Agnes AI (`agnes-2.0-flash`) to generate `tagline` / `mvp` / `wow·useful·easy` scores / skill recommendations, and keeps the Top 30 per track.
+1. **Fetch** — `scripts/fetch-trending.mjs` scrapes `github.com/trending` across several language views (all / Python / TypeScript / JavaScript, `since=daily`), keeps only repos whose name or description match AI-coding keywords (filtering out unrelated noise like pure frameworks or awesome-lists), and outputs a candidate list. All candidates land in the `stars` track.
+2. **Evaluate** — `scripts/ai-evaluate.mjs` reads each candidate's README and issue area, hands them to Agnes AI (`agnes-2.0-flash`) to generate `tagline` / `mvp` / `wow·useful·easy` scores / skill recommendations, and keeps the Top 30.
 3. **Validate** — `scripts/validate-data.mjs` runs data-quality checks; on failure it aborts the workflow so the data is never polluted.
 
 On success the results are committed to `lib/generated/`: `stars.ts` (evaluation results), `lastSnapshot.ts` (star snapshot from the previous refresh), and `metadata.ts` (refresh timestamp). **Do not hand-edit this directory** — everything here is script-written.

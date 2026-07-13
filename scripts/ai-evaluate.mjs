@@ -1,6 +1,6 @@
 // AI 评估脚本:对候选仓库做 AI 评估,生成 tagline/mvp/评分/Skill 推荐
 // 用法: node scripts/ai-evaluate.mjs [--dry-run] [--repo owner/repo]
-// 输入: lib/generated/temp-candidates.json (由 discover-topics.mjs 生成)
+// 输入: lib/generated/temp-candidates.json (由 fetch-trending.mjs 生成)
 // 输出: lib/generated/stars.ts + lib/generated/lastSnapshot.ts + lib/generated/metadata.ts
 
 import fs from "fs";
@@ -189,7 +189,7 @@ async function callAgnes(messages, retries = 2) {
 // ── Main evaluation logic ─────────────────────────────────────────────────────
 
 async function evaluateCandidate(candidate) {
-  const { fullName: repo, stargazersCount, language, description } = candidate;
+  const { fullName: repo, stargazersCount, language, description, track } = candidate;
 
   try {
     // 并发拉 README 和 issues
@@ -234,6 +234,7 @@ async function evaluateCandidate(candidate) {
       easy,
       url: `https://github.com/${repo}`,
       skills,
+      track: track || "stars",
     };
   } catch (err) {
     console.error(`  ❌ Failed to evaluate ${repo}: ${err.message}`);
@@ -370,7 +371,7 @@ async function main() {
   // 正式模式:读取候选列表
   if (!fs.existsSync(CANDIDATES_FILE)) {
     console.error(`❌ Candidates file not found: ${CANDIDATES_FILE}`);
-    console.error("   Run 'node scripts/discover-topics.mjs' first.");
+    console.error("   Run 'node scripts/fetch-trending.mjs' first.");
     process.exit(1);
   }
 
