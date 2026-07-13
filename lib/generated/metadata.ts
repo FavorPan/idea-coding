@@ -2,23 +2,11 @@
 import type { GeneratedMeta } from "@/lib/generated/metadata";
 
 export const generatedMeta: GeneratedMeta = {
-  "refreshedAt": "2026-07-12T07:33:15.662Z",
+  "refreshedAt": "2026-07-13T06:36:20.104Z",
   "topics": [
-    "self-hosted",
-    "ai-agents",
-    "rag",
-    "canvas",
-    "game-development",
-    "webgl",
-    "raspberry-pi",
-    "esp32",
-    "home-automation",
-    "3d-printing",
-    "creative-coding",
-    "web-audio",
-    "home-assistant"
+    "trending"
   ],
-  "totalCandidates": 110,
-  "passedFilters": 110,
+  "totalCandidates": 25,
+  "passedFilters": 25,
   "topNPerTrack": 30
 };
