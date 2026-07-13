@@ -17,14 +17,7 @@ export const generatedStars: StarProject[] = [
     "wow": 85,
     "useful": 80,
     "easy": 45,
-    "url": "https://github.com/affaan-m/ECC",
-    "skills": [
-      "agent-skills",
-      "sentry-skills",
-      "frontend-design"
-    ],
-    "track": "stars",
-    "score": 0.7470573095401509
+    "url": "https://github.com/affaan-m/ECC"
   },
   {
     "repo": "Comfy-Org/ComfyUI",
@@ -40,14 +33,7 @@ export const generatedStars: StarProject[] = [
     "wow": 85,
     "useful": 90,
     "easy": 30,
-    "url": "https://github.com/Comfy-Org/ComfyUI",
-    "skills": [
-      "huggingface-skills",
-      "agent-skills",
-      "github-cli"
-    ],
-    "track": "stars",
-    "score": 0.6082821158185427
+    "url": "https://github.com/Comfy-Org/ComfyUI"
   },
   {
     "repo": "Shubhamsaboo/awesome-llm-apps",
@@ -63,14 +49,7 @@ export const generatedStars: StarProject[] = [
     "wow": 85,
     "useful": 90,
     "easy": 92,
-    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-    "skills": [
-      "agent-skills",
-      "openai-skills",
-      "document-skills"
-    ],
-    "track": "stars",
-    "score": 0.8060601484709198
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps"
   },
   {
     "repo": "google-gemini/gemini-cli",
@@ -86,13 +65,7 @@ export const generatedStars: StarProject[] = [
     "wow": 85,
     "useful": 90,
     "easy": 70,
-    "url": "https://github.com/google-gemini/gemini-cli",
-    "skills": [
-      "agent-skills",
-      "github-cli"
-    ],
-    "track": "stars",
-    "score": 0.7180246799825512
+    "url": "https://github.com/google-gemini/gemini-cli"
   },
   {
     "repo": "home-assistant/core",
@@ -108,13 +81,7 @@ export const generatedStars: StarProject[] = [
     "wow": 85,
     "useful": 90,
     "easy": 65,
-    "url": "https://github.com/home-assistant/core",
-    "skills": [
-      "github-cli",
-      "openai-skills"
-    ],
-    "track": "stars",
-    "score": 0.6797302331292888
+    "url": "https://github.com/home-assistant/core"
   },
   {
     "repo": "ComposioHQ/awesome-claude-skills",
@@ -130,12 +97,7 @@ export const generatedStars: StarProject[] = [
     "wow": 88,
     "useful": 90,
     "easy": 85,
-    "url": "https://github.com/ComposioHQ/awesome-claude-skills",
-    "skills": [
-      "agent-skills"
-    ],
-    "track": "stars",
-    "score": 0.7531254641108964
+    "url": "https://github.com/ComposioHQ/awesome-claude-skills"
   },
   {
     "repo": "ruvnet/ruflo",
@@ -151,12 +113,7 @@ export const generatedStars: StarProject[] = [
     "wow": 75,
     "useful": 80,
     "easy": 30,
-    "url": "https://github.com/ruvnet/ruflo",
-    "skills": [
-      "agent-skills"
-    ],
-    "track": "stars",
-    "score": 0.35557333198992314
+    "url": "https://github.com/ruvnet/ruflo"
   },
   {
     "repo": "virattt/ai-hedge-fund",
@@ -172,13 +129,7 @@ export const generatedStars: StarProject[] = [
     "wow": 85,
     "useful": 45,
     "easy": 75,
-    "url": "https://github.com/virattt/ai-hedge-fund",
-    "skills": [
-      "agent-skills",
-      "openai-skills"
-    ],
-    "track": "stars",
-    "score": 0.4359542088769123
+    "url": "https://github.com/virattt/ai-hedge-fund"
   },
   {
     "repo": "anthropics/claude-cookbooks",
@@ -194,12 +145,7 @@ export const generatedStars: StarProject[] = [
     "wow": 88,
     "useful": 92,
     "easy": 78,
-    "url": "https://github.com/anthropics/claude-cookbooks",
-    "skills": [
-      "agent-skills"
-    ],
-    "track": "stars",
-    "score": 0.7160546379674706
+    "url": "https://github.com/anthropics/claude-cookbooks"
   },
   {
     "repo": "pbakaus/impeccable",
@@ -215,13 +161,7 @@ export const generatedStars: StarProject[] = [
     "wow": 75,
     "useful": 85,
     "easy": 55,
-    "url": "https://github.com/pbakaus/impeccable",
-    "skills": [
-      "agent-skills",
-      "frontend-design"
-    ],
-    "track": "stars",
-    "score": 0.4388093149601836
+    "url": "https://github.com/pbakaus/impeccable"
   },
   {
     "repo": "Crosstalk-Solutions/project-nomad",
@@ -237,14 +177,7 @@ export const generatedStars: StarProject[] = [
     "wow": 85,
     "useful": 90,
     "easy": 45,
-    "url": "https://github.com/Crosstalk-Solutions/project-nomad",
-    "skills": [
-      "agent-skills",
-      "frontend-design",
-      "openai-skills"
-    ],
-    "track": "stars",
-    "score": 0.5420453413318569
+    "url": "https://github.com/Crosstalk-Solutions/project-nomad"
   },
   {
     "repo": "SillyTavern/SillyTavern",
@@ -260,14 +193,7 @@ export const generatedStars: StarProject[] = [
     "wow": 85,
     "useful": 90,
     "easy": 55,
-    "url": "https://github.com/SillyTavern/SillyTavern",
-    "skills": [
-      "frontend-design",
-      "openai-skills",
-      "agent-skills"
-    ],
-    "track": "stars",
-    "score": 0.5699282872945366
+    "url": "https://github.com/SillyTavern/SillyTavern"
   },
   {
     "repo": "davila7/claude-code-templates",
@@ -283,12 +209,7 @@ export const generatedStars: StarProject[] = [
     "wow": 85,
     "useful": 90,
     "easy": 80,
-    "url": "https://github.com/davila7/claude-code-templates",
-    "skills": [
-      "agent-skills"
-    ],
-    "track": "stars",
-    "score": 0.6488411345538654
+    "url": "https://github.com/davila7/claude-code-templates"
   },
   {
     "repo": "louislam/dockge",
@@ -304,14 +225,7 @@ export const generatedStars: StarProject[] = [
     "wow": 75,
     "useful": 85,
     "easy": 48,
-    "url": "https://github.com/louislam/dockge",
-    "skills": [
-      "frontend-design",
-      "supabase-skills",
-      "github-cli"
-    ],
-    "track": "stars",
-    "score": 0.38672639577831025
+    "url": "https://github.com/louislam/dockge"
   },
   {
     "repo": "PrefectHQ/prefect",
@@ -327,12 +241,7 @@ export const generatedStars: StarProject[] = [
     "wow": 78,
     "useful": 85,
     "easy": 62,
-    "url": "https://github.com/PrefectHQ/prefect",
-    "skills": [
-      "agent-skills"
-    ],
-    "track": "stars",
-    "score": 0.4686690867740539
+    "url": "https://github.com/PrefectHQ/prefect"
   },
   {
     "repo": "HKUDS/Vibe-Trading",
@@ -348,14 +257,7 @@ export const generatedStars: StarProject[] = [
     "wow": 85,
     "useful": 75,
     "easy": 70,
-    "url": "https://github.com/HKUDS/Vibe-Trading",
-    "skills": [
-      "agent-skills",
-      "openai-skills",
-      "frontend-design"
-    ],
-    "track": "stars",
-    "score": 0.5256238000519831
+    "url": "https://github.com/HKUDS/Vibe-Trading"
   },
   {
     "repo": "pydantic/pydantic-ai",
@@ -371,13 +273,7 @@ export const generatedStars: StarProject[] = [
     "wow": 70,
     "useful": 85,
     "easy": 45,
-    "url": "https://github.com/pydantic/pydantic-ai",
-    "skills": [
-      "agent-skills",
-      "openai-skills"
-    ],
-    "track": "stars",
-    "score": 0.3075085557627483
+    "url": "https://github.com/pydantic/pydantic-ai"
   },
   {
     "repo": "teng-lin/notebooklm-py",
@@ -393,13 +289,7 @@ export const generatedStars: StarProject[] = [
     "wow": 88,
     "useful": 82,
     "easy": 72,
-    "url": "https://github.com/teng-lin/notebooklm-py",
-    "skills": [
-      "document-skills",
-      "agent-skills"
-    ],
-    "track": "stars",
-    "score": 0.6026010837600733
+    "url": "https://github.com/teng-lin/notebooklm-py"
   },
   {
     "repo": "InsForge/InsForge",
@@ -415,14 +305,7 @@ export const generatedStars: StarProject[] = [
     "wow": 85,
     "useful": 92,
     "easy": 70,
-    "url": "https://github.com/InsForge/InsForge",
-    "skills": [
-      "supabase-skills",
-      "vercel-deploy",
-      "openai-skills"
-    ],
-    "track": "stars",
-    "score": 0.6046470266261263
+    "url": "https://github.com/InsForge/InsForge"
   },
   {
     "repo": "MervinPraison/PraisonAI",
@@ -438,14 +321,7 @@ export const generatedStars: StarProject[] = [
     "wow": 85,
     "useful": 80,
     "easy": 75,
-    "url": "https://github.com/MervinPraison/PraisonAI",
-    "skills": [
-      "agent-skills",
-      "openai-skills",
-      "document-skills"
-    ],
-    "track": "stars",
-    "score": 0.551913429587605
+    "url": "https://github.com/MervinPraison/PraisonAI"
   },
   {
     "repo": "wonderwhy-er/DesktopCommanderMCP",
@@ -461,13 +337,7 @@ export const generatedStars: StarProject[] = [
     "wow": 85,
     "useful": 90,
     "easy": 75,
-    "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
-    "skills": [
-      "agent-skills",
-      "opencli"
-    ],
-    "track": "stars",
-    "score": 0.6046073253086245
+    "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP"
   },
   {
     "repo": "lingfengQAQ/webnovel-writer",
@@ -483,13 +353,7 @@ export const generatedStars: StarProject[] = [
     "wow": 85,
     "useful": 80,
     "easy": 60,
-    "url": "https://github.com/lingfengQAQ/webnovel-writer",
-    "skills": [
-      "agent-skills",
-      "document-skills"
-    ],
-    "track": "stars",
-    "score": 0.4998340821285586
+    "url": "https://github.com/lingfengQAQ/webnovel-writer"
   },
   {
     "repo": "Nutlope/hallmark",
@@ -505,13 +369,7 @@ export const generatedStars: StarProject[] = [
     "wow": 85,
     "useful": 80,
     "easy": 75,
-    "url": "https://github.com/Nutlope/hallmark",
-    "skills": [
-      "agent-skills",
-      "frontend-design"
-    ],
-    "track": "stars",
-    "score": 0.5466834028110679
+    "url": "https://github.com/Nutlope/hallmark"
   },
   {
     "repo": "ilysenko/codex-desktop-linux",
@@ -527,12 +385,7 @@ export const generatedStars: StarProject[] = [
     "wow": 68,
     "useful": 82,
     "easy": 40,
-    "url": "https://github.com/ilysenko/codex-desktop-linux",
-    "skills": [
-      "github-cli"
-    ],
-    "track": "stars",
-    "score": 0.22922273486081138
+    "url": "https://github.com/ilysenko/codex-desktop-linux"
   },
   {
     "repo": "ColeMurray/background-agents",
@@ -548,13 +401,6 @@ export const generatedStars: StarProject[] = [
     "wow": 88,
     "useful": 75,
     "easy": 35,
-    "url": "https://github.com/ColeMurray/background-agents",
-    "skills": [
-      "agent-skills",
-      "github-cli",
-      "openai-skills"
-    ],
-    "track": "stars",
-    "score": 0.4257035003431709
+    "url": "https://github.com/ColeMurray/background-agents"
   }
 ];
