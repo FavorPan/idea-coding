@@ -1,5 +1,6 @@
-// AUTO-GENERATED from src/main.js by scripts/extract-data.mjs.
-// Do not edit by hand — re-run the script after changing main.js.
+// 手动维护:fun / useful / hardware 三个分类的项目由人手编辑。
+// 每日自动更新的只有 trending(见 lib/generated/stars.ts,由 GitHub Actions 写入)。
+// 修改本项目时,记得同步更新 projectTagOverrides / projectTagRules / projectSkillRules。
 import type { Project, TrackId, ProjectTagRule } from "./types";
 import { tracks } from "./tracks";
 

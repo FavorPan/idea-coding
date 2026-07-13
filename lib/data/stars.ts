@@ -1,5 +1,5 @@
-// AUTO-GENERATED from src/main.js by scripts/extract-data.mjs.
-// Do not edit by hand — re-run the script after changing main.js.
+// 手动维护:这是 trending fetch 失败或无历史快照时的 fallback。
+// 每日自动更新写入的是 lib/generated/stars.ts(由 GitHub Actions 生成)。
 import type { StarProject } from "./types";
 
 // Hand-curated fallback used when the live GitHub Trending fetch fails or

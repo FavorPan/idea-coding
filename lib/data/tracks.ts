@@ -1,5 +1,4 @@
-// AUTO-GENERATED from src/main.js by scripts/extract-data.mjs.
-// Do not edit by hand — re-run the script after changing main.js.
+// 手动维护:四个分类(fun/useful/hardware/stars)的定义。
 import type { Track } from "./types";
 
 export const tracks: Track[] = [

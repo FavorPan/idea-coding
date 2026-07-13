@@ -1,5 +1,4 @@
-// AUTO-GENERATED from src/main.js by scripts/extract-data.mjs.
-// Do not edit by hand — re-run the script after changing main.js.
+// 手动维护:Skill 目录,人手编辑。
 import type { Skill, SkillId } from "./types";
 
 export const skillCatalog: Record<SkillId, Skill> = {

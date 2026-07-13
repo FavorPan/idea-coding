@@ -1,5 +1,4 @@
-// AUTO-GENERATED from src/main.js by scripts/extract-data.mjs.
-// Do not edit by hand — re-run the script after changing main.js.
+// 手动维护:starter-advisor 选项,人手编辑。
 import type { StarterOption, StarterState } from "./types";
 
 export const starterOptions: Record<string, StarterOption[]> = {

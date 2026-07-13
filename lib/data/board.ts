@@ -1,5 +1,4 @@
-// AUTO-GENERATED from src/main.js by scripts/extract-data.mjs.
-// Do not edit by hand — re-run the script after changing main.js.
+// 手动维护:看板主题与分类渲染配置,人手编辑。
 import type { BoardTheme, TrackId } from "./types";
 
 export const boardThemes: Record<string, BoardTheme> = {
