@@ -325,16 +325,19 @@ export function IdeaBoard({ starProjects, fetchedAt, trendingSource }: IdeaBoard
               >
                 {t("filter.all")}
               </button>
-              {boardTabs.map((t) => (
-                <button
-                  key={t.id}
-                  data-filter={t.id}
-                  className={track === t.id ? "active" : ""}
-                  onClick={() => selectFilter(t.id as BoardState["track"])}
-                >
-                  {t.nav ?? t.short}
-                </button>
-              ))}
+              {boardTabs.map((t) => {
+                const lt = localizeTrack(t, locale);
+                return (
+                  <button
+                    key={t.id}
+                    data-filter={t.id}
+                    className={track === t.id ? "active" : ""}
+                    onClick={() => selectFilter(t.id as BoardState["track"])}
+                  >
+                    {lt.nav ?? lt.short}
+                  </button>
+                );
+              })}
             </div>
             <label className="search-field">
               <span>{t("filter.search")}</span>

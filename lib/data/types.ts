@@ -91,6 +91,10 @@ export interface BoardProject {
   source: string;
   url: string;
   demoUrl?: string;
+  // Original Chinese name, preserved by localizeProject() so that override
+  // lookups (projectTagOverrides / projectSkillOverrides, keyed by Chinese
+  // name) still resolve after the display name has been swapped to English.
+  nameZh?: string;
   // Star-only fields, present when track === "stars".
   repo?: string;
   language?: string;

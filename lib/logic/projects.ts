@@ -57,12 +57,13 @@ export function recommendedSkillIds(
   limit = 3,
 ): string[] {
   const ids: string[] = [];
-  const resultLimit = Math.min(limit, projectSkillLimits[project.name] ?? limit);
+  const lookupName = project.nameZh ?? project.name;
+  const resultLimit = Math.min(limit, projectSkillLimits[lookupName] ?? limit);
   const push = (skillId: string) => {
     if (skillCatalog[skillId] && !ids.includes(skillId)) ids.push(skillId);
   };
 
-  (projectSkillOverrides[project.name] ?? []).forEach(push);
+  (projectSkillOverrides[lookupName] ?? []).forEach(push);
 
   const text = projectText(project);
   projectSkillRules.forEach((rule) => {
@@ -319,8 +320,9 @@ export function projectExperienceTags(
 ): string[] {
   const text = projectText(project);
   const en = locale === "en";
+  const lookupName = project.nameZh ?? project.name;
   const translateTag = (tag: string) => (en ? tagTranslationsEn[tag] || tag : tag);
-  const overrideTags = (projectTagOverrides[project.name] ?? []).map(translateTag);
+  const overrideTags = (projectTagOverrides[lookupName] ?? []).map(translateTag);
   const tags = [...overrideTags];
 
   if (!overrideTags.length) {
@@ -628,8 +630,10 @@ export function skillBundleMarkdown(
     .join("\n");
 }
 
-// 返回根据 locale 替换好 name/tagline/mvp 的项目副本（纯函数）。
+// 返回根据 locale 替换好 name/tagline/mvp 的项目副本(纯函数)。
 // 缺失英文字段时回退到原中文值。
+// 英文环境下把原始中文名保留到 nameZh,以便按中文名 key 的 override 表
+// (projectTagOverrides / projectSkillOverrides) 仍能正确查到。
 export function localizeProject(
   project: BoardProject,
   locale: Locale = defaultLocale
@@ -637,6 +641,7 @@ export function localizeProject(
   if (locale === "zh") return project;
   return {
     ...project,
+    nameZh: project.name,
     name: project.nameEn || project.name,
     tagline: project.taglineEn || project.tagline,
     mvp: project.mvpEn || project.mvp,
