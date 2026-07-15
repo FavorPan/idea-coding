@@ -31,7 +31,14 @@
     "source": "Source",
     "demo": "Demo",
     "skills": "Skills / tools",
-    "downloadSkills": "Download skill list (Markdown)"
+    "downloadSkills": "Download skill list (Markdown)",
+    "kicker": "Project Checkup",
+    "intro": "See if it's worth building first, then hand the prompt to AI.",
+    "difficultyAria": "Project difficulty Scale",
+    "tryDemo": "See if it runs",
+    "skillsExpand": "Optional, expand",
+    "skillsNote": "These aren't prerequisites to learn first; they're reference tools you can hand to AI alongside the project link.",
+    "promptHeading": "Starter prompt for Codex"
   },
   "scale": { "easy": "Easy run", "medium": "Some tinkering", "hard": "Needs patience", "expert": "Beginners beware" },
   "verdict": { "recommended": "Recommended", "caution": "Beginners beware", "optional": "Give it a try" },

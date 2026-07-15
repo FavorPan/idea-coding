@@ -478,7 +478,7 @@ function StarCard({ project, lead }: { project: StarBoardProject; lead?: boolean
         <span>#{project.rank}</span>
         <em>+{formatCount(project.deltaStars)} {locale === "zh" ? "近期" : "recent"}</em>
       </div>
-      <strong>{project.name}</strong>
+      <strong>{localized.name}</strong>
       <p>{localized.tagline}</p>
       <div className="star-card-meta">
         {projectExperienceTags(project, 3, locale).map((tag) => (
@@ -674,6 +674,7 @@ function StarterResult({
   const t = useTranslations();
   const rawTrack = trackById(project.track);
   const track = rawTrack ? localizeTrack(rawTrack, locale) : undefined;
+  const localized = localizeProject(project, locale);
   return (
     <article className="starter-result-card" style={{ "--track": track?.accent } as React.CSSProperties}>
       <div className="starter-result-top">
@@ -681,8 +682,8 @@ function StarterResult({
         <em>{track?.title}</em>
         <strong>{Math.round(score)}</strong>
       </div>
-      <h3>{project.name}</h3>
-      <p>{starterReason(project, starter)}</p>
+      <h3>{localized.name}</h3>
+      <p>{starterReason(project, starter, locale)}</p>
       <div className="feature-list">
         {projectExperienceTags(project, 3, locale).map((tag) => (
           <span key={tag}>{tag}</span>

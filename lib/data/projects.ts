@@ -16,6 +16,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Canvas"
       ],
       "mvp": "先做 3 个角色、1 个场景、10 条记忆；角色每天自动生成一段小剧情。",
+      "nameEn": "AI Town / NPC Social Game",
+      "taglineEn": "A small map with a few AI characters that remember, chat and act.",
+      "mvpEn": "Build 3 characters, 1 scene and 10 memories; each character auto-generates a short daily storyline.",
       "wow": 97,
       "useful": 66,
       "easy": 68,
@@ -32,6 +35,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Phaser"
       ],
       "mvp": "握拳暂停，张手发射，左右移动控制音高；5 分钟就能感到魔法发生。",
+      "nameEn": "Gesture-Controlled Mini Game / Gesture Instrument",
+      "taglineEn": "A webcam reads your hand so your palm controls the game, rhythm and sound.",
+      "mvpEn": "Clench to pause, open palm to fire, move left/right to control pitch — feel the magic in 5 minutes.",
       "wow": 94,
       "useful": 58,
       "easy": 74,
@@ -48,6 +54,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Node Graph"
       ],
       "mvp": "先复刻一个节点画布：形状、颜色、噪声和导出四个节点能连起来。",
+      "nameEn": "Node-Based Visual Lab",
+      "taglineEn": "Connect nodes like blocks to generate posters, motion graphics and interactive visuals.",
+      "mvpEn": "Recreate a node canvas: shape, color, noise and export nodes that wire together.",
       "wow": 93,
       "useful": 70,
       "easy": 54,
@@ -64,6 +73,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "IndexedDB"
       ],
       "mvp": "做波形预览、片段裁切、三种效果器和本地保存。",
+      "nameEn": "Mini Audio Workstation in the Browser",
+      "taglineEn": "Upload audio, trim, pitch-shift, loop samples and export right away.",
+      "mvpEn": "Build waveform preview, clip trimming, three effects and local saving.",
       "wow": 91,
       "useful": 72,
       "easy": 62,
@@ -80,6 +92,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Cellular"
       ],
       "mvp": "先做 8 种材料、画笔、暂停/单步和分享种子。",
+      "nameEn": "Physics Sandbox / Pixel Alchemy",
+      "taglineEn": "Sand, water, fire and plants react to each other — a few rules grow a tiny universe.",
+      "mvpEn": "Build 8 materials, a brush, pause and step controls, and seed sharing.",
       "wow": 90,
       "useful": 45,
       "easy": 60,
@@ -96,6 +111,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Web Audio"
       ],
       "mvp": "做 6 个 preset、BPM 控制、录屏导出和随机视觉按钮。",
+      "nameEn": "Live Visual Synth in the Browser",
+      "taglineEn": "Type one line of code and the visuals morph in real time with the music and beat.",
+      "mvpEn": "Build 6 presets, BPM control, screen-record export and a random-visual button.",
       "wow": 89,
       "useful": 52,
       "easy": 57,
@@ -112,6 +130,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Canvas"
       ],
       "mvp": "做 6 个参数、3 套版式、PNG 导出和随机种子复现。",
+      "nameEn": "Generative Poster & Wallpaper Factory",
+      "taglineEn": "Slide a few parameters to generate a poster with your own aesthetic.",
+      "mvpEn": "Build 6 parameters, 3 layouts, PNG export and random-seed reproduction.",
       "wow": 89,
       "useful": 61,
       "easy": 82,
@@ -127,6 +148,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Realtime"
       ],
       "mvp": "先做一个房间码、实时画布、倒计时和投票按钮。",
+      "nameEn": "Multiplayer Doodle Whiteboard Game",
+      "taglineEn": "Draw together in real time, vote and guess words — great for parties and team icebreakers.",
+      "mvpEn": "Build a room code, real-time canvas, countdown and vote button.",
       "wow": 86,
       "useful": 57,
       "easy": 70,
@@ -143,6 +167,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Charts"
       ],
       "mvp": "拖拽分配睡眠、工作、娱乐和学习；自动生成日复盘。",
+      "nameEn": "24-Hour Life Dial",
+      "taglineEn": "Turn a day into a draggable dial so you can see where your time is flowing.",
+      "mvpEn": "Drag to allocate sleep, work, play and learning; auto-generate a daily review.",
       "wow": 82,
       "useful": 76,
       "easy": 80,
@@ -159,6 +186,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Video"
       ],
       "mvp": "上传 3 张截图，自动生成字幕、镜头运动和 30 秒 MP4。",
+      "nameEn": "Product Launch Short Video Generator",
+      "taglineEn": "Give it screenshots, a script and a few shots, and a code agent auto-assembles a launch video.",
+      "mvpEn": "Upload 3 screenshots to auto-generate subtitles, camera motion and a 30-second MP4.",
       "wow": 84,
       "useful": 67,
       "easy": 46,
@@ -174,6 +204,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Realtime"
       ],
       "mvp": "做无限画布、三种图形、文本贴纸和一键分享链接。",
+      "nameEn": "Hand-Drawn Whiteboard & Sketch Board",
+      "taglineEn": "Draw flows, brainstorms and roadmaps in a hand-drawn style, shareable and collaborative.",
+      "mvpEn": "Build an infinite canvas, three shapes, text stickers and a one-click share link.",
       "wow": 85,
       "useful": 75,
       "easy": 72,
@@ -190,6 +223,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Pointer"
       ],
       "mvp": "放 6 个模型、键盘移动、点击物件打开项目卡。",
+      "nameEn": "3D Room & Portfolio Micro-Universe",
+      "taglineEn": "Turn your personal homepage into a walkable 3D room where every object is a link.",
+      "mvpEn": "Place 6 models, keyboard movement, and click an object to open a project card.",
       "wow": 92,
       "useful": 64,
       "easy": 45,
@@ -205,6 +241,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Canvas"
       ],
       "mvp": "做流体画布、颜色切换、截图导出和移动端触摸。",
+      "nameEn": "WebGL Fluid Toy",
+      "taglineEn": "A swipe of the mouse spreads ink like in water, great for backgrounds, covers and installations.",
+      "mvpEn": "Build a fluid canvas, color switching, screenshot export and mobile touch.",
       "wow": 88,
       "useful": 48,
       "easy": 56,
@@ -221,6 +260,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Live Coding"
       ],
       "mvp": "做四轨循环、BPM 控制、录音和分享 pattern。",
+      "nameEn": "Algorithmic Rhythm Band",
+      "taglineEn": "Generate beats, melodies and looping music with just a few lines of pattern.",
+      "mvpEn": "Build four-track looping, BPM control, recording and pattern sharing.",
       "wow": 87,
       "useful": 53,
       "easy": 61,
@@ -236,6 +278,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Canvas"
       ],
       "mvp": "做一个双振荡器合成器，支持键盘弹奏、滤波和 delay。",
+      "nameEn": "Browser Synth Panel",
+      "taglineEn": "Knobs, keyboard, waveform and effects all in the browser; tweak a parameter and it sounds.",
+      "mvpEn": "Build a dual-oscillator synth with keyboard play, filter and delay.",
       "wow": 84,
       "useful": 62,
       "easy": 67,
@@ -252,6 +297,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Sprites"
       ],
       "mvp": "做一个地图、一种敌人、三枚金币和终点门。",
+      "nameEn": "2D Platformer Mini Game",
+      "taglineEn": "Use a map, character, collisions and props to build one playable side-scrolling level.",
+      "mvpEn": "Build one map, one enemy type, three coins and a goal door.",
       "wow": 83,
       "useful": 49,
       "easy": 73,
@@ -268,6 +316,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Sprites"
       ],
       "mvp": "做一个 60 秒挑战关，支持分数、失败和重新开始。",
+      "nameEn": "Arcade-Style Game Prototyper",
+      "taglineEn": "Use a lighter game library to quickly make bullet-hell, jump or collect demos.",
+      "mvpEn": "Build a 60-second challenge level with score, fail and restart.",
       "wow": 82,
       "useful": 47,
       "easy": 78,
@@ -283,6 +334,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Physics"
       ],
       "mvp": "做一个弹球台：挡板、碰撞音效、计分和重力滑杆。",
+      "nameEn": "Physics Pinball & Domino Lab",
+      "taglineEn": "Let balls, blocks, springs and gravity put on a show; perfect for prototyping game mechanics.",
+      "mvpEn": "Build a pinball table: flippers, collision sounds, scoring and a gravity slider.",
       "wow": 82,
       "useful": 50,
       "easy": 70,
@@ -299,6 +353,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Export"
       ],
       "mvp": "做图层、拖拽缩放、对齐线和一键导出。",
+      "nameEn": "Drag-and-Drop Poster Editor",
+      "taglineEn": "Drag images, text, stickers and filters into place, then export a PNG.",
+      "mvpEn": "Build layers, drag-to-scale, alignment guides and one-click export.",
       "wow": 80,
       "useful": 78,
       "easy": 64,
@@ -315,6 +372,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Timeline"
       ],
       "mvp": "做一个排序算法动画，带字幕、暂停点和导出。",
+      "nameEn": "Code-Driven Animation Lessons",
+      "taglineEn": "Use an animation framework and timeline to generate explainer lessons for tech videos and course illustrations.",
+      "mvpEn": "Build a sorting-algorithm animation with subtitles, pause points and export.",
       "wow": 81,
       "useful": 73,
       "easy": 52,
@@ -331,6 +391,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "FFmpeg"
       ],
       "mvp": "用数据生成 5 个镜头，导出一支 15 秒产品短片。",
+      "nameEn": "React Video Rendering Factory",
+      "taglineEn": "Use a React video framework to render components into video, auto-generating intros, subtitles and product demos.",
+      "mvpEn": "Generate 5 shots from data and export a 15-second product clip.",
       "wow": 83,
       "useful": 74,
       "easy": 55,
@@ -347,6 +410,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Edges"
       ],
       "mvp": "实现输入、处理、输出三类节点，支持保存和重放。",
+      "nameEn": "Node Flow Toy",
+      "taglineEn": "Reference a React Flow example to build a drag-to-wire flow canvas, naturally suited to visualizing AI agents.",
+      "mvpEn": "Implement input, processing and output node types with save and replay.",
       "wow": 78,
       "useful": 82,
       "easy": 68,
@@ -363,6 +429,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Export"
       ],
       "mvp": "做编辑器、实时预览、主题切换和 PNG/SVG 导出。",
+      "nameEn": "Text-to-Diagram Magic",
+      "taglineEn": "Write a few lines of text to generate flowcharts, sequence diagrams and project roadmaps.",
+      "mvpEn": "Build an editor, live preview, theme switching and PNG and SVG export.",
       "wow": 76,
       "useful": 84,
       "easy": 78,
@@ -379,6 +448,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Charts"
       ],
       "mvp": "上传一份表格，选 3 种图表，调字段映射并导出 SVG/PNG。",
+      "nameEn": "Data Visualization Toybox",
+      "taglineEn": "Drag a CSV into a visualization tool to quickly try bubble charts, Sankey diagrams, timelines and relationship graphs.",
+      "mvpEn": "Upload a table, pick 3 chart types, tune field mapping and export SVG or PNG.",
       "wow": 79,
       "useful": 81,
       "easy": 58,
@@ -395,6 +467,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Canvas"
       ],
       "mvp": "先挑按钮、输入框、卡片和开关四类组件，做成一个可复用的草稿风组件页。",
+      "nameEn": "Hand-Drawn UI Component Reference",
+      "taglineEn": "A set of hand-drawn-feel web component references, great for quick wireframes, draft prototypes and playful controls.",
+      "mvpEn": "Pick buttons, inputs, cards and toggles and turn them into a reusable sketch-style component page.",
       "wow": 75,
       "useful": 67,
       "easy": 80,
@@ -411,6 +486,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "3D Assets"
       ],
       "mvp": "做一间展厅、五件展品、说明牌和第一人称漫游；确认桌面端可见后再考虑手机 XR。",
+      "nameEn": "Browser 3D Mini Gallery & A-Frame Example",
+      "taglineEn": "First build a walkable 3D gallery in a regular browser, then treat WebXR as an optional enhancement.",
+      "mvpEn": "Build one gallery, five exhibits, caption plates and first-person roaming; confirm desktop visibility before considering mobile XR.",
       "wow": 84,
       "useful": 55,
       "easy": 66,
@@ -427,6 +505,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Sprites"
       ],
       "mvp": "先用编辑器调出 3 个粒子 preset，再接入一个 PixiJS 画布页面。",
+      "nameEn": "Pixel & Particle Editor",
+      "taglineEn": "Use a ready-made particle editor to tune sparks, smoke and pixel stages, then pipe the config into your own page.",
+      "mvpEn": "Tune 3 particle presets in the editor, then wire them into a PixiJS canvas page.",
       "wow": 84,
       "useful": 56,
       "easy": 62,
@@ -442,6 +523,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "GLTF"
       ],
       "mvp": "先在本地展示一个模型，做 4 个热点、光照切换和截图按钮。",
+      "nameEn": "React 3D Product Model Reference",
+      "taglineEn": "Reference a React Three Fiber product model source; start with local rotation, hotspots and animated explanations.",
+      "mvpEn": "Display one model locally with 4 hotspots, lighting toggle and a screenshot button.",
       "wow": 82,
       "useful": 76,
       "easy": 50,
@@ -457,6 +541,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Typography"
       ],
       "mvp": "先复刻 3 种标题效果，支持改字、换色和截图导出。",
+      "nameEn": "Typography Distortion Effects Library",
+      "taglineEn": "A classic WebGL typography effects library reference, great for title covers, dynamic type and poster inspiration.",
+      "mvpEn": "Recreate 3 title effects with editable text, color switching and screenshot export.",
       "wow": 78,
       "useful": 61,
       "easy": 59,
@@ -473,6 +560,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Web Export"
       ],
       "mvp": "做一个完整循环：开始、玩法、失败、胜利、导出网页。",
+      "nameEn": "Weekend Game Engine Prototype",
+      "taglineEn": "Use a Godot official example to build a web-exportable 2D or 3D game slice inside a local engine.",
+      "mvpEn": "Build a complete loop: start, gameplay, fail, victory and web export.",
       "wow": 80,
       "useful": 60,
       "easy": 57,
@@ -490,6 +580,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Local LLM"
       ],
       "mvp": "先接一个模型，支持上传 PDF，回答时附来源片段。",
+      "nameEn": "Personal AI Workbench",
+      "taglineEn": "Unify chat, file Q&A, web summarization and everyday tool calls.",
+      "mvpEn": "Connect one model, support PDF upload, and attach source snippets to answers.",
       "wow": 79,
       "useful": 98,
       "easy": 65,
@@ -505,6 +598,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "AI Tools"
       ],
       "mvp": "先做一个「收到链接 → 摘要 → 写进表格 → 发通知」流程。",
+      "nameEn": "Automation Workflow Hub",
+      "taglineEn": "Chain forms, email, spreadsheets, AI summaries and reminders into one automated pipeline.",
+      "mvpEn": "Build a receive-link to summary to spreadsheet to notification flow.",
       "wow": 86,
       "useful": 97,
       "easy": 66,
@@ -520,6 +616,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "LLM"
       ],
       "mvp": "每日抓 30 条链接，去重、打分、生成 5 条推荐。",
+      "nameEn": "Info Radar & Weekly Report Bot",
+      "taglineEn": "Auto-scan Product Hunt, HN, GitHub and RSS, and compile a publishable weekly report.",
+      "mvpEn": "Fetch 30 links daily, dedupe, score and generate 5 recommendations.",
       "wow": 82,
       "useful": 96,
       "easy": 72,
@@ -535,6 +634,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "RAG"
       ],
       "mvp": "浏览器扩展收藏链接，抓正文，生成一句摘要和三个标签。",
+      "nameEn": "Bookmarks & AI Reading Inbox",
+      "taglineEn": "Save web pages, PDFs and video links in one place with auto-archiving, summaries and full-text storage.",
+      "mvpEn": "A browser extension saves links, grabs the body text and generates a one-line summary and three tags.",
       "wow": 77,
       "useful": 94,
       "easy": 70,
@@ -550,6 +652,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Search"
       ],
       "mvp": "图片/PDF 上传、OCR 文本、标签、全文搜索。",
+      "nameEn": "Receipts & Contracts OCR Archive",
+      "taglineEn": "Turn contracts, invoices and screenshots into a searchable, taggable document library.",
+      "mvpEn": "Image and PDF upload, OCR text, tags and full-text search.",
       "wow": 73,
       "useful": 94,
       "easy": 63,
@@ -565,6 +670,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Storage"
       ],
       "mvp": "本地上传 200 张照片，自动生成标签和按月浏览。",
+      "nameEn": "Private Photo Album & AI Search",
+      "taglineEn": "Stop scrolling a year of photos; search by place, person, event or scene directly.",
+      "mvpEn": "Upload 200 photos locally, auto-generate tags and browse by month.",
       "wow": 76,
       "useful": 91,
       "easy": 59,
@@ -580,6 +688,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Reminders"
       ],
       "mvp": "导入账单 CSV，识别订阅，生成月度支出图。",
+      "nameEn": "Personal Finance & Subscription Manager",
+      "taglineEn": "See where your money goes each month and get auto-reminders for expiring subscriptions.",
+      "mvpEn": "Import a bill CSV, detect subscriptions and generate a monthly spending chart.",
       "wow": 68,
       "useful": 90,
       "easy": 78,
@@ -595,6 +706,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "OCR"
       ],
       "mvp": "做一个上传区，支持合并、压缩、加水印和转图片四个按钮。",
+      "nameEn": "All-in-One PDF Toolbox",
+      "taglineEn": "Merge, compress, sign, OCR and convert to images; every small PDF job runs locally.",
+      "mvpEn": "Build an upload area with four buttons: merge, compress, watermark and convert to images.",
       "wow": 71,
       "useful": 89,
       "easy": 74,
@@ -610,6 +724,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Alerts"
       ],
       "mvp": "监控 5 个 URL，失败时发邮件/Telegram，并生成公开状态页。",
+      "nameEn": "Service Health Monitor Dashboard",
+      "taglineEn": "Put websites, APIs and automation scripts into one alerting status page.",
+      "mvpEn": "Monitor 5 URLs, send email or Telegram on failure and generate a public status page.",
       "wow": 69,
       "useful": 88,
       "easy": 79,
@@ -625,6 +742,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "PWA"
       ],
       "mvp": "菜谱粘贴、食材提取、购物清单勾选、常买项记忆。",
+      "nameEn": "Recipes & Shopping List & Fridge Inventory",
+      "taglineEn": "Paste a recipe link to auto-split it into a shopping list and manage inventory along the way.",
+      "mvpEn": "Recipe paste, ingredient extraction, shopping-list check-off and frequent-item memory.",
       "wow": 70,
       "useful": 87,
       "easy": 76,
@@ -640,6 +760,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Tags"
       ],
       "mvp": "做快速输入、标签、日历视图和全文搜索。",
+      "nameEn": "Quick Notes & Personal Micro-Blog",
+      "taglineEn": "Record thoughts, links, screenshots and daily fragments like posting to a micro-blog.",
+      "mvpEn": "Build quick input, tags, a calendar view and full-text search.",
       "wow": 65,
       "useful": 86,
       "easy": 82,
@@ -655,6 +778,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Full Text"
       ],
       "mvp": "浏览器收藏 50 条链接，自动抓取正文、截图和标签。",
+      "nameEn": "Bookmark Everything Archive",
+      "taglineEn": "Save links, images and notes in one place with AI auto-tagging.",
+      "mvpEn": "Bookmark 50 links from the browser; auto-grab body text, screenshots and tags.",
       "wow": 73,
       "useful": 88,
       "easy": 69,
@@ -670,6 +796,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Docs"
       ],
       "mvp": "做一个项目空间：文档、任务看板、数据库和 AI 摘要。",
+      "nameEn": "Local Notion-Style Workbench",
+      "taglineEn": "Put projects, docs, tasks and a database in one offline-capable workspace.",
+      "mvpEn": "Build a project space: docs, a task board, a database and AI summaries.",
       "wow": 72,
       "useful": 88,
       "easy": 60,
@@ -685,6 +814,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Docs"
       ],
       "mvp": "做一个选题工作区：资料页、白板、任务区互相引用。",
+      "nameEn": "Whiteboard & Knowledge Base Hybrid Space",
+      "taglineEn": "Write docs and also use a whiteboard to organize relationships and thinking.",
+      "mvpEn": "Build a topic workspace: a research page, whiteboard and task area that reference each other.",
       "wow": 76,
       "useful": 86,
       "easy": 58,
@@ -700,6 +832,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Graph"
       ],
       "mvp": "做每日笔记、双链引用、标签图谱和复习清单。",
+      "nameEn": "Bi-directional Knowledge Base & Study Cards",
+      "taglineEn": "Connect reading notes, meeting minutes and inspirations into a traceable knowledge network.",
+      "mvpEn": "Build daily notes, bi-directional links, a tag graph and a review checklist.",
       "wow": 68,
       "useful": 87,
       "easy": 67,
@@ -715,6 +850,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Search"
       ],
       "mvp": "搭一个空间，录入 20 篇 SOP，支持权限和搜索。",
+      "nameEn": "Team Wiki & SOP Center",
+      "taglineEn": "Organize processes, templates, account docs and FAQs into a team knowledge base.",
+      "mvpEn": "Set up a space, enter 20 SOPs, with permissions and search.",
       "wow": 64,
       "useful": 89,
       "easy": 71,
@@ -730,6 +868,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Permissions"
       ],
       "mvp": "建立 3 本书、10 个章节、搜索和公开分享。",
+      "nameEn": "Private Manual Site",
+      "taglineEn": "Like an internal encyclopedia, manage life, projects and tool docs in a layered hierarchy.",
+      "mvpEn": "Create 3 books, 10 chapters, search and public sharing.",
       "wow": 62,
       "useful": 86,
       "easy": 75,
@@ -745,6 +886,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Realtime"
       ],
       "mvp": "做一个团队空间、模板库、评论和权限。",
+      "nameEn": "Open-Source Doc Collaboration Site",
+      "taglineEn": "A lightweight Confluence for small teams to write requirements, specs and retrospectives.",
+      "mvpEn": "Build a team space, template library, comments and permissions.",
       "wow": 66,
       "useful": 88,
       "easy": 68,
@@ -760,6 +904,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Forms"
       ],
       "mvp": "把 CSV 导入成数据库，做表单、视图和筛选。",
+      "nameEn": "No-Code Database Backend",
+      "taglineEn": "Turn spreadsheets into a database and internal tools, great for operations ledgers.",
+      "mvpEn": "Import a CSV as a database, build forms, views and filters.",
       "wow": 69,
       "useful": 90,
       "easy": 74,
@@ -775,6 +922,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Automation"
       ],
       "mvp": "搭 4 张表：客户、项目、任务、报价，并加自动提醒。",
+      "nameEn": "Spreadsheet Database & Mini CRM",
+      "taglineEn": "Manage clients, projects, quotes and content schedules with an Airtable-style table.",
+      "mvpEn": "Build 4 tables: clients, projects, tasks, quotes, with auto-reminders.",
       "wow": 67,
       "useful": 88,
       "easy": 73,
@@ -790,6 +940,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Automations"
       ],
       "mvp": "做一个商单排期后台，支持新建、筛选、状态变更。",
+      "nameEn": "Internal Tool Builder",
+      "taglineEn": "Drag tables, buttons, forms and automation to build your own operations backend.",
+      "mvpEn": "Build an order-scheduling backend with create, filter and status changes.",
       "wow": 70,
       "useful": 89,
       "easy": 65,
@@ -805,6 +958,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Workspaces"
       ],
       "mvp": "创建 3 个资料库，上传文件并按空间回答问题。",
+      "nameEn": "Private Knowledge Q&A Vault",
+      "taglineEn": "Connect local files, web pages and notes to an AI assistant that can follow up.",
+      "mvpEn": "Create 3 knowledge bases, upload files and answer questions per workspace.",
       "wow": 76,
       "useful": 91,
       "easy": 67,
@@ -820,6 +976,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Workflow"
       ],
       "mvp": "做一个选题助手：输入链接，输出摘要、角度和标题。",
+      "nameEn": "AI App Workflow Platform",
+      "taglineEn": "Turn prompts, knowledge bases, tool calls and a publish entry into reusable apps.",
+      "mvpEn": "Build a topic assistant: input a link, output a summary, angle and title.",
       "wow": 78,
       "useful": 92,
       "easy": 63,
@@ -835,6 +994,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Nodes"
       ],
       "mvp": "拖一个 RAG 流程：输入、检索、LLM、输出四个节点。",
+      "nameEn": "Visual Agent Orchestrator",
+      "taglineEn": "Use a node-based approach to build chatbots, retrieval chains and tool-calling flows.",
+      "mvpEn": "Drag a RAG flow: input, retrieval, LLM and output, four nodes.",
       "wow": 75,
       "useful": 89,
       "easy": 66,
@@ -850,6 +1012,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Agents"
       ],
       "mvp": "导入 20 份 PDF，支持引用来源和多轮追问。",
+      "nameEn": "Deep RAG Document Assistant",
+      "taglineEn": "Retrieval-augmented Q&A over large sets of PDFs, web pages and tables.",
+      "mvpEn": "Import 20 PDFs, support cited sources and multi-turn follow-ups.",
       "wow": 73,
       "useful": 91,
       "easy": 54,
@@ -865,6 +1030,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Crawler"
       ],
       "mvp": "输入 URL 列表，抓正文、去重、转摘要并导出。",
+      "nameEn": "Web Scraping & Content Pipeline",
+      "taglineEn": "Turn web pages into clean Markdown for weekly reports, knowledge bases and AI flows.",
+      "mvpEn": "Input a URL list, grab body text, dedupe, summarize and export.",
       "wow": 72,
       "useful": 90,
       "easy": 62,
@@ -880,6 +1048,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Search"
       ],
       "mvp": "部署搜索页，配置 5 个引擎，保存常用查询。",
+      "nameEn": "Private Meta Search Engine",
+      "taglineEn": "Aggregate multiple search sources with no tracking and no ads, great as a research entry point.",
+      "mvpEn": "Deploy a search page, configure 5 engines and save common queries.",
       "wow": 66,
       "useful": 86,
       "easy": 70,
@@ -895,6 +1066,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Folders"
       ],
       "mvp": "同步两个文件夹，设置忽略规则和冲突提示。",
+      "nameEn": "Cross-Device File Sync",
+      "taglineEn": "Auto-sync files between computers, NAS and phones without relying on a cloud drive.",
+      "mvpEn": "Sync two folders, set ignore rules and conflict alerts.",
       "wow": 64,
       "useful": 88,
       "easy": 73,
@@ -910,6 +1084,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Docker"
       ],
       "mvp": "部署服务、创建家庭组织、导入密码并启用 2FA。",
+      "nameEn": "Family Password Vault",
+      "taglineEn": "Self-hosted password management to store accounts for yourself and your family in one place.",
+      "mvpEn": "Deploy the service, create a family org, import passwords and enable 2FA.",
       "wow": 62,
       "useful": 92,
       "easy": 69,
@@ -925,6 +1102,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Rules"
       ],
       "mvp": "导入账单，自动分类，做预算、标签和月报。",
+      "nameEn": "Finance Control Dashboard",
+      "taglineEn": "Turn accounts, budgets, bills and financial rules into a more complete personal system.",
+      "mvpEn": "Import bills, auto-categorize, and build budgets, tags and a monthly report.",
       "wow": 63,
       "useful": 89,
       "easy": 58,
@@ -942,6 +1122,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "ESPHome"
       ],
       "mvp": "每 30 分钟刷新一次天气和今日待办，晚上自动低功耗。",
+      "nameEn": "ESP32 E-Ink Calendar Board",
+      "taglineEn": "A low-power screen for your desk showing schedule, weather, to-dos and reminders.",
+      "mvpEn": "Refresh weather and today's to-dos every 30 minutes, auto low-power at night.",
       "wow": 90,
       "useful": 91,
       "easy": 73,
@@ -957,6 +1140,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "WLED"
       ],
       "mvp": "三种氛围场景、一个音乐模式、一个睡前暖光模式。",
+      "nameEn": "WLED Music-Reactive Lights",
+      "taglineEn": "Control an LED strip from a phone web page and let the room move with the music.",
+      "mvpEn": "Three ambient scenes, one music mode and one warm bedtime-light mode.",
       "wow": 92,
       "useful": 69,
       "easy": 80,
@@ -972,6 +1158,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Modules"
       ],
       "mvp": "天气、日历、新闻、倒计时四个模块先跑起来。",
+      "nameEn": "Magic Mirror Smart Mirror",
+      "taglineEn": "Raspberry Pi plus a half-silvered mirror turns the mirror into a family info panel.",
+      "mvpEn": "Get four modules running first: weather, calendar, news and countdown.",
       "wow": 93,
       "useful": 82,
       "easy": 61,
@@ -987,6 +1176,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Meshtastic"
       ],
       "mvp": "两台设备互发消息，网页地图显示节点位置，再加一个频道名。",
+      "nameEn": "Meshtastic Offline Comm Node",
+      "taglineEn": "Two LoRa boards form a text-messaging network with no cell signal needed.",
+      "mvpEn": "Two devices exchange messages, a web map shows node positions, plus a channel name.",
       "wow": 91,
       "useful": 76,
       "easy": 62,
@@ -1002,6 +1194,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "3D Print"
       ],
       "mvp": "6 个键：截图、录音、打开项目、切窗口、提交、部署。",
+      "nameEn": "QMK Macro Pad & Workflow Console",
+      "taglineEn": "A few keys to handle screenshots, fire prompts, open tools and switch scenes.",
+      "mvpEn": "6 keys: screenshot, record, open project, switch window, commit, deploy.",
       "wow": 84,
       "useful": 88,
       "easy": 67,
@@ -1017,6 +1212,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Home Assistant"
       ],
       "mvp": "先接一支摄像头，识别人形事件，保存 10 秒片段并推送。",
+      "nameEn": "Local AI Camera Doorbell",
+      "taglineEn": "A door camera runs local recognition for people, cars and packages, pushing only important events.",
+      "mvpEn": "Connect one camera, detect person events, save 10-second clips and push notifications.",
       "wow": 87,
       "useful": 89,
       "easy": 44,
@@ -1032,6 +1230,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Speech"
       ],
       "mvp": "按键唤醒、语音问答、调用一个本地工具，再在屏幕上显示回复。",
+      "nameEn": "Xiaozhi ESP32 AI Voice Terminal",
+      "taglineEn": "A small board, speaker and mic become a conversational desktop AI companion.",
+      "mvpEn": "Push-to-wake, voice Q&A, call one local tool, then show the reply on screen.",
       "wow": 89,
       "useful": 80,
       "easy": 52,
@@ -1047,6 +1248,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Web UI"
       ],
       "mvp": "先接一个智能插座，网页开关、定时规则和功耗曲线跑起来。",
+      "nameEn": "Tasmota Appliance Console",
+      "taglineEn": "Flash plugs, lights and sensors to a unified firmware and build a fully local control panel.",
+      "mvpEn": "Connect one smart plug with web toggle, timer rules and a power-consumption chart.",
       "wow": 78,
       "useful": 86,
       "easy": 63,
@@ -1062,6 +1266,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "DNS"
       ],
       "mvp": "接管家庭 DNS，显示今日拦截数，再加常用域名白名单。",
+      "nameEn": "Pi-hole Home Network Moat",
+      "taglineEn": "A Raspberry Pi becomes the family ad-blocking, DNS and network-stats center.",
+      "mvpEn": "Take over home DNS, show today's block count, plus a whitelist for common domains.",
       "wow": 74,
       "useful": 90,
       "easy": 71,
@@ -1077,6 +1284,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Home Assistant"
       ],
       "mvp": "土壤湿度低于阈值时亮灯，并推送一条提醒。",
+      "nameEn": "Smart Plant Monitor",
+      "taglineEn": "Moisture, temperature, light and low-water alerts make desk plants easier to keep alive.",
+      "mvpEn": "Light up and push a reminder when soil moisture drops below a threshold.",
       "wow": 78,
       "useful": 81,
       "easy": 77,
@@ -1092,6 +1302,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "YAML"
       ],
       "mvp": "做一个温湿度节点，接入 Home Assistant 并显示历史曲线。",
+      "nameEn": "ESPHome Whole-Home Sensor Platform",
+      "taglineEn": "Use YAML to wire temperature, motion, door and light controls into home automation.",
+      "mvpEn": "Build a temp/humidity node, integrate into Home Assistant and show a history chart.",
       "wow": 76,
       "useful": 90,
       "easy": 75,
@@ -1107,6 +1320,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Dashboard"
       ],
       "mvp": "接入 5 个设备，做一个早安/晚安自动化和手机面板。",
+      "nameEn": "Home Assistant Family Hub",
+      "taglineEn": "Unify lights, locks, sensors, cameras and automation in one place.",
+      "mvpEn": "Integrate 5 devices, build a good-morning and good-night automation and a phone dashboard.",
       "wow": 80,
       "useful": 94,
       "easy": 57,
@@ -1122,6 +1338,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "ESP32"
       ],
       "mvp": "读取一个蓝牙温度计和一个 433 遥控器，发布到 MQTT。",
+      "nameEn": "OpenMQTTGateway Universal Gateway",
+      "taglineEn": "Convert signals from Bluetooth, 433MHz, infrared and other devices into MQTT.",
+      "mvpEn": "Read a Bluetooth thermometer and a 433 remote, publish to MQTT.",
       "wow": 77,
       "useful": 86,
       "easy": 56,
@@ -1137,6 +1356,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Coordinator"
       ],
       "mvp": "配对一个门磁和一个按钮，触发灯光或通知。",
+      "nameEn": "Zigbee2MQTT Device Bridge",
+      "taglineEn": "Let Zigbee sensors join a local system directly without a vendor gateway.",
+      "mvpEn": "Pair a door sensor and a button, trigger lights or notifications.",
       "wow": 76,
       "useful": 88,
       "easy": 54,
@@ -1152,6 +1374,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Storage"
       ],
       "mvp": "网页实时预览，按按钮拍照，并保存最近 20 张。",
+      "nameEn": "ESP32-CAM Pocket Camera",
+      "taglineEn": "A cheap little board for time-lapse, door monitoring or a pet cam.",
+      "mvpEn": "Live web preview, push a button to snap a photo and keep the latest 20.",
       "wow": 82,
       "useful": 75,
       "easy": 62,
@@ -1167,6 +1392,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Presence"
       ],
       "mvp": "部署两个节点，识别手机/手环所在房间并触发自动化。",
+      "nameEn": "ESPresense Room Presence",
+      "taglineEn": "Use Bluetooth signals to tell whether you are in the living room, bedroom or study.",
+      "mvpEn": "Deploy two nodes, detect which room a phone or wearable is in and trigger automation.",
       "wow": 79,
       "useful": 84,
       "easy": 57,
@@ -1182,6 +1410,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "3D Printer"
       ],
       "mvp": "编译固件，配置主板、热床、喷头和自动调平。",
+      "nameEn": "Marlin 3D Printer Firmware",
+      "taglineEn": "Flash open-source firmware onto a 3D printer to understand temp control, stepping and endstops.",
+      "mvpEn": "Compile the firmware, configure the board, heated bed, hotend and auto-leveling.",
       "wow": 76,
       "useful": 82,
       "easy": 43,
@@ -1197,6 +1428,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Printer"
       ],
       "mvp": "接入一台打印机，完成校准、压力提前和输入整形。",
+      "nameEn": "Klipper High-Speed Print Controller",
+      "taglineEn": "A Raspberry Pi handles motion control for faster, more stable 3D printing.",
+      "mvpEn": "Connect a printer, complete calibration, pressure advance and input shaping.",
       "wow": 79,
       "useful": 84,
       "easy": 42,
@@ -1212,6 +1446,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Webcam"
       ],
       "mvp": "网页上传 G-code，接摄像头，做打印完成通知。",
+      "nameEn": "OctoPrint Printer Monitor",
+      "taglineEn": "Remotely upload models, watch the camera, pause prints and check progress.",
+      "mvpEn": "Upload G-code via the web, connect a camera and notify on print completion.",
       "wow": 73,
       "useful": 85,
       "easy": 66,
@@ -1227,6 +1464,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Keymap"
       ],
       "mvp": "配置 36 键布局、蓝牙配对、双层快捷键。",
+      "nameEn": "ZMK Wireless Mechanical Keyboard",
+      "taglineEn": "Low-power Bluetooth keyboard firmware, suited to split and portable keyboards.",
+      "mvpEn": "Configure a 36-key layout, Bluetooth pairing and dual-layer shortcuts.",
       "wow": 77,
       "useful": 83,
       "easy": 52,
@@ -1242,6 +1482,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "HID"
       ],
       "mvp": "做一个 4 键小键盘，支持旋钮、宏和层切换。",
+      "nameEn": "KMK CircuitPython Keyboard",
+      "taglineEn": "Write keyboard firmware in Python, better for rapid remapping and experiments.",
+      "mvpEn": "Build a 4-key pad with a rotary knob, macros and layer switching.",
       "wow": 75,
       "useful": 82,
       "easy": 66,
@@ -1257,6 +1500,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Weather"
       ],
       "mvp": "控制一路水阀，设置日程和下雨跳过规则。",
+      "nameEn": "OpenSprinkler Smart Irrigation",
+      "taglineEn": "Control garden or balcony watering by time, weather and moisture.",
+      "mvpEn": "Control one water valve, set a schedule and rain-skip rules.",
       "wow": 74,
       "useful": 84,
       "easy": 49,
@@ -1272,6 +1518,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Astronomy"
       ],
       "mvp": "打印结构件，驱动一步进电机，完成基础极轴校准。",
+      "nameEn": "OpenAstroTracker Star Tracker",
+      "taglineEn": "A DIY equatorial mount that tracks the sky for clearer long-exposure astrophotography.",
+      "mvpEn": "Print the structure, drive one stepper motor and complete basic polar alignment.",
       "wow": 88,
       "useful": 68,
       "easy": 35,
@@ -1287,6 +1536,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Display"
       ],
       "mvp": "做音量旋钮、模式切换、屏幕显示和阻尼反馈。",
+      "nameEn": "SmartKnob Haptic Knob",
+      "taglineEn": "A knob with a screen and force feedback that can control volume, lights and a timeline.",
+      "mvpEn": "Build a volume knob, mode switching, screen display and detent feedback.",
       "wow": 90,
       "useful": 78,
       "easy": 37,
@@ -1302,6 +1554,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Home Assistant"
       ],
       "mvp": "读取开关状态，网页控制开关，并设置离家提醒。",
+      "nameEn": "ratgdo Garage Door Controller",
+      "taglineEn": "Bring garage door status, local control and automation into Home Assistant.",
+      "mvpEn": "Read switch state, web-control open and close, and set a leave-home reminder.",
       "wow": 72,
       "useful": 86,
       "easy": 50,
@@ -1317,6 +1572,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Dashboard"
       ],
       "mvp": "接入 CO2 和 PM2.5 传感器，显示曲线和超标提醒。",
+      "nameEn": "AirGradient Air Quality Station",
+      "taglineEn": "Monitor PM2.5, CO2, temp and humidity with a home air dashboard.",
+      "mvpEn": "Connect CO2 and PM2.5 sensors, show charts and threshold alerts.",
       "wow": 76,
       "useful": 88,
       "easy": 59,
@@ -1332,6 +1590,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "MQTT"
       ],
       "mvp": "读取逆变器功率，展示实时曲线和日发电量。",
+      "nameEn": "OpenDTU Solar Monitor",
+      "taglineEn": "Read micro-inverter data and see how much power you generated today.",
+      "mvpEn": "Read inverter power, show a live chart and daily energy generated.",
       "wow": 73,
       "useful": 87,
       "easy": 48,
@@ -1347,6 +1608,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "MQTT"
       ],
       "mvp": "识别一个无线温度计，把数据写入 Home Assistant。",
+      "nameEn": "rtl_433 Wireless Sensor Radar",
+      "taglineEn": "Use an SDR to receive 433MHz signals from thermometers, doorbells, tire pressure and more.",
+      "mvpEn": "Identify one wireless thermometer and write the data into Home Assistant.",
       "wow": 79,
       "useful": 81,
       "easy": 46,
@@ -1362,6 +1626,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Touchscreen"
       ],
       "mvp": "做灯光、温度、场景三个页面，并支持触摸控制。",
+      "nameEn": "openHASP Wall Control Panel",
+      "taglineEn": "Turn an old phone or small screen into a Home Assistant wall control panel.",
+      "mvpEn": "Build three pages (lights, temperature, scenes) with touch control.",
       "wow": 77,
       "useful": 85,
       "easy": 55,
@@ -1377,6 +1644,9 @@ export const projectGroups: Record<Exclude<TrackId, "stars">, Project[]> = {
         "Dashboard"
       ],
       "mvp": "显示温度、进度、文件列表和摄像头预览。",
+      "nameEn": "Mainsail 3D Print Dashboard",
+      "taglineEn": "A prettier web console for a Klipper printer.",
+      "mvpEn": "Show temperature, progress, a file list and a camera preview.",
       "wow": 72,
       "useful": 84,
       "easy": 62,

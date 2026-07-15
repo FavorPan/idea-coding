@@ -28,7 +28,14 @@
     "source": "项目来源",
     "demo": "演示入口",
     "skills": "用得上的 Skill / 工具",
-    "downloadSkills": "下载 Skill 清单 (Markdown)"
+    "downloadSkills": "下载 Skill 清单 (Markdown)",
+    "kicker": "项目体检",
+    "intro": "先看它能不能搓，再把提示词交给 AI 开工。",
+    "difficultyAria": "项目难度 Scale",
+    "tryDemo": "先看能不能跑出效果",
+    "skillsExpand": "可选展开",
+    "skillsNote": "这些不是必须先学的技术栈，只是可以和项目链接一起交给 AI 的参考工具。",
+    "promptHeading": "复制给 Codex 的开工提示词"
   },
   "scale": { "easy": "轻松跑", "medium": "有点折腾", "hard": "需要耐心", "expert": "新手慎入" },
   "verdict": { "recommended": "推荐搓", "caution": "新手慎入", "optional": "可以试试" },

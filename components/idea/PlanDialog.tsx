@@ -16,7 +16,7 @@ export function PlanDialog({ project, onClose }: PlanDialogProps) {
   const { locale } = useLocale();
   const dialogRef = useRef<HTMLDivElement>(null);
   const [copied, setCopied] = useState(false);
-  const plan = buildStarterPlan(project);
+  const plan = buildStarterPlan(project, locale);
   const track = trackById(project.track);
   const scalePercent = Math.round((plan.scale.value / 5) * 100);
 
@@ -52,7 +52,7 @@ export function PlanDialog({ project, onClose }: PlanDialogProps) {
   }
 
   function downloadSkillBundle() {
-    const md = skillBundleMarkdown(project);
+    const md = skillBundleMarkdown(project, locale);
     const blob = new Blob([md], { type: "text/markdown;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -78,10 +78,10 @@ export function PlanDialog({ project, onClose }: PlanDialogProps) {
       >
         <header className="plan-dialog-head">
           <div>
-            <p className="section-kicker">Project Checkup</p>
+            <p className="section-kicker">{t("kicker")}</p>
             <h2 id="planTitle">{project.name}</h2>
             <p>
-              {project.tagline} 先看它能不能搓，再把提示词交给 AI 开工。
+              {project.tagline} {t("intro")}
             </p>
             <div className="plan-dialog-actions">
               <button type="button" className="copy-plan" onClick={copyPrompt}>
@@ -120,7 +120,7 @@ export function PlanDialog({ project, onClose }: PlanDialogProps) {
             </div>
             <div
               className="plan-scale-meter"
-              aria-label={`项目难度 Scale ${plan.scale.value}/5`}
+              aria-label={t("difficultyAria") + " " + plan.scale.value + "/5"}
             >
               <i style={{ width: `${scalePercent}%` }} />
             </div>
@@ -169,17 +169,17 @@ export function PlanDialog({ project, onClose }: PlanDialogProps) {
               rel="noreferrer"
             >
               <span>{t("demo")}</span>
-              <strong>先看能不能跑出效果</strong>
+              <strong>{t("tryDemo")}</strong>
               <em>{plan.demoUrl}</em>
             </a>
           )}
           <details className="plan-block plan-skill-block">
             <summary>
               <span>{t("skills")}</span>
-              <em>可选展开</em>
+              <em>{t("skillsExpand")}</em>
             </summary>
             <p>
-              这些不是必须先学的技术栈，只是可以和项目链接一起交给 AI 的参考工具。
+              {t("skillsNote")}
             </p>
             <div className="plan-skill-list">
               {plan.skills.map((skill) => (
@@ -190,7 +190,7 @@ export function PlanDialog({ project, onClose }: PlanDialogProps) {
                   rel="noreferrer"
                 >
                   <strong>{skill.name}</strong>
-                  <span>{skillUseReason(project, skill)}</span>
+                  <span>{skillUseReason(project, skill, locale)}</span>
                 </a>
               ))}
             </div>
@@ -206,7 +206,7 @@ export function PlanDialog({ project, onClose }: PlanDialogProps) {
           </details>
           <section className="plan-block plan-prompt-block">
             <div className="plan-block-head">
-              <h3>复制给 Codex 的开工提示词</h3>
+              <h3>{t("promptHeading")}</h3>
               <button type="button" className="copy-plan" onClick={copyPrompt}>
                 {copied ? t("copied") : t("copyPrompt")}
               </button>

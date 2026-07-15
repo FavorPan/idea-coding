@@ -24,6 +24,7 @@ export interface Project {
   tagline: string;
   stack: string[];
   mvp: string;
+  nameEn?: string;
   taglineEn?: string;
   mvpEn?: string;
   wow: number;
@@ -81,6 +82,7 @@ export interface BoardProject {
   tagline: string;
   stack: string[];
   mvp: string;
+  nameEn?: string;
   taglineEn?: string;
   mvpEn?: string;
   wow: number;

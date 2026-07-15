@@ -2,9 +2,10 @@
 // recommendation pool (curated projects + live star projects) as input,
 // so the caller controls data sourcing and we avoid module cycles.
 import type { StarterState } from "@/lib/data/types";
-import { starterLabels } from "@/lib/data/starter";
+import { starterLabels, starterLabelsEn } from "@/lib/data/starter";
 import { trackById, type BoardProject } from "./projects";
 import { formatCount } from "./format";
+import { defaultLocale, type Locale } from "@/i18n/config";
 
 export function starterScore(
   project: BoardProject,
@@ -67,16 +68,26 @@ export function starterRecommendations(
 export function starterReason(
   project: BoardProject,
   state: StarterState,
+  locale: Locale = defaultLocale,
 ): string {
+  const en = locale === "en";
   const track = trackById(project.track);
-  const timeText = starterLabels.time[state.time];
-  const goalText = starterLabels.goal[state.goal];
+  const labels = en ? starterLabelsEn : starterLabels;
+  const timeText = labels.time[state.time];
+  const goalText = labels.goal[state.goal];
+  const trackShort = track?.short ?? "";
   if (project.track === "stars") {
     const delta = project.deltaStars ?? 0;
-    return `适合想“${goalText}”的新手：近期增长 +${formatCount(delta)} stars，先复刻一个最小使用场景就能摸到前沿脉搏。`;
+    return en
+      ? `Suited to beginners who want to "${goalText}": recent growth +${formatCount(delta)} stars. Replicate a minimal use case first to feel the frontier.`
+      : `适合想“${goalText}”的新手：近期增长 +${formatCount(delta)} stars，先复刻一个最小使用场景就能摸到前沿脉搏。`;
   }
   if (project.track === "hardware") {
-    return `适合“${timeText}”动手：反馈来自真实设备，按 MVP 做出一个可见/可测的小结果。`;
+    return en
+      ? `Suited for "${timeText}" hands-on: feedback comes from real devices; build a visible, testable small result per the MVP.`
+      : `适合“${timeText}”动手：反馈来自真实设备，按 MVP 做出一个可见/可测的小结果。`;
   }
-  return `适合“${timeText}”开工：${track?.short}方向匹配“${goalText}”，先把 MVP 做成可演示版本。`;
+  return en
+    ? `Suited to start in "${timeText}": the ${trackShort} direction matches "${goalText}"; turn the MVP into a demoable version first.`
+    : `适合“${timeText}”开工：${track?.short}方向匹配“${goalText}”，先把 MVP 做成可演示版本。`;
 }
