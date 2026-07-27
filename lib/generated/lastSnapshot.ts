@@ -7,28 +7,26 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W04",
-  "taken": "2026-07-26T06:04:55.106Z",
+  "week": "2026-W05",
+  "taken": "2026-07-27T06:30:05.917Z",
   "counts": {
-    "affaan-m/ECC": 233403,
-    "n8n-io/n8n": 198027,
-    "earendil-works/pi": 77659,
-    "koala73/worldmonitor": 74276,
-    "ComposioHQ/awesome-claude-skills": 70699,
-    "pbakaus/impeccable": 50190,
-    "anthropics/claude-cookbooks": 49961,
-    "usestrix/strix": 44251,
-    "Alishahryar1/free-claude-code": 42315,
-    "VectifyAI/PageIndex": 34586,
-    "diegosouzapw/OmniRoute": 30212,
-    "OtterMind/Chat2DB": 26765,
-    "mksglu/context-mode": 19329,
-    "different-ai/openwork": 17188,
-    "MODSetter/SurfSense": 15471,
-    "Anionex/banana-slides": 15319,
-    "andrewyng/aisuite": 15267,
-    "open-metadata/OpenMetadata": 14567,
-    "alibaba/open-code-review": 13140,
-    "palmier-io/palmier-pro": 12295
+    "affaan-m/ECC": 233751,
+    "home-assistant/core": 89486,
+    "ComposioHQ/awesome-claude-skills": 70975,
+    "Leonxlnx/taste-skill": 68015,
+    "pbakaus/impeccable": 50888,
+    "anthropics/claude-cookbooks": 50355,
+    "Crosstalk-Solutions/project-nomad": 34856,
+    "VectifyAI/PageIndex": 34726,
+    "nrwl/nx": 29145,
+    "OtterMind/Chat2DB": 27265,
+    "decolua/9router": 23687,
+    "tashfeenahmed/freellmapi": 17118,
+    "andrewyng/aisuite": 15462,
+    "xbtlin/ai-berkshire": 14285,
+    "alibaba/open-code-review": 14124,
+    "Lightning-AI/litgpt": 13583,
+    "browseros-ai/BrowserOS": 12762,
+    "huggingface/speech-to-speech": 6504
   }
 };
