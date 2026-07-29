@@ -9,11 +9,11 @@ interface GeneratedMeta {
 }
 
 export const generatedMeta: GeneratedMeta = {
-  "refreshedAt": "2026-07-28T05:46:42.425Z",
+  "refreshedAt": "2026-07-29T05:53:37.535Z",
   "topics": [
     "trending"
   ],
-  "totalCandidates": 34,
-  "passedFilters": 22,
+  "totalCandidates": 32,
+  "passedFilters": 20,
   "topNPerTrack": 30
 };
