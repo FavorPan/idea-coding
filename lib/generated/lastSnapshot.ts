@@ -7,26 +7,28 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W06",
-  "taken": "2026-07-31T06:13:13.407Z",
+  "week": "2026-W02",
+  "taken": "2026-08-01T05:54:44.574Z",
   "counts": {
-    "affaan-m/ECC": 236359,
-    "harry0703/MoneyPrinterTurbo": 100704,
-    "JuliusBrussee/caveman": 94708,
-    "PaddlePaddle/PaddleOCR": 86618,
-    "Panniantong/Agent-Reach": 63052,
-    "mvanhorn/last30days-skill": 55698,
-    "microsoft/AI-For-Beginners": 54409,
-    "microsoft/VibeVoice": 51632,
-    "ChromeDevTools/chrome-devtools-mcp": 48154,
-    "github/awesome-copilot": 37274,
-    "nrwl/nx": 29161,
-    "bojieli/ai-agent-book": 27824,
-    "jenkinsci/jenkins": 26335,
-    "different-ai/openwork": 18926,
-    "JOYCEQL/magic-resume": 9319,
-    "huggingface/speech-to-speech": 9231,
-    "google-labs-code/stitch-skills": 7872,
-    "zarazhangrui/follow-builders": 6097
+    "affaan-m/ECC": 236687,
+    "NousResearch/hermes-agent": 223518,
+    "openai/whisper": 106316,
+    "harry0703/MoneyPrinterTurbo": 100839,
+    "Panniantong/Agent-Reach": 63509,
+    "appwrite/appwrite": 56742,
+    "mvanhorn/last30days-skill": 56336,
+    "microsoft/AI-For-Beginners": 55492,
+    "FlowiseAI/Flowise": 55079,
+    "microsoft/VibeVoice": 51725,
+    "ChromeDevTools/chrome-devtools-mcp": 48291,
+    "moeru-ai/airi": 46257,
+    "continuedev/continue": 35248,
+    "fishaudio/fish-speech": 31871,
+    "langchain-ai/deepagents": 27176,
+    "google-labs-code/design.md": 26825,
+    "different-ai/openwork": 19638,
+    "huggingface/transformers.js": 16224,
+    "zhaoxuya520/reverse-skill": 10987,
+    "0x4m4/hexstrike-ai": 10723
   }
 };
