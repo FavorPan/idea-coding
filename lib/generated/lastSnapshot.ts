@@ -8,27 +8,14 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W01",
-  "taken": "2026-08-03T06:22:48.560Z",
+  "taken": "2026-08-04T05:46:48.243Z",
   "counts": {
-    "NousResearch/hermes-agent": 224459,
-    "garrytan/gstack": 125978,
-    "microsoft/generative-ai-for-beginners": 115001,
-    "harry0703/MoneyPrinterTurbo": 101255,
-    "Panniantong/Agent-Reach": 65017,
-    "microsoft/AI-For-Beginners": 59665,
-    "mvanhorn/last30days-skill": 56989,
-    "jamiepine/voicebox": 48309,
-    "SimplifyJobs/Summer2027-Internships": 45731,
-    "diegosouzapw/OmniRoute": 38105,
-    "SillyTavern/SillyTavern": 31555,
-    "openai/codex-plugin-cc": 31024,
-    "esengine/DeepSeek-Reasonix": 29332,
-    "simstudioai/sim": 29307,
-    "nrwl/nx": 29175,
-    "decolua/9router": 24504,
-    "PrefectHQ/prefect": 23535,
-    "can1357/oh-my-pi": 21387,
-    "different-ai/openwork": 20486,
-    "Huanshere/VideoLingo": 18034
+    "louislam/uptime-kuma": 89785,
+    "PostHog/posthog": 37484,
+    "esengine/DeepSeek-Reasonix": 30179,
+    "simstudioai/sim": 29319,
+    "karakeep-app/karakeep": 28073,
+    "slopus/happy": 23088,
+    "TencentCloud/TencentDB-Agent-Memory": 12393
   }
 };
