@@ -7,15 +7,33 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W01",
-  "taken": "2026-08-04T05:46:48.243Z",
+  "week": "2026-W02",
+  "taken": "2026-08-05T05:52:24.591Z",
   "counts": {
-    "louislam/uptime-kuma": 89785,
-    "PostHog/posthog": 37484,
-    "esengine/DeepSeek-Reasonix": 30179,
-    "simstudioai/sim": 29319,
-    "karakeep-app/karakeep": 28073,
-    "slopus/happy": 23088,
-    "TencentCloud/TencentDB-Agent-Memory": 12393
+    "NousResearch/hermes-agent": 225633,
+    "Shubhamsaboo/awesome-llm-apps": 130597,
+    "microsoft/generative-ai-for-beginners": 116397,
+    "Leonxlnx/taste-skill": 72046,
+    "Panniantong/Agent-Reach": 66593,
+    "jamiepine/voicebox": 49216,
+    "usestrix/strix": 48472,
+    "SimplifyJobs/Summer2027-Internships": 45864,
+    "Alishahryar1/free-claude-code": 44378,
+    "K-Dense-AI/scientific-agent-skills": 32668,
+    "openai/codex-plugin-cc": 31322,
+    "esengine/DeepSeek-Reasonix": 30967,
+    "nrwl/nx": 29196,
+    "EveryInc/compound-engineering-plugin": 23928,
+    "alirezarezvani/claude-skills": 23830,
+    "czlonkowski/n8n-mcp": 22602,
+    "browser-use/video-use": 19464,
+    "zhaoxuya520/reverse-skill": 18269,
+    "TencentCloud/TencentDB-Agent-Memory": 14082,
+    "livekit/agents": 12518,
+    "facebook/astryx": 11624,
+    "wonderwhy-er/DesktopCommanderMCP": 9168,
+    "worldwonderer/oh-story-claudecode": 5057,
+    "huangruiteng/loopx": 1624,
+    "uber/ADR": 765
   }
 };
