@@ -13,7 +13,7 @@ const ROOT = path.resolve(__dirname, "..");
 
 // ── Agnes AI Hub config ───────────────────────────────────────────────────────
 const AGNES_BASE_URL = "https://apihub.agnes-ai.com/v1";
-const AGNES_MODEL = "agnes-2.0-flash";
+const AGNES_MODEL = "agnes-2.5-flash";
 const AGNES_API_KEY = process.env.AGNES_API_KEY;
 if (!AGNES_API_KEY) {
   console.error("❌ AGNES_API_KEY environment variable not set.");
