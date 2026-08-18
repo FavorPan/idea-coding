@@ -8,21 +8,26 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W03",
-  "taken": "2026-08-17T03:49:03.325Z",
+  "taken": "2026-08-18T03:43:06.371Z",
   "counts": {
-    "harry0703/MoneyPrinterTurbo": 104815,
-    "unslothai/unsloth": 72720,
-    "usestrix/strix": 53435,
-    "HKUDS/CLI-Anything": 47645,
-    "ToolJet/ToolJet": 40142,
-    "jundot/omlx": 18806,
-    "citrolabs/ego-lite": 11348,
-    "CodebuffAI/freebuff": 9709,
-    "THUDM/slime": 8069,
-    "mnfst/awesome-free-llm-apis": 6693,
-    "cursor/plugins": 3061,
-    "darkzOGx/youtube-automation-agent": 2102,
-    "chaitanyagiri/munder-difflin": 1260,
-    "0xSero/ai-data-extraction": 1136
+    "immich-app/immich": 111261,
+    "harry0703/MoneyPrinterTurbo": 106461,
+    "unslothai/unsloth": 73287,
+    "santifer/career-ops": 64852,
+    "mvanhorn/last30days-skill": 58518,
+    "usestrix/strix": 54365,
+    "HKUDS/CLI-Anything": 47716,
+    "microsoft/qlib": 47670,
+    "ToolJet/ToolJet": 40406,
+    "volcengine/OpenViking": 28931,
+    "mukul975/Anthropic-Cybersecurity-Skills": 28539,
+    "QwenLM/qwen-code": 27128,
+    "jundot/omlx": 19051,
+    "calesthio/Crucix": 11459,
+    "0x4m4/hexstrike-ai": 11154,
+    "freestylefly/awesome-gpt-image-2": 11137,
+    "Blaizzy/mlx-audio": 7750,
+    "liustack/modlens": 2868,
+    "akitaonrails/ai-memory": 2212
   }
 };
