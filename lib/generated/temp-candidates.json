@@ -5,7 +5,7 @@
     "fullName": "huggingface/transformers",
     "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
     "language": "Python",
-    "stargazersCount": 164560,
+    "stargazersCount": 164592,
     "url": "https://github.com/huggingface/transformers",
     "track": "stars",
     "topic": "trending"
@@ -16,7 +16,7 @@
     "fullName": "DietrichGebert/ponytail",
     "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
     "language": "JavaScript",
-    "stargazersCount": 114956,
+    "stargazersCount": 115805,
     "url": "https://github.com/DietrichGebert/ponytail",
     "track": "stars",
     "topic": "trending"
@@ -27,7 +27,7 @@
     "fullName": "Graphify-Labs/graphify",
     "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
     "language": "Python",
-    "stargazersCount": 111846,
+    "stargazersCount": 112119,
     "url": "https://github.com/Graphify-Labs/graphify",
     "track": "stars",
     "topic": "trending"
@@ -38,7 +38,7 @@
     "fullName": "thedotmack/claude-mem",
     "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
     "language": "JavaScript",
-    "stargazersCount": 92466,
+    "stargazersCount": 92537,
     "url": "https://github.com/thedotmack/claude-mem",
     "track": "stars",
     "topic": "trending"
@@ -49,7 +49,7 @@
     "fullName": "addyosmani/agent-skills",
     "description": "Production-grade engineering skills for AI coding agents.",
     "language": "JavaScript",
-    "stargazersCount": 90446,
+    "stargazersCount": 90585,
     "url": "https://github.com/addyosmani/agent-skills",
     "track": "stars",
     "topic": "trending"
@@ -60,7 +60,7 @@
     "fullName": "OpenHands/OpenHands",
     "description": "🙌 OpenHands: AI-Driven Development",
     "language": "TypeScript",
-    "stargazersCount": 85417,
+    "stargazersCount": 85508,
     "url": "https://github.com/OpenHands/OpenHands",
     "track": "stars",
     "topic": "trending"
@@ -71,7 +71,7 @@
     "fullName": "koala73/worldmonitor",
     "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
     "language": "TypeScript",
-    "stargazersCount": 84640,
+    "stargazersCount": 84730,
     "url": "https://github.com/koala73/worldmonitor",
     "track": "stars",
     "topic": "trending"
@@ -82,7 +82,7 @@
     "fullName": "ComposioHQ/awesome-claude-skills",
     "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
     "language": "Python",
-    "stargazersCount": 73788,
+    "stargazersCount": 73841,
     "url": "https://github.com/ComposioHQ/awesome-claude-skills",
     "track": "stars",
     "topic": "trending"
@@ -93,7 +93,7 @@
     "fullName": "Mintplex-Labs/anything-llm",
     "description": "Stop renting your intelligence. Own it with AnythingLLM. Everything you need for a powerful local-first agent experience ",
     "language": "JavaScript",
-    "stargazersCount": 65329,
+    "stargazersCount": 65354,
     "url": "https://github.com/Mintplex-Labs/anything-llm",
     "track": "stars",
     "topic": "trending"
@@ -104,7 +104,7 @@
     "fullName": "pbakaus/impeccable",
     "description": "The design language that makes your AI harness better at design.",
     "language": "JavaScript",
-    "stargazersCount": 63513,
+    "stargazersCount": 63678,
     "url": "https://github.com/pbakaus/impeccable",
     "track": "stars",
     "topic": "trending"
@@ -115,7 +115,7 @@
     "fullName": "mvanhorn/last30days-skill",
     "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
     "language": "Python",
-    "stargazersCount": 59842,
+    "stargazersCount": 60054,
     "url": "https://github.com/mvanhorn/last30days-skill",
     "track": "stars",
     "topic": "trending"
@@ -126,7 +126,7 @@
     "fullName": "diegosouzapw/OmniRoute",
     "description": "Never stop coding. Free MIT AI gateway: one endpoint, 350 providers (90+ free), 1200+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 450+ contributors",
     "language": "TypeScript",
-    "stargazersCount": 57331,
+    "stargazersCount": 57743,
     "url": "https://github.com/diegosouzapw/OmniRoute",
     "track": "stars",
     "topic": "trending"
@@ -137,7 +137,7 @@
     "fullName": "twentyhq/twenty",
     "description": "The open alternative to Salesforce, designed for AI.",
     "language": "TypeScript",
-    "stargazersCount": 55778,
+    "stargazersCount": 55821,
     "url": "https://github.com/twentyhq/twenty",
     "track": "stars",
     "topic": "trending"
@@ -148,7 +148,7 @@
     "fullName": "calesthio/OpenMontage",
     "description": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
     "language": "Python",
-    "stargazersCount": 53013,
+    "stargazersCount": 53579,
     "url": "https://github.com/calesthio/OpenMontage",
     "track": "stars",
     "topic": "trending"
@@ -159,7 +159,7 @@
     "fullName": "bmad-code-org/BMAD-METHOD",
     "description": "Breakthrough Method for Agile Ai Driven Development",
     "language": "JavaScript",
-    "stargazersCount": 52418,
+    "stargazersCount": 52431,
     "url": "https://github.com/bmad-code-org/BMAD-METHOD",
     "track": "stars",
     "topic": "trending"
@@ -170,7 +170,7 @@
     "fullName": "rohitg00/ai-engineering-from-scratch",
     "description": "Learn it. Build it. Ship it for others.",
     "language": "Python",
-    "stargazersCount": 50493,
+    "stargazersCount": 50753,
     "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
     "track": "stars",
     "topic": "trending"
@@ -181,7 +181,7 @@
     "fullName": "ChromeDevTools/chrome-devtools-mcp",
     "description": "Chrome DevTools for coding agents",
     "language": "TypeScript",
-    "stargazersCount": 49892,
+    "stargazersCount": 50039,
     "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
     "track": "stars",
     "topic": "trending"
@@ -192,7 +192,7 @@
     "fullName": "abhigyanpatwari/GitNexus",
     "description": "GitNexus: The Zero-Server Code Intelligence Engine -       GitNexus is a client-side knowledge graph creator that runs entirely in your browser. Drop in a git repository (Github, Gitlab, Azure, Local) or ZIP file, and get an interactive knowledge graph with a built in Graph RAG Agent. Perfect for code exploration",
     "language": "TypeScript",
-    "stargazersCount": 46058,
+    "stargazersCount": 46252,
     "url": "https://github.com/abhigyanpatwari/GitNexus",
     "track": "stars",
     "topic": "trending"
@@ -203,7 +203,7 @@
     "fullName": "K-Dense-AI/scientific-agent-skills",
     "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 175,000+ scientists worldwide. 163 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
     "language": "Python",
-    "stargazersCount": 35995,
+    "stargazersCount": 37147,
     "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
     "track": "stars",
     "topic": "trending"
@@ -214,7 +214,7 @@
     "fullName": "anthropics/claude-plugins-official",
     "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
     "language": "Python",
-    "stargazersCount": 34893,
+    "stargazersCount": 35153,
     "url": "https://github.com/anthropics/claude-plugins-official",
     "track": "stars",
     "topic": "trending"
@@ -225,19 +225,8 @@
     "fullName": "HKUDS/Vibe-Trading",
     "description": "\"Vibe-Trading: Your Personal Trading Agent\"",
     "language": "Python",
-    "stargazersCount": 31944,
+    "stargazersCount": 32007,
     "url": "https://github.com/HKUDS/Vibe-Trading",
-    "track": "stars",
-    "topic": "trending"
-  },
-  {
-    "repo": "rohitg00/agentmemory",
-    "name": "agentmemory",
-    "fullName": "rohitg00/agentmemory",
-    "description": "#1 Persistent memory for AI coding agents based on real-world benchmarks",
-    "language": "TypeScript",
-    "stargazersCount": 27661,
-    "url": "https://github.com/rohitg00/agentmemory",
     "track": "stars",
     "topic": "trending"
   },
@@ -247,8 +236,19 @@
     "fullName": "tt-a1i/archify",
     "description": "Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained HTML with motion and crisp export.",
     "language": "JavaScript",
-    "stargazersCount": 26001,
+    "stargazersCount": 28907,
     "url": "https://github.com/tt-a1i/archify",
+    "track": "stars",
+    "topic": "trending"
+  },
+  {
+    "repo": "rohitg00/agentmemory",
+    "name": "agentmemory",
+    "fullName": "rohitg00/agentmemory",
+    "description": "#1 Persistent memory for AI coding agents based on real-world benchmarks",
+    "language": "TypeScript",
+    "stargazersCount": 27700,
+    "url": "https://github.com/rohitg00/agentmemory",
     "track": "stars",
     "topic": "trending"
   },
@@ -258,7 +258,7 @@
     "fullName": "EveryInc/compound-engineering-plugin",
     "description": "Official Compound Engineering plugin for Claude Code, Codex, Cursor, and more",
     "language": "TypeScript",
-    "stargazersCount": 24640,
+    "stargazersCount": 24661,
     "url": "https://github.com/EveryInc/compound-engineering-plugin",
     "track": "stars",
     "topic": "trending"
@@ -269,19 +269,8 @@
     "fullName": "freestylefly/awesome-gpt-image-2",
     "description": "Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中",
     "language": "JavaScript",
-    "stargazersCount": 24044,
+    "stargazersCount": 24593,
     "url": "https://github.com/freestylefly/awesome-gpt-image-2",
-    "track": "stars",
-    "topic": "trending"
-  },
-  {
-    "repo": "HKUDS/AI-Trader",
-    "name": "AI-Trader",
-    "fullName": "HKUDS/AI-Trader",
-    "description": "\"AI-Trader: 100% Fully-Automated Agent-Native Trading\"  ",
-    "language": "Python",
-    "stargazersCount": 21739,
-    "url": "https://github.com/HKUDS/AI-Trader",
     "track": "stars",
     "topic": "trending"
   },
@@ -291,8 +280,19 @@
     "fullName": "tashfeenahmed/freellmapi",
     "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
     "language": "TypeScript",
-    "stargazersCount": 21386,
+    "stargazersCount": 21818,
     "url": "https://github.com/tashfeenahmed/freellmapi",
+    "track": "stars",
+    "topic": "trending"
+  },
+  {
+    "repo": "HKUDS/AI-Trader",
+    "name": "AI-Trader",
+    "fullName": "HKUDS/AI-Trader",
+    "description": "\"AI-Trader: 100% Fully-Automated Agent-Native Trading\"  ",
+    "language": "Python",
+    "stargazersCount": 21806,
+    "url": "https://github.com/HKUDS/AI-Trader",
     "track": "stars",
     "topic": "trending"
   },
@@ -302,7 +302,7 @@
     "fullName": "livekit/agents",
     "description": "A framework for building realtime voice AI agents 🤖🎙️📹 ",
     "language": "Python",
-    "stargazersCount": 13244,
+    "stargazersCount": 13430,
     "url": "https://github.com/livekit/agents",
     "track": "stars",
     "topic": "trending"
@@ -313,7 +313,7 @@
     "fullName": "mnfst/awesome-free-llm-apis",
     "description": "List of Permanent Free LLM API  (API Keys)",
     "language": "JavaScript",
-    "stargazersCount": 7140,
+    "stargazersCount": 7182,
     "url": "https://github.com/mnfst/awesome-free-llm-apis",
     "track": "stars",
     "topic": "trending"
@@ -324,7 +324,7 @@
     "fullName": "cursor/plugins",
     "description": "Cursor plugin specification and official plugins",
     "language": "TypeScript",
-    "stargazersCount": 5862,
+    "stargazersCount": 6051,
     "url": "https://github.com/cursor/plugins",
     "track": "stars",
     "topic": "trending"
@@ -335,7 +335,7 @@
     "fullName": "Agenta-AI/agenta",
     "description": "Agenta is a workspace where you and your team build agents and automations.",
     "language": "TypeScript",
-    "stargazersCount": 4580,
+    "stargazersCount": 4634,
     "url": "https://github.com/Agenta-AI/agenta",
     "track": "stars",
     "topic": "trending"
@@ -346,7 +346,7 @@
     "fullName": "conorbronsdon/avoid-ai-writing",
     "description": "Skill that audits and rewrites content to remove AI writing patterns. Use it with your favorite agents including Claude Code, OpenClaw, Codex, and Hermes.",
     "language": "JavaScript",
-    "stargazersCount": 3565,
+    "stargazersCount": 3682,
     "url": "https://github.com/conorbronsdon/avoid-ai-writing",
     "track": "stars",
     "topic": "trending"
@@ -357,7 +357,7 @@
     "fullName": "cloudflare/security-audit-skill",
     "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
     "language": "JavaScript",
-    "stargazersCount": 3141,
+    "stargazersCount": 3154,
     "url": "https://github.com/cloudflare/security-audit-skill",
     "track": "stars",
     "topic": "trending"
@@ -368,7 +368,7 @@
     "fullName": "music-assistant/server",
     "description": "Music Assistant is a free, opensource Media library manager that connects to your streaming services and a wide range of connected speakers. The server is the beating heart, the core of Music Assistant and must run on an always-on device like a Raspberry Pi, a NAS or an Intel NUC or alike.",
     "language": "Python",
-    "stargazersCount": 2999,
+    "stargazersCount": 3009,
     "url": "https://github.com/music-assistant/server",
     "track": "stars",
     "topic": "trending"
@@ -379,7 +379,7 @@
     "fullName": "JetBrains/go-modern-guidelines",
     "description": "Help AI coding agents write modern Go",
     "language": "Go",
-    "stargazersCount": 2470,
+    "stargazersCount": 2697,
     "url": "https://github.com/JetBrains/go-modern-guidelines",
     "track": "stars",
     "topic": "trending"
@@ -390,7 +390,7 @@
     "fullName": "ArnasDon/wacrm",
     "description": "Self-hostable CRM template for WhatsApp — shared inbox, contacts, sales pipelines, broadcasts, and no-code automations. Fork it, brand it, host it.",
     "language": "TypeScript",
-    "stargazersCount": 2130,
+    "stargazersCount": 2143,
     "url": "https://github.com/ArnasDon/wacrm",
     "track": "stars",
     "topic": "trending"
@@ -401,7 +401,7 @@
     "fullName": "NeoLabHQ/context-engineering-kit",
     "description": "Hand-crafted Claude Code Skills focused on improving agent results quality. Compatible with OpenCode, Cursor, Antigravity, Gemini CLI, and others. Includes CodeRabbit open-source alternative.",
     "language": "TypeScript",
-    "stargazersCount": 1455,
+    "stargazersCount": 1476,
     "url": "https://github.com/NeoLabHQ/context-engineering-kit",
     "track": "stars",
     "topic": "trending"
@@ -412,7 +412,7 @@
     "fullName": "microsoft/hve-core",
     "description": "A refined collection of Hypervelocity Engineering components (instructions, prompts, agents, and skills) to start your project off right, or upgrade your existing projects to get the most out of GitHub Copilot",
     "language": "Python",
-    "stargazersCount": 1376,
+    "stargazersCount": 1390,
     "url": "https://github.com/microsoft/hve-core",
     "track": "stars",
     "topic": "trending"
@@ -423,7 +423,7 @@
     "fullName": "atlassian/atlassian-mcp-server",
     "description": "Official remote MCP server for Atlassian. Securely connect Jira, Confluence, Jira Service Management, Bitbucket, and Compass to Claude, ChatGPT, Cursor, VS Code, and other AI tools using OAuth 2.1 or API tokens.",
     "language": "JavaScript",
-    "stargazersCount": 998,
+    "stargazersCount": 999,
     "url": "https://github.com/atlassian/atlassian-mcp-server",
     "track": "stars",
     "topic": "trending"
