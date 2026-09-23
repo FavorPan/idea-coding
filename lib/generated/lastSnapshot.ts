@@ -8,30 +8,17 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W04",
-  "taken": "2026-09-22T08:16:52.305Z",
+  "taken": "2026-09-23T08:18:30.244Z",
   "counts": {
-    "anthropics/claude-code": 147541,
-    "browser-use/browser-use": 115844,
-    "earendil-works/pi": 108317,
-    "addyosmani/agent-skills": 98243,
-    "Leonxlnx/taste-skill": 89151,
-    "docling-project/docling": 67578,
-    "ZhuLinsen/daily_stock_analysis": 65472,
-    "Crosstalk-Solutions/project-nomad": 38034,
-    "davila7/claude-code-templates": 30900,
-    "yikart/AiToEarn": 26305,
-    "bendlang/bend": 22393,
-    "owainlewis/awesome-artificial-intelligence": 16539,
-    "krillinai/OpenCreator": 12145,
-    "calesthio/Crucix": 11884,
-    "zhouxiaoka/autoclip": 8538,
-    "mnfst/awesome-free-llm-apis": 8047,
-    "akitaonrails/ai-memory": 7899,
-    "BuilderIO/agent-native": 6191,
-    "aipoch/open-science": 4898,
-    "cloudflare/mcp-server-cloudflare": 4272,
-    "yynxxxxx/Codex-X": 3804,
-    "Jakubantalik/thinking-orbs": 3131,
-    "TNT-Likely/PanWatch": 1237
+    "affaan-m/ECC": 265691,
+    "anthropics/claude-code": 147716,
+    "stablyai/orca": 76006,
+    "upscayl/upscayl": 49818,
+    "Crosstalk-Solutions/project-nomad": 38157,
+    "openai/codex-plugin-cc": 33499,
+    "davila7/claude-code-templates": 31252,
+    "yikart/AiToEarn": 26350,
+    "browser-use/video-use": 26128,
+    "dream-num/univer": 15891
   }
 };
