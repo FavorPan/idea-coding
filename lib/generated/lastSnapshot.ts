@@ -7,18 +7,24 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W04",
-  "taken": "2026-09-23T08:18:30.244Z",
+  "week": "2026-W05",
+  "taken": "2026-09-24T08:10:38.574Z",
   "counts": {
-    "affaan-m/ECC": 265691,
-    "anthropics/claude-code": 147716,
-    "stablyai/orca": 76006,
-    "upscayl/upscayl": 49818,
-    "Crosstalk-Solutions/project-nomad": 38157,
-    "openai/codex-plugin-cc": 33499,
-    "davila7/claude-code-templates": 31252,
-    "yikart/AiToEarn": 26350,
-    "browser-use/video-use": 26128,
-    "dream-num/univer": 15891
+    "Comfy-Org/ComfyUI": 134776,
+    "thedotmack/claude-mem": 94574,
+    "PaddlePaddle/PaddleOCR": 90129,
+    "pbakaus/impeccable": 70530,
+    "code-yeongyu/oh-my-openagent": 69356,
+    "byoungd/up": 63728,
+    "HKUDS/CLI-Anything": 50080,
+    "DeusData/codebase-memory-mcp": 44719,
+    "ToolJet/ToolJet": 40985,
+    "github/awesome-copilot": 39342,
+    "strands-agents/harness-sdk": 7996,
+    "BuilderIO/agent-native": 6694,
+    "agent-substrate/substrate": 3626,
+    "spotify/portal-ai-plugins": 2223,
+    "DuarteSantos8/openGym": 1321,
+    "elidickinson/pi-claude-bridge": 438
   }
 };
