@@ -8,23 +8,18 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W05",
-  "taken": "2026-09-24T08:10:38.574Z",
+  "taken": "2026-09-25T08:33:47.280Z",
   "counts": {
-    "Comfy-Org/ComfyUI": 134776,
-    "thedotmack/claude-mem": 94574,
-    "PaddlePaddle/PaddleOCR": 90129,
-    "pbakaus/impeccable": 70530,
-    "code-yeongyu/oh-my-openagent": 69356,
-    "byoungd/up": 63728,
-    "HKUDS/CLI-Anything": 50080,
-    "DeusData/codebase-memory-mcp": 44719,
-    "ToolJet/ToolJet": 40985,
-    "github/awesome-copilot": 39342,
-    "strands-agents/harness-sdk": 7996,
-    "BuilderIO/agent-native": 6694,
-    "agent-substrate/substrate": 3626,
-    "spotify/portal-ai-plugins": 2223,
-    "DuarteSantos8/openGym": 1321,
-    "elidickinson/pi-claude-bridge": 438
+    "anthropics/skills": 178035,
+    "harry0703/MoneyPrinterTurbo": 125580,
+    "stablyai/orca": 77777,
+    "pbakaus/impeccable": 70876,
+    "Mintplex-Labs/anything-llm": 66444,
+    "rohitg00/ai-engineering-from-scratch": 56933,
+    "HKUDS/CLI-Anything": 50438,
+    "SimplifyJobs/Summer2027-Internships": 47680,
+    "can1357/oh-my-pi": 33230,
+    "davila7/claude-code-templates": 31748,
+    "androoAGI/starnet": 270
   }
 };
