@@ -7,18 +7,18 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W05",
-  "taken": "2026-09-26T08:20:01.558Z",
+  "week": "2026-W04",
+  "taken": "2026-09-27T08:58:06.912Z",
   "counts": {
-    "openclaw/openclaw": 390546,
-    "anomalyco/opencode": 210109,
-    "anthropics/skills": 178445,
-    "Leonxlnx/taste-skill": 90215,
-    "stablyai/orca": 78541,
-    "pbakaus/impeccable": 71335,
-    "rohitg00/ai-engineering-from-scratch": 57777,
-    "Alishahryar1/free-claude-code": 55954,
-    "ChromeDevTools/chrome-devtools-mcp": 52619,
-    "HKUDS/CLI-Anything": 50569
+    "openclaw/openclaw": 390620,
+    "Chalarangelo/30-seconds-of-code": 129253,
+    "harry0703/MoneyPrinterTurbo": 126191,
+    "Leonxlnx/taste-skill": 90461,
+    "pbakaus/impeccable": 71651,
+    "usestrix/strix": 65090,
+    "rohitg00/ai-engineering-from-scratch": 58634,
+    "bmad-code-org/BMAD-METHOD": 53529,
+    "HKUDS/CLI-Anything": 50666,
+    "wshobson/agents": 40018
   }
 };
