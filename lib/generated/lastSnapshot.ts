@@ -8,22 +8,17 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W05",
-  "taken": "2026-09-28T09:27:26.353Z",
+  "taken": "2026-09-29T09:29:22.137Z",
   "counts": {
-    "DietrichGebert/ponytail": 147129,
-    "rohitg00/ai-engineering-from-scratch": 59907,
-    "vectorize-io/hindsight": 39122,
-    "dream-num/univer": 20863,
-    "microsoft/data-formulator": 17465,
-    "chuspeeism/dashi-ppt-skill": 8914,
-    "pacifio/atlas": 8160,
-    "mobile-next/mobile-mcp": 8061,
-    "NVIDIA/Model-Optimizer": 4977,
-    "melgarafael/DeskcommCRM": 4168,
-    "darkzOGx/youtube-automation-agent": 3887,
-    "ulsklyc/yuvomi": 1601,
-    "mvschwarz/openrig": 1264,
-    "Gimanh/taskview-community": 1099,
-    "androoAGI/starnet": 685
+    "code-yeongyu/oh-my-openagent": 69645,
+    "byoungd/up": 65286,
+    "rohitg00/ai-engineering-from-scratch": 60707,
+    "moeru-ai/airi": 49772,
+    "vectorize-io/hindsight": 41786,
+    "vercel-labs/agent-skills": 31699,
+    "topoteretes/cognee": 31195,
+    "alirezarezvani/claude-skills": 26811,
+    "dream-num/univer": 21538,
+    "agent0ai/agent-zero": 19341
   }
 };
