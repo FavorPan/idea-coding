@@ -7,18 +7,27 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W05",
-  "taken": "2026-09-30T09:20:48.351Z",
+  "week": "2026-W01",
+  "taken": "2026-10-01T09:48:15.051Z",
   "counts": {
-    "DietrichGebert/ponytail": 148500,
-    "harry0703/MoneyPrinterTurbo": 127208,
-    "tt-a1i/archify": 74694,
-    "pbakaus/impeccable": 72752,
-    "mem0ai/mem0": 66352,
-    "byoungd/up": 66032,
-    "rohitg00/ai-engineering-from-scratch": 61858,
-    "moeru-ai/airi": 49856,
-    "vectorize-io/hindsight": 43362,
-    "VectifyAI/PageIndex": 37726
+    "openclaw/openclaw": 391097,
+    "affaan-m/ECC": 270375,
+    "firecrawl/firecrawl": 187329,
+    "DietrichGebert/ponytail": 149632,
+    "anthropics/claude-code": 148768,
+    "harry0703/MoneyPrinterTurbo": 127769,
+    "Leonxlnx/taste-skill": 91638,
+    "OpenHands/OpenHands": 89691,
+    "ComposioHQ/awesome-claude-skills": 76256,
+    "pbakaus/impeccable": 73217,
+    "TencentCloud/Octop": 6155,
+    "aipoch/open-science": 5344,
+    "VectifyAI/OpenKB": 4698,
+    "mvschwarz/openrig": 3264,
+    "FB208/OpenBidKit_Yibiao": 3083,
+    "aws/agent-toolkit-for-aws": 2768,
+    "Javis603/token-monitor": 2531,
+    "xiufengsun/TokenTracker": 1929,
+    "Mafifrizi/ARES": 571
   }
 };
