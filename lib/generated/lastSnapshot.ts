@@ -7,27 +7,18 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W01",
-  "taken": "2026-10-01T09:48:15.051Z",
+  "week": "2026-W02",
+  "taken": "2026-10-02T09:23:56.071Z",
   "counts": {
-    "openclaw/openclaw": 391097,
-    "affaan-m/ECC": 270375,
-    "firecrawl/firecrawl": 187329,
-    "DietrichGebert/ponytail": 149632,
-    "anthropics/claude-code": 148768,
-    "harry0703/MoneyPrinterTurbo": 127769,
-    "Leonxlnx/taste-skill": 91638,
-    "OpenHands/OpenHands": 89691,
-    "ComposioHQ/awesome-claude-skills": 76256,
-    "pbakaus/impeccable": 73217,
-    "TencentCloud/Octop": 6155,
-    "aipoch/open-science": 5344,
-    "VectifyAI/OpenKB": 4698,
-    "mvschwarz/openrig": 3264,
-    "FB208/OpenBidKit_Yibiao": 3083,
-    "aws/agent-toolkit-for-aws": 2768,
-    "Javis603/token-monitor": 2531,
-    "xiufengsun/TokenTracker": 1929,
-    "Mafifrizi/ARES": 571
+    "affaan-m/ECC": 270880,
+    "Snailclimb/JavaGuide": 159009,
+    "DietrichGebert/ponytail": 151006,
+    "Shubhamsaboo/awesome-llm-apps": 140533,
+    "garrytan/gstack": 134737,
+    "harry0703/MoneyPrinterTurbo": 128021,
+    "earendil-works/pi": 111496,
+    "addyosmani/agent-skills": 100415,
+    "thedotmack/claude-mem": 95161,
+    "ComposioHQ/awesome-claude-skills": 76340
   }
 };
