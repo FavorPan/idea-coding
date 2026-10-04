@@ -7,18 +7,18 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W02",
-  "taken": "2026-10-03T08:53:18.218Z",
+  "week": "2026-W01",
+  "taken": "2026-10-04T09:24:06.582Z",
   "counts": {
-    "affaan-m/ECC": 271626,
-    "n8n-io/n8n": 206540,
-    "DietrichGebert/ponytail": 152178,
-    "garrytan/gstack": 134848,
-    "JuliusBrussee/caveman": 109239,
-    "addyosmani/agent-skills": 100632,
-    "thedotmack/claude-mem": 95215,
-    "Panniantong/Agent-Reach": 89168,
-    "ComposioHQ/awesome-claude-skills": 76390,
-    "pbakaus/impeccable": 74548
+    "affaan-m/ECC": 272508,
+    "DietrichGebert/ponytail": 153977,
+    "anthropics/claude-code": 149329,
+    "earendil-works/pi": 112293,
+    "JuliusBrussee/caveman": 109667,
+    "addyosmani/agent-skills": 100942,
+    "thedotmack/claude-mem": 95783,
+    "Leonxlnx/taste-skill": 92426,
+    "Panniantong/Agent-Reach": 90173,
+    "pbakaus/impeccable": 75671
   }
 };
