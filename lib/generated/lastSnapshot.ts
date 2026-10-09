@@ -7,18 +7,18 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W02",
-  "taken": "2026-10-08T10:02:15.066Z",
+  "week": "2026-W03",
+  "taken": "2026-10-09T10:05:21.230Z",
   "counts": {
-    "anthropics/claude-code": 149833,
-    "addyosmani/agent-skills": 103136,
-    "thedotmack/claude-mem": 97998,
-    "calesthio/OpenMontage": 65234,
-    "twentyhq/twenty": 58071,
-    "ayghri/i-have-adhd": 55544,
-    "cathrynlavery/diagram-design": 45496,
-    "garrytan/gbrain": 30675,
-    "manaflow-ai/cmux": 27987,
-    "anthropics/knowledge-work-plugins": 27241
+    "addyosmani/agent-skills": 103556,
+    "thedotmack/claude-mem": 98815,
+    "Leonxlnx/taste-skill": 93969,
+    "koala73/worldmonitor": 88116,
+    "ayghri/i-have-adhd": 55963,
+    "bmad-code-org/BMAD-METHOD": 53975,
+    "cathrynlavery/diagram-design": 47185,
+    "github/awesome-copilot": 39841,
+    "ItzCrazyKns/Vane": 37169,
+    "tashfeenahmed/freellmapi": 32328
   }
 };
