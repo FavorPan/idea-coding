@@ -8,17 +8,17 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W03",
-  "taken": "2026-10-09T10:05:21.230Z",
+  "taken": "2026-10-10T09:26:36.067Z",
   "counts": {
-    "addyosmani/agent-skills": 103556,
-    "thedotmack/claude-mem": 98815,
-    "Leonxlnx/taste-skill": 93969,
-    "koala73/worldmonitor": 88116,
-    "ayghri/i-have-adhd": 55963,
-    "bmad-code-org/BMAD-METHOD": 53975,
-    "cathrynlavery/diagram-design": 47185,
-    "github/awesome-copilot": 39841,
-    "ItzCrazyKns/Vane": 37169,
-    "tashfeenahmed/freellmapi": 32328
+    "Snailclimb/JavaGuide": 158916,
+    "addyosmani/agent-skills": 104254,
+    "thedotmack/claude-mem": 99079,
+    "tt-a1i/archify": 81458,
+    "unslothai/unsloth": 77678,
+    "headroomlabs-ai/headroom": 74875,
+    "BerriAI/litellm": 60839,
+    "hugohe3/ppt-master": 58926,
+    "ayghri/i-have-adhd": 56190,
+    "bojieli/ai-agent-book": 53292
   }
 };
