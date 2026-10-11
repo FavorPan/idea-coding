@@ -7,18 +7,17 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W03",
-  "taken": "2026-10-10T09:26:36.067Z",
+  "week": "2026-W02",
+  "taken": "2026-10-11T09:41:50.239Z",
   "counts": {
-    "Snailclimb/JavaGuide": 158916,
-    "addyosmani/agent-skills": 104254,
-    "thedotmack/claude-mem": 99079,
-    "tt-a1i/archify": 81458,
-    "unslothai/unsloth": 77678,
-    "headroomlabs-ai/headroom": 74875,
-    "BerriAI/litellm": 60839,
-    "hugohe3/ppt-master": 58926,
-    "ayghri/i-have-adhd": 56190,
-    "bojieli/ai-agent-book": 53292
+    "multica-ai/andrej-karpathy-skills": 218575,
+    "huggingface/transformers": 167461,
+    "anthropics/claude-code": 150119,
+    "immich-app/immich": 115996,
+    "addyosmani/agent-skills": 104636,
+    "Leonxlnx/taste-skill": 94541,
+    "tt-a1i/archify": 81815,
+    "hugohe3/ppt-master": 59924,
+    "cathrynlavery/diagram-design": 49407
   }
 };
