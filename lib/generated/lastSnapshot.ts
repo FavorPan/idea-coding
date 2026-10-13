@@ -7,18 +7,18 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W02",
-  "taken": "2026-10-12T10:15:59.084Z",
+  "week": "2026-W03",
+  "taken": "2026-10-13T10:07:39.342Z",
   "counts": {
-    "openclaw/openclaw": 391742,
-    "huggingface/transformers": 167554,
-    "langgenius/dify": 158227,
-    "Shubhamsaboo/awesome-llm-apps": 141344,
-    "ComposioHQ/awesome-claude-skills": 76910,
-    "hugohe3/ppt-master": 60751,
-    "Alishahryar1/free-claude-code": 58231,
-    "cathrynlavery/diagram-design": 51468,
-    "anthropics/knowledge-work-plugins": 29190,
-    "mksglu/context-mode": 26768
+    "openclaw/openclaw": 391828,
+    "affaan-m/ECC": 278173,
+    "huggingface/transformers": 167630,
+    "open-webui/open-webui": 155470,
+    "home-assistant/core": 91436,
+    "calesthio/OpenMontage": 67755,
+    "hugohe3/ppt-master": 61439,
+    "Alishahryar1/free-claude-code": 59741,
+    "cathrynlavery/diagram-design": 53278,
+    "Crosstalk-Solutions/project-nomad": 39764
   }
 };
