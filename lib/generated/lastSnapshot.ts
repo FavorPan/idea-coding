@@ -8,20 +8,17 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W03",
-  "taken": "2026-10-14T08:25:25.594Z",
+  "taken": "2026-10-15T08:00:59.467Z",
   "counts": {
-    "open-webui/open-webui": 155607,
-    "harry0703/MoneyPrinterTurbo": 130644,
-    "ComposioHQ/awesome-claude-skills": 77053,
-    "mvanhorn/last30days-skill": 64189,
-    "Alishahryar1/free-claude-code": 60358,
-    "cathrynlavery/diagram-design": 54734,
-    "Crosstalk-Solutions/project-nomad": 40003,
-    "lyogavin/airllm": 38526,
-    "tashfeenahmed/freellmapi": 34886,
-    "vercel-labs/skills": 34758,
-    "Javis603/token-monitor": 3061,
-    "supabase/agent-skills": 2819,
-    "sgl-project/sglang-omni": 1473
+    "anomalyco/opencode": 213615,
+    "supabase/supabase": 111570,
+    "stablyai/orca": 92811,
+    "home-assistant/core": 91514,
+    "ruvnet/ruflo": 74723,
+    "Alishahryar1/free-claude-code": 60617,
+    "jamiepine/voicebox": 57526,
+    "coreyhaines31/marketingskills": 54801,
+    "ChromeDevTools/chrome-devtools-mcp": 53567,
+    "HKUDS/CLI-Anything": 52783
   }
 };
