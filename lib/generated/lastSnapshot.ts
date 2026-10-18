@@ -7,28 +7,18 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W04",
-  "taken": "2026-10-17T07:37:53.178Z",
+  "week": "2026-W03",
+  "taken": "2026-10-18T07:47:55.524Z",
   "counts": {
-    "affaan-m/ECC": 281741,
-    "anomalyco/opencode": 214453,
-    "harry0703/MoneyPrinterTurbo": 132211,
-    "stablyai/orca": 94695,
-    "ruvnet/ruflo": 75739,
-    "Fission-AI/OpenSpec": 72182,
-    "rohitg00/ai-engineering-from-scratch": 70423,
-    "HKUDS/CLI-Anything": 53646,
-    "Imbad0202/academic-research-skills": 52457,
-    "K-Dense-AI/scientific-agent-skills": 51753,
-    "anthropics/claude-plugins-official": 40913,
-    "github/awesome-copilot": 40105,
-    "mksglu/context-mode": 30332,
-    "ifixai-ai/iFixAi": 28870,
-    "earthtojake/text-to-cad": 21078,
-    "krillinai/OpenCreator": 13565,
-    "cursor/plugins": 12085,
-    "google/artemis": 12073,
-    "google-labs-code/stitch-skills": 8529,
-    "superdesigndev/superdesign": 7433
+    "affaan-m/ECC": 282771,
+    "anomalyco/opencode": 215725,
+    "DietrichGebert/ponytail": 166442,
+    "anthropics/claude-code": 152137,
+    "stablyai/orca": 95742,
+    "ruvnet/ruflo": 76209,
+    "Fission-AI/OpenSpec": 72287,
+    "cline/cline": 70489,
+    "coreyhaines31/marketingskills": 55286,
+    "bmad-code-org/BMAD-METHOD": 54272
   }
 };
