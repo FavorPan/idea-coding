@@ -7,18 +7,27 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W03",
-  "taken": "2026-10-19T08:31:09.595Z",
+  "week": "2026-W04",
+  "taken": "2026-10-20T08:13:44.998Z",
   "counts": {
-    "affaan-m/ECC": 283534,
-    "anomalyco/opencode": 217003,
-    "DietrichGebert/ponytail": 167361,
-    "Comfy-Org/ComfyUI": 138987,
-    "Graphify-Labs/graphify": 128642,
-    "earendil-works/pi": 116277,
-    "TauricResearch/TradingAgents": 111983,
-    "addyosmani/agent-skills": 108348,
-    "stablyai/orca": 97260,
-    "diegosouzapw/OmniRoute": 78257
+    "anomalyco/opencode": 218195,
+    "DietrichGebert/ponytail": 168431,
+    "anthropics/claude-code": 152817,
+    "Comfy-Org/ComfyUI": 140141,
+    "Graphify-Labs/graphify": 129404,
+    "stablyai/orca": 98765,
+    "koala73/worldmonitor": 88879,
+    "tt-a1i/archify": 86023,
+    "diegosouzapw/OmniRoute": 78666,
+    "ruvnet/ruflo": 77411,
+    "usestrix/strix": 70195,
+    "HKUDS/CLI-Anything": 55457,
+    "Imbad0202/academic-research-skills": 53066,
+    "anthropics/claude-plugins-official": 43267,
+    "cloudflare/security-audit-skill": 32872,
+    "datawhalechina/easy-vibe": 20040,
+    "anthropics/claude-quickstarts": 18882,
+    "cursor/plugins": 13134,
+    "google/artemis": 13094
   }
 };
