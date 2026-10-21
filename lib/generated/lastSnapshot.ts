@@ -8,26 +8,20 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W04",
-  "taken": "2026-10-20T08:13:44.998Z",
+  "taken": "2026-10-21T08:18:20.081Z",
   "counts": {
-    "anomalyco/opencode": 218195,
-    "DietrichGebert/ponytail": 168431,
-    "anthropics/claude-code": 152817,
-    "Comfy-Org/ComfyUI": 140141,
-    "Graphify-Labs/graphify": 129404,
-    "stablyai/orca": 98765,
-    "koala73/worldmonitor": 88879,
-    "tt-a1i/archify": 86023,
-    "diegosouzapw/OmniRoute": 78666,
-    "ruvnet/ruflo": 77411,
-    "usestrix/strix": 70195,
-    "HKUDS/CLI-Anything": 55457,
-    "Imbad0202/academic-research-skills": 53066,
-    "anthropics/claude-plugins-official": 43267,
-    "cloudflare/security-audit-skill": 32872,
-    "datawhalechina/easy-vibe": 20040,
-    "anthropics/claude-quickstarts": 18882,
-    "cursor/plugins": 13134,
-    "google/artemis": 13094
+    "openclaw/openclaw": 392711,
+    "anomalyco/opencode": 219292,
+    "DietrichGebert/ponytail": 170387,
+    "msitarzewski/agency-agents": 162634,
+    "anthropics/claude-code": 152709,
+    "Comfy-Org/ComfyUI": 141072,
+    "Graphify-Labs/graphify": 130699,
+    "stablyai/orca": 100262,
+    "ruvnet/ruflo": 78007,
+    "headroomlabs-ai/headroom": 76910,
+    "shy3130/tick-stock-panel": 6198,
+    "WorldFlowAI/everything-claude-code": 5153,
+    "croffasia/itsaplan": 1675
   }
 };
