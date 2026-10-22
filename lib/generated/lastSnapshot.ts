@@ -8,20 +8,17 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W04",
-  "taken": "2026-10-21T08:18:20.081Z",
+  "taken": "2026-10-22T08:19:32.622Z",
   "counts": {
-    "openclaw/openclaw": 392711,
-    "anomalyco/opencode": 219292,
-    "DietrichGebert/ponytail": 170387,
-    "msitarzewski/agency-agents": 162634,
-    "anthropics/claude-code": 152709,
-    "Comfy-Org/ComfyUI": 141072,
-    "Graphify-Labs/graphify": 130699,
-    "stablyai/orca": 100262,
-    "ruvnet/ruflo": 78007,
-    "headroomlabs-ai/headroom": 76910,
-    "shy3130/tick-stock-panel": 6198,
-    "WorldFlowAI/everything-claude-code": 5153,
-    "croffasia/itsaplan": 1675
+    "openclaw/openclaw": 392723,
+    "anomalyco/opencode": 219891,
+    "DietrichGebert/ponytail": 172276,
+    "Comfy-Org/ComfyUI": 141773,
+    "Graphify-Labs/graphify": 132067,
+    "supabase/supabase": 113201,
+    "stablyai/orca": 101868,
+    "Panniantong/Agent-Reach": 100780,
+    "koala73/worldmonitor": 89153,
+    "tt-a1i/archify": 87286
   }
 };
