@@ -7,18 +7,19 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W05",
-  "taken": "2026-10-24T07:54:14.013Z",
+  "week": "2026-W04",
+  "taken": "2026-10-25T08:08:17.297Z",
   "counts": {
-    "firecrawl/firecrawl": 194767,
-    "DietrichGebert/ponytail": 175011,
-    "Graphify-Labs/graphify": 134026,
-    "supabase/supabase": 113840,
-    "TauricResearch/TradingAgents": 113475,
-    "stablyai/orca": 104205,
-    "OpenHands/OpenHands": 91699,
-    "twentyhq/twenty": 59620,
-    "luongnv89/claude-howto": 44094,
-    "cloudflare/security-audit-skill": 42662
+    "DietrichGebert/ponytail": 175700,
+    "TauricResearch/TradingAgents": 113807,
+    "google-gemini/gemini-cli": 108269,
+    "thedotmack/claude-mem": 102910,
+    "louislam/uptime-kuma": 92881,
+    "tt-a1i/archify": 88877,
+    "pbakaus/impeccable": 86706,
+    "ComposioHQ/awesome-claude-skills": 77874,
+    "crewAIInc/crewAI": 60079,
+    "coreyhaines31/marketingskills": 56411,
+    "NomaDamas/CozyClay": 1010
   }
 };
