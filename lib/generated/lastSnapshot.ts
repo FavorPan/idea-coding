@@ -8,18 +8,17 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W04",
-  "taken": "2026-10-25T08:08:17.297Z",
+  "taken": "2026-10-26T08:33:21.342Z",
   "counts": {
-    "DietrichGebert/ponytail": 175700,
-    "TauricResearch/TradingAgents": 113807,
-    "google-gemini/gemini-cli": 108269,
-    "thedotmack/claude-mem": 102910,
-    "louislam/uptime-kuma": 92881,
-    "tt-a1i/archify": 88877,
-    "pbakaus/impeccable": 86706,
-    "ComposioHQ/awesome-claude-skills": 77874,
-    "crewAIInc/crewAI": 60079,
-    "coreyhaines31/marketingskills": 56411,
-    "NomaDamas/CozyClay": 1010
+    "affaan-m/ECC": 289105,
+    "firecrawl/firecrawl": 195426,
+    "Shubhamsaboo/awesome-llm-apps": 143082,
+    "garrytan/gstack": 137764,
+    "TauricResearch/TradingAgents": 115064,
+    "google-gemini/gemini-cli": 108395,
+    "thedotmack/claude-mem": 103212,
+    "pbakaus/impeccable": 88211,
+    "unslothai/unsloth": 78574,
+    "coollabsio/coolify": 64743
   }
 };
