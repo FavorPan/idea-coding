@@ -7,18 +7,29 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W04",
-  "taken": "2026-10-26T08:33:21.342Z",
+  "week": "2026-W05",
+  "taken": "2026-10-27T08:46:27.407Z",
   "counts": {
-    "affaan-m/ECC": 289105,
-    "firecrawl/firecrawl": 195426,
-    "Shubhamsaboo/awesome-llm-apps": 143082,
-    "garrytan/gstack": 137764,
-    "TauricResearch/TradingAgents": 115064,
-    "google-gemini/gemini-cli": 108395,
-    "thedotmack/claude-mem": 103212,
-    "pbakaus/impeccable": 88211,
-    "unslothai/unsloth": 78574,
-    "coollabsio/coolify": 64743
+    "affaan-m/ECC": 290175,
+    "multica-ai/andrej-karpathy-skills": 225019,
+    "Significant-Gravitas/AutoGPT": 187785,
+    "garrytan/gstack": 137868,
+    "TauricResearch/TradingAgents": 116713,
+    "addyosmani/agent-skills": 110907,
+    "Panniantong/Agent-Reach": 104273,
+    "thedotmack/claude-mem": 103534,
+    "home-assistant/core": 91762,
+    "pbakaus/impeccable": 89645,
+    "AgriciDaniel/claude-seo": 22379,
+    "OpenWhispr/openwhispr": 10078,
+    "chuspeeism/dashi-ppt-skill": 10074,
+    "makecindy/cindy": 6968,
+    "homeassistant-ai/ha-mcp": 5288,
+    "microsoft/skill-recorder": 5260,
+    "eugeniughelbur/obsidian-second-brain": 4963,
+    "darkzOGx/youtube-automation-agent": 4753,
+    "HarnessRouter/harnessrouter": 3717,
+    "JetBrains/thinkrail": 3335,
+    "ulsklyc/yuvomi": 2052
   }
 };
