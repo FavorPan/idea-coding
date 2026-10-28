@@ -8,28 +8,18 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W05",
-  "taken": "2026-10-27T08:46:27.407Z",
+  "taken": "2026-10-28T09:20:29.815Z",
   "counts": {
-    "affaan-m/ECC": 290175,
-    "multica-ai/andrej-karpathy-skills": 225019,
-    "Significant-Gravitas/AutoGPT": 187785,
-    "garrytan/gstack": 137868,
-    "TauricResearch/TradingAgents": 116713,
-    "addyosmani/agent-skills": 110907,
-    "Panniantong/Agent-Reach": 104273,
-    "thedotmack/claude-mem": 103534,
-    "home-assistant/core": 91762,
-    "pbakaus/impeccable": 89645,
-    "AgriciDaniel/claude-seo": 22379,
-    "OpenWhispr/openwhispr": 10078,
-    "chuspeeism/dashi-ppt-skill": 10074,
-    "makecindy/cindy": 6968,
-    "homeassistant-ai/ha-mcp": 5288,
-    "microsoft/skill-recorder": 5260,
-    "eugeniughelbur/obsidian-second-brain": 4963,
-    "darkzOGx/youtube-automation-agent": 4753,
-    "HarnessRouter/harnessrouter": 3717,
-    "JetBrains/thinkrail": 3335,
-    "ulsklyc/yuvomi": 2052
+    "affaan-m/ECC": 291217,
+    "garrytan/gstack": 137995,
+    "TauricResearch/TradingAgents": 117563,
+    "addyosmani/agent-skills": 111273,
+    "Panniantong/Agent-Reach": 105200,
+    "thedotmack/claude-mem": 103827,
+    "pbakaus/impeccable": 91138,
+    "tt-a1i/archify": 90718,
+    "rohitg00/ai-engineering-from-scratch": 74827,
+    "byoungd/up": 69609,
+    "Raktim94/nodedr-restaurant-pos": 192
   }
 };
