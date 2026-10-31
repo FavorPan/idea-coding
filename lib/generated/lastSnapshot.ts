@@ -8,17 +8,17 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W06",
-  "taken": "2026-10-30T09:38:04.139Z",
+  "taken": "2026-10-31T09:18:29.190Z",
   "counts": {
-    "affaan-m/ECC": 292961,
-    "addyosmani/agent-skills": 111835,
-    "Leonxlnx/taste-skill": 105872,
-    "thedotmack/claude-mem": 105184,
-    "microsoft/playwright": 98853,
-    "pbakaus/impeccable": 96203,
-    "rohitg00/ai-engineering-from-scratch": 75642,
-    "ansible/ansible": 71158,
-    "vectorize-io/hindsight": 56345,
-    "KeygraphHQ/shannon": 50487
+    "openclaw/openclaw": 393513,
+    "affaan-m/ECC": 293606,
+    "n8n-io/n8n": 209173,
+    "anthropics/skills": 185583,
+    "addyosmani/agent-skills": 112065,
+    "thedotmack/claude-mem": 106839,
+    "Leonxlnx/taste-skill": 106559,
+    "pbakaus/impeccable": 97526,
+    "MemPalace/mempalace": 60172,
+    "vectorize-io/hindsight": 56769
   }
 };
