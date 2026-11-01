@@ -7,18 +7,18 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W06",
-  "taken": "2026-10-31T09:18:29.190Z",
+  "week": "2026-W01",
+  "taken": "2026-11-01T10:06:09.906Z",
   "counts": {
-    "openclaw/openclaw": 393513,
-    "affaan-m/ECC": 293606,
-    "n8n-io/n8n": 209173,
-    "anthropics/skills": 185583,
-    "addyosmani/agent-skills": 112065,
-    "thedotmack/claude-mem": 106839,
-    "Leonxlnx/taste-skill": 106559,
-    "pbakaus/impeccable": 97526,
-    "MemPalace/mempalace": 60172,
-    "vectorize-io/hindsight": 56769
+    "anthropics/skills": 186061,
+    "DietrichGebert/ponytail": 181743,
+    "Graphify-Labs/graphify": 140218,
+    "addyosmani/agent-skills": 112373,
+    "stablyai/orca": 112008,
+    "thedotmack/claude-mem": 108356,
+    "Leonxlnx/taste-skill": 107337,
+    "pbakaus/impeccable": 98715,
+    "calesthio/OpenMontage": 74143,
+    "MemPalace/mempalace": 60208
   }
 };
