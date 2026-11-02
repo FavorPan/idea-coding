@@ -8,17 +8,17 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W01",
-  "taken": "2026-11-01T10:06:09.906Z",
+  "taken": "2026-11-02T10:34:22.316Z",
   "counts": {
-    "anthropics/skills": 186061,
-    "DietrichGebert/ponytail": 181743,
-    "Graphify-Labs/graphify": 140218,
-    "addyosmani/agent-skills": 112373,
-    "stablyai/orca": 112008,
-    "thedotmack/claude-mem": 108356,
-    "Leonxlnx/taste-skill": 107337,
-    "pbakaus/impeccable": 98715,
-    "calesthio/OpenMontage": 74143,
-    "MemPalace/mempalace": 60208
+    "anthropics/skills": 186559,
+    "anthropics/claude-code": 154229,
+    "thedotmack/claude-mem": 110123,
+    "Leonxlnx/taste-skill": 108215,
+    "calesthio/OpenMontage": 74714,
+    "coreyhaines31/marketingskills": 57944,
+    "upscayl/upscayl": 51619,
+    "LibreChat-AI/LibreChat": 46633,
+    "ifixai-ai/iFixAi": 42907,
+    "THU-MAIC/OpenMAIC": 42455
   }
 };
