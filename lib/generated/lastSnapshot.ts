@@ -8,17 +8,17 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W01",
-  "taken": "2026-11-02T10:34:22.316Z",
+  "taken": "2026-11-03T10:29:17.093Z",
   "counts": {
-    "anthropics/skills": 186559,
-    "anthropics/claude-code": 154229,
-    "thedotmack/claude-mem": 110123,
-    "Leonxlnx/taste-skill": 108215,
-    "calesthio/OpenMontage": 74714,
-    "coreyhaines31/marketingskills": 57944,
-    "upscayl/upscayl": 51619,
-    "LibreChat-AI/LibreChat": 46633,
-    "ifixai-ai/iFixAi": 42907,
-    "THU-MAIC/OpenMAIC": 42455
+    "affaan-m/ECC": 296038,
+    "addyosmani/agent-skills": 112921,
+    "thedotmack/claude-mem": 111223,
+    "koala73/worldmonitor": 90051,
+    "cheaper-inference/OmniRoute": 84096,
+    "calesthio/OpenMontage": 75607,
+    "mvanhorn/last30days-skill": 66423,
+    "Crosstalk-Solutions/project-nomad": 41947,
+    "vercel-labs/skills": 37870,
+    "Donchitos/Claude-Code-Game-Studios": 34084
   }
 };
