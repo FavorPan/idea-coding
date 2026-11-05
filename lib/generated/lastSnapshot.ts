@@ -7,18 +7,18 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W01",
-  "taken": "2026-11-03T10:29:17.093Z",
+  "week": "2026-W02",
+  "taken": "2026-11-05T10:23:11.674Z",
   "counts": {
-    "affaan-m/ECC": 296038,
-    "addyosmani/agent-skills": 112921,
-    "thedotmack/claude-mem": 111223,
-    "koala73/worldmonitor": 90051,
-    "cheaper-inference/OmniRoute": 84096,
-    "calesthio/OpenMontage": 75607,
-    "mvanhorn/last30days-skill": 66423,
-    "Crosstalk-Solutions/project-nomad": 41947,
-    "vercel-labs/skills": 37870,
-    "Donchitos/Claude-Code-Game-Studios": 34084
+    "affaan-m/ECC": 297498,
+    "garrytan/gstack": 139585,
+    "harry0703/MoneyPrinterTurbo": 139493,
+    "thedotmack/claude-mem": 113228,
+    "calesthio/OpenMontage": 76829,
+    "Crosstalk-Solutions/project-nomad": 42245,
+    "davila7/claude-code-templates": 33137,
+    "QwenLM/qwen-code": 29018,
+    "openobserve/openobserve": 22812,
+    "Usagi-org/ai-goofish-monitor": 17261
   }
 };
