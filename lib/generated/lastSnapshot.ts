@@ -8,17 +8,23 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W02",
-  "taken": "2026-11-05T10:23:11.674Z",
+  "taken": "2026-11-06T10:45:15.356Z",
   "counts": {
-    "affaan-m/ECC": 297498,
-    "garrytan/gstack": 139585,
-    "harry0703/MoneyPrinterTurbo": 139493,
-    "thedotmack/claude-mem": 113228,
-    "calesthio/OpenMontage": 76829,
-    "Crosstalk-Solutions/project-nomad": 42245,
-    "davila7/claude-code-templates": 33137,
-    "QwenLM/qwen-code": 29018,
-    "openobserve/openobserve": 22812,
-    "Usagi-org/ai-goofish-monitor": 17261
+    "harry0703/MoneyPrinterTurbo": 140026,
+    "immich-app/immich": 118375,
+    "Fission-AI/OpenSpec": 74118,
+    "vercel-labs/agent-browser": 46192,
+    "Anil-matcha/Open-Generative-AI": 32722,
+    "harvard-edge/cs249r_book": 29987,
+    "google/skills": 22587,
+    "vercel-labs/agent-desktop": 17589,
+    "The-PR-Agent/pr-agent": 15182,
+    "max-sixty/worktrunk": 11702,
+    "awslabs/aidlc-workflows": 5811,
+    "NVIDIA/Model-Optimizer": 5546,
+    "google-gemini/gemini-skills": 4411,
+    "sandbox-quantum/switch": 3995,
+    "liguobao/ds-harness-remote": 2030,
+    "KenKaiii/gg-framework": 207
   }
 };
