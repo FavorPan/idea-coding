@@ -8,27 +8,17 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W02",
-  "taken": "2026-11-07T09:43:28.213Z",
+  "taken": "2026-11-08T09:54:17.048Z",
   "counts": {
-    "stablyai/orca": 118081,
-    "byoungd/up": 70229,
-    "cloudflare/security-audit-skill": 64609,
-    "microsoft/VibeVoice": 56568,
-    "tldraw/tldraw": 51393,
-    "dgtlmoon/changedetection.io": 35606,
-    "Anil-matcha/Open-Generative-AI": 32875,
-    "mlflow/mlflow": 28712,
-    "google/skills": 23011,
-    "airbytehq/airbyte": 22330,
-    "ParadevAI/Paradev": 16055,
-    "NVIDIA/TensorRT-LLM": 15031,
-    "meta/astryx": 14088,
-    "NVIDIA/auto-ontology": 9501,
-    "openai/plugins": 7793,
-    "elder-plinius/T3MP3ST": 6963,
-    "melgarafael/DeskcommCRM": 5240,
-    "pipeshub-ai/pipeshub-ai": 4036,
-    "southleft/figma-console-mcp": 3188,
-    "HaD0Yun/CozyClay": 1562
+    "anthropics/skills": 189046,
+    "anthropics/claude-code": 154943,
+    "garrytan/gstack": 140708,
+    "stablyai/orca": 118847,
+    "cheaper-inference/OmniRoute": 85544,
+    "Fission-AI/OpenSpec": 74252,
+    "byoungd/up": 70268,
+    "cloudflare/security-audit-skill": 66225,
+    "jamiepine/voicebox": 60050,
+    "microsoft/VibeVoice": 56734
   }
 };
