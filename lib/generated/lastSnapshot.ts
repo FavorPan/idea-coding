@@ -7,18 +7,18 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W02",
-  "taken": "2026-11-10T10:47:44.920Z",
+  "week": "2026-W03",
+  "taken": "2026-11-11T10:22:42.268Z",
   "counts": {
-    "anthropics/skills": 191693,
-    "DietrichGebert/ponytail": 188052,
-    "addyosmani/agent-skills": 114751,
-    "rohitg00/ai-engineering-from-scratch": 78208,
-    "ZhuLinsen/daily_stock_analysis": 69442,
-    "cloudflare/security-audit-skill": 68549,
-    "Imbad0202/academic-research-skills": 56291,
-    "upscayl/upscayl": 52145,
-    "vercel-labs/agent-browser": 48851,
-    "OpenBMB/VoxCPM": 42179
+    "anthropics/skills": 192761,
+    "DietrichGebert/ponytail": 188696,
+    "addyosmani/agent-skills": 115491,
+    "rohitg00/ai-engineering-from-scratch": 78410,
+    "cloudflare/security-audit-skill": 69765,
+    "ZhuLinsen/daily_stock_analysis": 69677,
+    "Imbad0202/academic-research-skills": 56438,
+    "upscayl/upscayl": 52229,
+    "vercel-labs/agent-browser": 49542,
+    "OpenBMB/VoxCPM": 42245
   }
 };

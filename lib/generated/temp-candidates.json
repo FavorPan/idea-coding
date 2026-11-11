@@ -5,7 +5,7 @@
     "fullName": "anthropics/skills",
     "description": "Public repository for Agent Skills",
     "language": "Python",
-    "stargazersCount": 191693,
+    "stargazersCount": 192761,
     "url": "https://github.com/anthropics/skills",
     "track": "stars",
     "topic": "trending"
@@ -16,7 +16,7 @@
     "fullName": "DietrichGebert/ponytail",
     "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
     "language": "JavaScript",
-    "stargazersCount": 188052,
+    "stargazersCount": 188696,
     "url": "https://github.com/DietrichGebert/ponytail",
     "track": "stars",
     "topic": "trending"
@@ -27,7 +27,7 @@
     "fullName": "addyosmani/agent-skills",
     "description": "Production-grade engineering skills for AI coding agents.",
     "language": "JavaScript",
-    "stargazersCount": 114751,
+    "stargazersCount": 115491,
     "url": "https://github.com/addyosmani/agent-skills",
     "track": "stars",
     "topic": "trending"
@@ -38,19 +38,8 @@
     "fullName": "rohitg00/ai-engineering-from-scratch",
     "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
     "language": "Python",
-    "stargazersCount": 78208,
+    "stargazersCount": 78410,
     "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
-    "track": "stars",
-    "topic": "trending"
-  },
-  {
-    "repo": "ZhuLinsen/daily_stock_analysis",
-    "name": "daily_stock_analysis",
-    "fullName": "ZhuLinsen/daily_stock_analysis",
-    "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
-    "language": "Python",
-    "stargazersCount": 69442,
-    "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
     "track": "stars",
     "topic": "trending"
   },
@@ -60,8 +49,19 @@
     "fullName": "cloudflare/security-audit-skill",
     "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
     "language": "JavaScript",
-    "stargazersCount": 68549,
+    "stargazersCount": 69765,
     "url": "https://github.com/cloudflare/security-audit-skill",
+    "track": "stars",
+    "topic": "trending"
+  },
+  {
+    "repo": "ZhuLinsen/daily_stock_analysis",
+    "name": "daily_stock_analysis",
+    "fullName": "ZhuLinsen/daily_stock_analysis",
+    "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+    "language": "Python",
+    "stargazersCount": 69677,
+    "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
     "track": "stars",
     "topic": "trending"
   },
@@ -71,7 +71,7 @@
     "fullName": "Imbad0202/academic-research-skills",
     "description": "Academic Research Skills for Claude Code: research → write → review → revise → finalize",
     "language": "Python",
-    "stargazersCount": 56291,
+    "stargazersCount": 56438,
     "url": "https://github.com/Imbad0202/academic-research-skills",
     "track": "stars",
     "topic": "trending"
@@ -82,7 +82,7 @@
     "fullName": "upscayl/upscayl",
     "description": "🆙 Upscayl - #1 Free and Open Source AI Image Upscaler for Linux, MacOS and Windows.",
     "language": "TypeScript",
-    "stargazersCount": 52145,
+    "stargazersCount": 52229,
     "url": "https://github.com/upscayl/upscayl",
     "track": "stars",
     "topic": "trending"
@@ -93,7 +93,7 @@
     "fullName": "vercel-labs/agent-browser",
     "description": "Browser automation CLI for AI agents",
     "language": "Rust",
-    "stargazersCount": 48851,
+    "stargazersCount": 49542,
     "url": "https://github.com/vercel-labs/agent-browser",
     "track": "stars",
     "topic": "trending"
@@ -104,7 +104,7 @@
     "fullName": "OpenBMB/VoxCPM",
     "description": "VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning",
     "language": "Python",
-    "stargazersCount": 42179,
+    "stargazersCount": 42245,
     "url": "https://github.com/OpenBMB/VoxCPM",
     "track": "stars",
     "topic": "trending"
@@ -115,7 +115,7 @@
     "fullName": "ashishpatel26/500-AI-Agents-Projects",
     "description": "The 500 AI Agents Projects is a curated collection of AI agent use cases across various industries. It showcases practical applications and provides links to open-source projects for implementation, illustrating how AI agents are transforming sectors such as healthcare, finance, education, retail, and more.",
     "language": "Python",
-    "stargazersCount": 39570,
+    "stargazersCount": 39690,
     "url": "https://github.com/ashishpatel26/500-AI-Agents-Projects",
     "track": "stars",
     "topic": "trending"
@@ -126,7 +126,7 @@
     "fullName": "Anil-matcha/Open-Generative-AI",
     "description": "Uncensored Open-source alternative to AI video platforms — Free AI image & video generation studio with 600+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.",
     "language": "JavaScript",
-    "stargazersCount": 33756,
+    "stargazersCount": 34005,
     "url": "https://github.com/Anil-matcha/Open-Generative-AI",
     "track": "stars",
     "topic": "trending"
@@ -137,19 +137,8 @@
     "fullName": "garrytan/gbrain",
     "description": "Garry's Opinionated OpenClaw/Hermes Agent Brain",
     "language": "TypeScript",
-    "stargazersCount": 32384,
+    "stargazersCount": 32603,
     "url": "https://github.com/garrytan/gbrain",
-    "track": "stars",
-    "topic": "trending"
-  },
-  {
-    "repo": "fosrl/pangolin",
-    "name": "pangolin",
-    "fullName": "fosrl/pangolin",
-    "description": "Modern networking and security platform providing secure access and connectivity to apps, infrastructure, and AI workloads. Connect and protect your users.",
-    "language": "TypeScript",
-    "stargazersCount": 23536,
-    "url": "https://github.com/fosrl/pangolin",
     "track": "stars",
     "topic": "trending"
   },
@@ -159,8 +148,19 @@
     "fullName": "meta/astryx",
     "description": "An open source design system that's fully customizable and agent ready",
     "language": "TypeScript",
-    "stargazersCount": 21246,
+    "stargazersCount": 24010,
     "url": "https://github.com/meta/astryx",
+    "track": "stars",
+    "topic": "trending"
+  },
+  {
+    "repo": "fosrl/pangolin",
+    "name": "pangolin",
+    "fullName": "fosrl/pangolin",
+    "description": "Modern networking and security platform providing secure access and connectivity to apps, infrastructure, and AI workloads. Connect and protect your users.",
+    "language": "TypeScript",
+    "stargazersCount": 23580,
+    "url": "https://github.com/fosrl/pangolin",
     "track": "stars",
     "topic": "trending"
   },
@@ -170,7 +170,7 @@
     "fullName": "anthropics/claude-quickstarts",
     "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
     "language": "Python",
-    "stargazersCount": 20224,
+    "stargazersCount": 20702,
     "url": "https://github.com/anthropics/claude-quickstarts",
     "track": "stars",
     "topic": "trending"
@@ -180,8 +180,8 @@
     "name": "OpenSandbox",
     "fullName": "opensandbox-group/OpenSandbox",
     "description": "Secure, Fast, and Extensible Sandbox runtime for AI agents.",
-    "language": "Python",
-    "stargazersCount": 17064,
+    "language": "Go",
+    "stargazersCount": 17178,
     "url": "https://github.com/opensandbox-group/OpenSandbox",
     "track": "stars",
     "topic": "trending"
@@ -192,7 +192,7 @@
     "fullName": "a-ghorbani/pocketpal-ai",
     "description": "An app that brings language models directly to your phone.",
     "language": "TypeScript",
-    "stargazersCount": 9157,
+    "stargazersCount": 9205,
     "url": "https://github.com/a-ghorbani/pocketpal-ai",
     "track": "stars",
     "topic": "trending"
@@ -203,7 +203,7 @@
     "fullName": "google-labs-code/stitch-skills",
     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
     "language": "TypeScript",
-    "stargazersCount": 8714,
+    "stargazersCount": 8732,
     "url": "https://github.com/google-labs-code/stitch-skills",
     "track": "stars",
     "topic": "trending"
@@ -214,7 +214,7 @@
     "fullName": "homeassistant-ai/ha-mcp",
     "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
     "language": "Python",
-    "stargazersCount": 6301,
+    "stargazersCount": 6923,
     "url": "https://github.com/homeassistant-ai/ha-mcp",
     "track": "stars",
     "topic": "trending"
@@ -225,7 +225,7 @@
     "fullName": "conorbronsdon/avoid-ai-writing",
     "description": "Skill that audits and rewrites content to remove AI writing patterns. Use it with your favorite agents including Claude Code, OpenClaw, Codex, and Hermes.",
     "language": "JavaScript",
-    "stargazersCount": 5542,
+    "stargazersCount": 5573,
     "url": "https://github.com/conorbronsdon/avoid-ai-writing",
     "track": "stars",
     "topic": "trending"
@@ -236,7 +236,7 @@
     "fullName": "rlaope/oh-my-hermes",
     "description": "⚚ The ultrawork agent with AI coworkers wired into you",
     "language": "Python",
-    "stargazersCount": 5327,
+    "stargazersCount": 5425,
     "url": "https://github.com/rlaope/oh-my-hermes",
     "track": "stars",
     "topic": "trending"
@@ -247,7 +247,7 @@
     "fullName": "figma/mcp-server-guide",
     "description": "A guide on how to use the Figma MCP server",
     "language": "Python",
-    "stargazersCount": 2170,
+    "stargazersCount": 2173,
     "url": "https://github.com/figma/mcp-server-guide",
     "track": "stars",
     "topic": "trending"
@@ -258,7 +258,7 @@
     "fullName": "WhiteTowerAI/ohmygame",
     "description": "The open-source studio for making games with AI. Your own one-person game studio. Everything you need to make games with AI, in one app. Game canvas.  Bring your own key.",
     "language": "TypeScript",
-    "stargazersCount": 1981,
+    "stargazersCount": 2072,
     "url": "https://github.com/WhiteTowerAI/ohmygame",
     "track": "stars",
     "topic": "trending"
