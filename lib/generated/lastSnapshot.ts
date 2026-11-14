@@ -8,17 +8,17 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W03",
-  "taken": "2026-11-13T10:33:38.022Z",
+  "taken": "2026-11-14T09:50:12.157Z",
   "counts": {
-    "n8n-io/n8n": 210363,
-    "huggingface/transformers": 168940,
-    "ggml-org/llama.cpp": 134804,
-    "addyosmani/agent-skills": 116957,
-    "supabase/supabase": 114955,
-    "openai/whisper": 112634,
-    "ZhuLinsen/daily_stock_analysis": 71186,
-    "Alishahryar1/free-claude-code": 69675,
-    "mvanhorn/last30days-skill": 67488,
-    "coreyhaines31/marketingskills": 60052
+    "affaan-m/ECC": 302598,
+    "DietrichGebert/ponytail": 190539,
+    "addyosmani/agent-skills": 117289,
+    "Leonxlnx/taste-skill": 115252,
+    "louislam/uptime-kuma": 93997,
+    "headroomlabs-ai/headroom": 79619,
+    "ZhuLinsen/daily_stock_analysis": 71994,
+    "asgeirtj/system_prompts_leaks": 71381,
+    "Alishahryar1/free-claude-code": 70007,
+    "mvanhorn/last30days-skill": 67596
   }
 };
