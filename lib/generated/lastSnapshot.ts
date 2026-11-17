@@ -8,17 +8,17 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W03",
-  "taken": "2026-11-16T10:40:39.494Z",
+  "taken": "2026-11-17T11:30:25.402Z",
   "counts": {
-    "louislam/uptime-kuma": 94464,
-    "unslothai/unsloth": 79594,
-    "ChromeDevTools/chrome-devtools-mcp": 57361,
-    "tashfeenahmed/freellmapi": 53107,
-    "alibaba/open-code-review": 52578,
-    "HKUDS/Vibe-Trading": 38359,
-    "davila7/claude-code-templates": 33816,
-    "PrefectHQ/fastmcp": 28570,
-    "dream-num/univer": 26837,
-    "ag-ui-protocol/ag-ui": 18295
+    "affaan-m/ECC": 304952,
+    "DietrichGebert/ponytail": 192521,
+    "Graphify-Labs/graphify": 149288,
+    "stablyai/orca": 127284,
+    "ComposioHQ/awesome-claude-skills": 79689,
+    "usestrix/strix": 76193,
+    "mvanhorn/last30days-skill": 68523,
+    "jingyaogong/minimind": 65637,
+    "coreyhaines31/marketingskills": 60919,
+    "ChromeDevTools/chrome-devtools-mcp": 57915
   }
 };
