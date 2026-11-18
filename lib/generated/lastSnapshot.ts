@@ -7,18 +7,18 @@ interface LastSnapshot {
 }
 
 export const lastSnapshot: LastSnapshot = {
-  "week": "2026-W03",
-  "taken": "2026-11-17T11:30:25.402Z",
+  "week": "2026-W04",
+  "taken": "2026-11-18T11:10:45.661Z",
   "counts": {
-    "affaan-m/ECC": 304952,
-    "DietrichGebert/ponytail": 192521,
-    "Graphify-Labs/graphify": 149288,
-    "stablyai/orca": 127284,
-    "ComposioHQ/awesome-claude-skills": 79689,
-    "usestrix/strix": 76193,
-    "mvanhorn/last30days-skill": 68523,
-    "jingyaogong/minimind": 65637,
-    "coreyhaines31/marketingskills": 60919,
-    "ChromeDevTools/chrome-devtools-mcp": 57915
+    "affaan-m/ECC": 305994,
+    "n8n-io/n8n": 210813,
+    "huggingface/transformers": 169208,
+    "Leonxlnx/taste-skill": 118081,
+    "openai/whisper": 112996,
+    "punkpeye/awesome-mcp-servers": 97839,
+    "home-assistant/core": 92342,
+    "colbymchenry/codegraph": 77931,
+    "ansible/ansible": 71502,
+    "mvanhorn/last30days-skill": 69540
   }
 };
