@@ -8,17 +8,17 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W04",
-  "taken": "2026-11-18T11:10:45.661Z",
+  "taken": "2026-11-19T11:09:23.587Z",
   "counts": {
-    "affaan-m/ECC": 305994,
-    "n8n-io/n8n": 210813,
-    "huggingface/transformers": 169208,
-    "Leonxlnx/taste-skill": 118081,
-    "openai/whisper": 112996,
-    "punkpeye/awesome-mcp-servers": 97839,
-    "home-assistant/core": 92342,
-    "colbymchenry/codegraph": 77931,
-    "ansible/ansible": 71502,
-    "mvanhorn/last30days-skill": 69540
+    "affaan-m/ECC": 306899,
+    "n8n-io/n8n": 211353,
+    "huggingface/transformers": 169242,
+    "Leonxlnx/taste-skill": 118684,
+    "openai/whisper": 113080,
+    "punkpeye/awesome-mcp-servers": 98207,
+    "home-assistant/core": 92374,
+    "colbymchenry/codegraph": 78056,
+    "ansible/ansible": 71495,
+    "mvanhorn/last30days-skill": 70467
   }
 };

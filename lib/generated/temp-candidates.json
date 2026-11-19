@@ -5,7 +5,7 @@
     "fullName": "affaan-m/ECC",
     "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
     "language": "JavaScript",
-    "stargazersCount": 305994,
+    "stargazersCount": 306899,
     "url": "https://github.com/affaan-m/ECC",
     "track": "stars",
     "topic": "trending"
@@ -16,7 +16,7 @@
     "fullName": "n8n-io/n8n",
     "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
     "language": "TypeScript",
-    "stargazersCount": 210813,
+    "stargazersCount": 211353,
     "url": "https://github.com/n8n-io/n8n",
     "track": "stars",
     "topic": "trending"
@@ -27,7 +27,7 @@
     "fullName": "huggingface/transformers",
     "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
     "language": "Python",
-    "stargazersCount": 169208,
+    "stargazersCount": 169242,
     "url": "https://github.com/huggingface/transformers",
     "track": "stars",
     "topic": "trending"
@@ -38,7 +38,7 @@
     "fullName": "Leonxlnx/taste-skill",
     "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
     "language": "JavaScript",
-    "stargazersCount": 118081,
+    "stargazersCount": 118684,
     "url": "https://github.com/Leonxlnx/taste-skill",
     "track": "stars",
     "topic": "trending"
@@ -49,7 +49,7 @@
     "fullName": "openai/whisper",
     "description": "Robust Speech Recognition via Large-Scale Weak Supervision",
     "language": "Python",
-    "stargazersCount": 112996,
+    "stargazersCount": 113080,
     "url": "https://github.com/openai/whisper",
     "track": "stars",
     "topic": "trending"
@@ -60,7 +60,7 @@
     "fullName": "punkpeye/awesome-mcp-servers",
     "description": "A collection of MCP servers.",
     "language": null,
-    "stargazersCount": 97839,
+    "stargazersCount": 98207,
     "url": "https://github.com/punkpeye/awesome-mcp-servers",
     "track": "stars",
     "topic": "trending"
@@ -71,7 +71,7 @@
     "fullName": "home-assistant/core",
     "description": ":house_with_garden: Open source home automation that puts local control and privacy first.",
     "language": "Python",
-    "stargazersCount": 92342,
+    "stargazersCount": 92374,
     "url": "https://github.com/home-assistant/core",
     "track": "stars",
     "topic": "trending"
@@ -82,7 +82,7 @@
     "fullName": "colbymchenry/codegraph",
     "description": "Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, CoPilot, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
     "language": "TypeScript",
-    "stargazersCount": 77931,
+    "stargazersCount": 78056,
     "url": "https://github.com/colbymchenry/codegraph",
     "track": "stars",
     "topic": "trending"
@@ -93,7 +93,7 @@
     "fullName": "ansible/ansible",
     "description": "Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy and maintain. Automate everything from code deployment to network configuration to cloud management, in a language that approaches plain English, using SSH, with no agents to install on remote systems. https://docs.ansible.com.",
     "language": "Python",
-    "stargazersCount": 71502,
+    "stargazersCount": 71495,
     "url": "https://github.com/ansible/ansible",
     "track": "stars",
     "topic": "trending"
@@ -104,7 +104,7 @@
     "fullName": "mvanhorn/last30days-skill",
     "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
     "language": "Python",
-    "stargazersCount": 69540,
+    "stargazersCount": 70467,
     "url": "https://github.com/mvanhorn/last30days-skill",
     "track": "stars",
     "topic": "trending"
@@ -113,9 +113,9 @@
     "repo": "jingyaogong/minimind",
     "name": "minimind",
     "fullName": "jingyaogong/minimind",
-    "description": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
+    "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
     "language": "Python",
-    "stargazersCount": 66395,
+    "stargazersCount": 66604,
     "url": "https://github.com/jingyaogong/minimind",
     "track": "stars",
     "topic": "trending"
@@ -126,7 +126,7 @@
     "fullName": "pingdotgg/t3code",
     "description": "The best way to control Claude Code, Codex and more from any computer or phone",
     "language": "TypeScript",
-    "stargazersCount": 64683,
+    "stargazersCount": 65796,
     "url": "https://github.com/pingdotgg/t3code",
     "track": "stars",
     "topic": "trending"
@@ -137,7 +137,7 @@
     "fullName": "HKUDS/CLI-Anything",
     "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
     "language": "Python",
-    "stargazersCount": 59304,
+    "stargazersCount": 60177,
     "url": "https://github.com/HKUDS/CLI-Anything",
     "track": "stars",
     "topic": "trending"
@@ -148,7 +148,7 @@
     "fullName": "bojieli/ai-agent-book",
     "description": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码",
     "language": "Python",
-    "stargazersCount": 58642,
+    "stargazersCount": 58791,
     "url": "https://github.com/bojieli/ai-agent-book",
     "track": "stars",
     "topic": "trending"
@@ -159,7 +159,7 @@
     "fullName": "github/awesome-copilot",
     "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot.",
     "language": "JavaScript",
-    "stargazersCount": 41301,
+    "stargazersCount": 41348,
     "url": "https://github.com/github/awesome-copilot",
     "track": "stars",
     "topic": "trending"
@@ -170,7 +170,7 @@
     "fullName": "JCodesMore/ai-website-cloner-template",
     "description": "Clone any website with one command using AI coding agents",
     "language": "TypeScript",
-    "stargazersCount": 39425,
+    "stargazersCount": 39491,
     "url": "https://github.com/JCodesMore/ai-website-cloner-template",
     "track": "stars",
     "topic": "trending"
@@ -181,7 +181,7 @@
     "fullName": "dream-num/univer",
     "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
     "language": "TypeScript",
-    "stargazersCount": 29758,
+    "stargazersCount": 30381,
     "url": "https://github.com/dream-num/univer",
     "track": "stars",
     "topic": "trending"
@@ -192,8 +192,19 @@
     "fullName": "DuarteSantos8/openGym",
     "description": "Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan routines, log workouts, see which muscles are trained, import from Strong/Hevy/FitNotes. Self-host it or use it on the phone alone.",
     "language": "JavaScript",
-    "stargazersCount": 22638,
+    "stargazersCount": 22828,
     "url": "https://github.com/DuarteSantos8/openGym",
+    "track": "stars",
+    "topic": "trending"
+  },
+  {
+    "repo": "Vincentwei1021/video-shotcraft",
+    "name": "video-shotcraft",
+    "fullName": "Vincentwei1021/video-shotcraft",
+    "description": "AI video skill for Claude Code & Codex — cinematic, editable product promos with Remotion: 124 shot recipe cards, 150 motion previews, beat sync, sound design, Motion Workbench & JianYing (CapCut CN) export.",
+    "language": "TypeScript",
+    "stargazersCount": 21540,
+    "url": "https://github.com/Vincentwei1021/video-shotcraft",
     "track": "stars",
     "topic": "trending"
   },
@@ -203,7 +214,7 @@
     "fullName": "ag-ui-protocol/ag-ui",
     "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
     "language": "TypeScript",
-    "stargazersCount": 20259,
+    "stargazersCount": 20546,
     "url": "https://github.com/ag-ui-protocol/ag-ui",
     "track": "stars",
     "topic": "trending"
@@ -214,7 +225,7 @@
     "fullName": "cursor/plugins",
     "description": "Cursor plugin specification and official plugins",
     "language": "TypeScript",
-    "stargazersCount": 17035,
+    "stargazersCount": 17407,
     "url": "https://github.com/cursor/plugins",
     "track": "stars",
     "topic": "trending"
@@ -225,19 +236,8 @@
     "fullName": "openvinotoolkit/openvino",
     "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
     "language": "C++",
-    "stargazersCount": 11204,
+    "stargazersCount": 11441,
     "url": "https://github.com/openvinotoolkit/openvino",
-    "track": "stars",
-    "topic": "trending"
-  },
-  {
-    "repo": "elementalsouls/Claude-BugHunter",
-    "name": "Claude-BugHunter",
-    "fullName": "elementalsouls/Claude-BugHunter",
-    "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
-    "language": "Python",
-    "stargazersCount": 10278,
-    "url": "https://github.com/elementalsouls/Claude-BugHunter",
     "track": "stars",
     "topic": "trending"
   },
@@ -247,7 +247,7 @@
     "fullName": "google-labs-code/stitch-skills",
     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
     "language": "TypeScript",
-    "stargazersCount": 10262,
+    "stargazersCount": 10554,
     "url": "https://github.com/google-labs-code/stitch-skills",
     "track": "stars",
     "topic": "trending"
@@ -258,7 +258,7 @@
     "fullName": "kajisho5/ffmpeg-skill",
     "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
     "language": "Python",
-    "stargazersCount": 7895,
+    "stargazersCount": 8117,
     "url": "https://github.com/kajisho5/ffmpeg-skill",
     "track": "stars",
     "topic": "trending"
@@ -269,7 +269,7 @@
     "fullName": "anthropics/claude-code-security-review",
     "description": "An AI-powered security review GitHub Action using Claude to analyze code changes for security vulnerabilities.",
     "language": "Python",
-    "stargazersCount": 6989,
+    "stargazersCount": 7014,
     "url": "https://github.com/anthropics/claude-code-security-review",
     "track": "stars",
     "topic": "trending"
@@ -280,7 +280,7 @@
     "fullName": "ethanplusai/sellbird",
     "description": "Sellbird (formerly Harvey): the open-source outreach platform that runs on your Claude or ChatGPT plan. Finds companies and decision makers, verifies emails, writes personal cold email, sends it and handles the replies.",
     "language": "Python",
-    "stargazersCount": 6410,
+    "stargazersCount": 6601,
     "url": "https://github.com/ethanplusai/sellbird",
     "track": "stars",
     "topic": "trending"
@@ -291,7 +291,7 @@
     "fullName": "google-research/paper-orchestra",
     "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
     "language": "Python",
-    "stargazersCount": 3590,
+    "stargazersCount": 4769,
     "url": "https://github.com/google-research/paper-orchestra",
     "track": "stars",
     "topic": "trending"
@@ -300,9 +300,9 @@
     "repo": "NVIDIA/SkillEvaluator",
     "name": "SkillEvaluator",
     "fullName": "NVIDIA/SkillEvaluator",
-    "description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+    "description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, security scanning, harness compatibility checks, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior. Ships reusable CI templates that bring every check to any repository.",
     "language": "Python",
-    "stargazersCount": 3439,
+    "stargazersCount": 3992,
     "url": "https://github.com/NVIDIA/SkillEvaluator",
     "track": "stars",
     "topic": "trending"
@@ -313,7 +313,7 @@
     "fullName": "pugarte7/spanish-top-tech-companies",
     "description": "MCP con las mejores ofertas tech de España, para que tus agentes puedan aplicar por ti de forma automática.",
     "language": "JavaScript",
-    "stargazersCount": 597,
+    "stargazersCount": 603,
     "url": "https://github.com/pugarte7/spanish-top-tech-companies",
     "track": "stars",
     "topic": "trending"
@@ -324,7 +324,7 @@
     "fullName": "Dodaios/Dodaios",
     "description": "One workspace for everything you do with AI: Claude Code, Codex and seven more coding agents side by side, one assistant that runs them, voice, and docs. Open source, on your computer, on your own plans and keys. Formerly Personal Jarvis.",
     "language": "Python",
-    "stargazersCount": 409,
+    "stargazersCount": 431,
     "url": "https://github.com/Dodaios/Dodaios",
     "track": "stars",
     "topic": "trending"
