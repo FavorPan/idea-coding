@@ -8,17 +8,17 @@ interface LastSnapshot {
 
 export const lastSnapshot: LastSnapshot = {
   "week": "2026-W04",
-  "taken": "2026-11-20T10:56:15.382Z",
+  "taken": "2026-11-21T10:40:30.048Z",
   "counts": {
-    "affaan-m/ECC": 307487,
-    "anomalyco/opencode": 228143,
-    "firecrawl/firecrawl": 204708,
-    "DietrichGebert/ponytail": 195195,
-    "earendil-works/pi": 123014,
-    "colbymchenry/codegraph": 78207,
-    "Fission-AI/OpenSpec": 75315,
-    "mvanhorn/last30days-skill": 71125,
-    "cathrynlavery/diagram-design": 68950,
-    "jingyaogong/minimind": 67420
+    "affaan-m/ECC": 308042,
+    "anomalyco/opencode": 228318,
+    "firecrawl/firecrawl": 205652,
+    "DietrichGebert/ponytail": 195926,
+    "earendil-works/pi": 123125,
+    "colbymchenry/codegraph": 78277,
+    "Fission-AI/OpenSpec": 75384,
+    "mvanhorn/last30days-skill": 71665,
+    "cathrynlavery/diagram-design": 69509,
+    "jingyaogong/minimind": 67899
   }
 };

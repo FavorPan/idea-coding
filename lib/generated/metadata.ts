@@ -9,7 +9,7 @@ interface GeneratedMeta {
 }
 
 export const generatedMeta: GeneratedMeta = {
-  "refreshedAt": "2026-11-20T10:56:15.383Z",
+  "refreshedAt": "2026-11-21T10:40:30.049Z",
   "topics": [
     "trending"
   ],
